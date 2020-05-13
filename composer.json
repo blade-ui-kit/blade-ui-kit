@@ -1,0 +1,54 @@
+{
+    "name": "blade-ui-kit/blade-ui-kit",
+    "description": "A set of out-of-the-box components to utilise in your Laravel Blade views.",
+    "keywords": ["Blade", "UI", "Laravel"],
+    "homepage": "https://github.com/blade-ui-kit/blade-ui-kit",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/blade-ui-kit/blade-ui-kit/issues",
+        "source": "https://github.com/blade-ui-kit/blade-ui-kit"
+    },
+    "authors": [
+        {
+            "name": "Dries Vints",
+            "email": "dries@vints.io",
+            "homepage": "https://driesvints.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BladeUI\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BladeUI\\BladeUIServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "format": [
+            "vendor/bin/php-cs-fixer fix"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
