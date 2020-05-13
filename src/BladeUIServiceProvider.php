@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUI;
 
 use BladeUI\Support\Cron;
+use BladeUI\Support\DateTime;
 use Illuminate\Support\ServiceProvider;
 
 final class BladeUIServiceProvider extends ServiceProvider
@@ -15,6 +16,7 @@ final class BladeUIServiceProvider extends ServiceProvider
 
         $this->loadViewComponentsAs('', [
             Cron::class,
+            DateTime::class,
         ]);
     }
 }
