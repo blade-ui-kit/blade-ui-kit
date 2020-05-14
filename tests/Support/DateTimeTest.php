@@ -19,10 +19,10 @@ class DateTimeTest extends ComponentTest
         $view = trim((string) $this->blade('<x-date-time :date="$date"/>', ['date' => $date]));
 
         $expected = <<<Blade
-        <span title="2 hours from now">
-            2020-05-13 23:00:00
-        </span>
-        Blade;
+<span title="2 hours from now">
+    2020-05-13 23:00:00
+</span>
+Blade;
 
         $this->assertSame($expected, (string) $view);
     }
@@ -37,10 +37,10 @@ class DateTimeTest extends ComponentTest
         $view = trim((string) $this->blade('<x-date-time :date="$date" format="d/m/Y H:i"/>', ['date' => $date]));
 
         $expected = <<<Blade
-        <span title="2 hours from now">
-            13/05/2020 23:00
-        </span>
-        Blade;
+<span title="2 hours from now">
+    13/05/2020 23:00
+</span>
+Blade;
 
         $this->assertSame($expected, (string) $view);
     }

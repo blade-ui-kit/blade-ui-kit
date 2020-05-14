@@ -15,10 +15,10 @@ class CronTest extends ComponentTest
         $view = trim((string) $this->blade('<x-cron schedule="@weekly"/>'));
 
         $expected = <<<Blade
-        <span title="Every Sunday at 12:00am">
-            @weekly
-        </span>
-        Blade;
+<span title="Every Sunday at 12:00am">
+    @weekly
+</span>
+Blade;
 
         $this->assertSame($expected, (string) $view);
     }
