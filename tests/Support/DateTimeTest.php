@@ -19,11 +19,11 @@ class DateTimeTest extends ComponentTestCase
     /** @test */
     public function its_component_can_be_rendered()
     {
-        $expected = <<<Blade
+        $expected = <<<HTML
 <span title="2 hours from now">
     2020-05-13 23:00:00
 </span>
-Blade;
+HTML;
 
         Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
@@ -35,11 +35,11 @@ Blade;
     /** @test */
     public function its_component_can_be_rendered_in_a_specific_format()
     {
-        $expected = <<<Blade
+        $expected = <<<HTML
 <span title="2 hours from now">
     13/05/2020 23:00
 </span>
-Blade;
+HTML;
 
         Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
@@ -51,11 +51,11 @@ Blade;
     /** @test */
     public function its_component_can_be_rendered_as_human_readable()
     {
-        $expected = <<<Blade
+        $expected = <<<HTML
 <time datetime="2020-05-13 23:00:00">
     2 hours from now
 </time>
-Blade;
+HTML;
 
         Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 

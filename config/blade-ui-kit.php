@@ -4,6 +4,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Components
+    |--------------------------------------------------------------------------
+    |
+    | Below you reference all components that should be loaded for your app.
+    | By default all components from Blade UI Kit are loaded in.
+    |
+    */
+
+    'components' => [
+        \BladeUI\Support\Cron::class,
+        \BladeUI\Support\DateTime::class,
+        \BladeUI\Support\Unsplash::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Components Prefix
     |--------------------------------------------------------------------------
     |

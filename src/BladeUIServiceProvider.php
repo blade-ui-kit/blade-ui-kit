@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace BladeUI;
 
-use BladeUI\Support\Cron;
-use BladeUI\Support\DateTime;
 use Illuminate\Support\ServiceProvider;
 
 final class BladeUIServiceProvider extends ServiceProvider
@@ -21,9 +19,6 @@ final class BladeUIServiceProvider extends ServiceProvider
 
         $config = $this->app->make('config')->get('blade-ui-kit');
 
-        $this->loadViewComponentsAs($config['prefix'], [
-            Cron::class,
-            DateTime::class,
-        ]);
+        $this->loadViewComponentsAs($config['prefix'], $config['components']);
     }
 }

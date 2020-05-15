@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUI\Support;
 
 use Carbon\Carbon;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 final class DateTime extends Component
@@ -25,7 +26,7 @@ final class DateTime extends Component
         $this->human = $human;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('blade-ui::components.support.date-time');
     }
