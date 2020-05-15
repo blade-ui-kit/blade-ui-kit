@@ -15,10 +15,14 @@ final class DateTime extends Component
     /** @var string */
     public $format;
 
-    public function __construct(Carbon $date, string $format = 'Y-m-d H:i:s')
+    /** @var bool */
+    public $human = false;
+
+    public function __construct(Carbon $date, string $format = 'Y-m-d H:i:s', bool $human = false)
     {
         $this->date = $date;
         $this->format = $format;
+        $this->human = $human;
     }
 
     public function render()

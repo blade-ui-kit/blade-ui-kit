@@ -47,4 +47,20 @@ Blade;
             'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
         ]);
     }
+
+    /** @test */
+    public function its_component_can_be_rendered_as_human_readable()
+    {
+        $expected = <<<Blade
+<time datetime="2020-05-13 23:00:00">
+    2 hours from now
+</time>
+Blade;
+
+        Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
+
+        $this->assertSameComponent($expected, '<x-date-time :date="$date" human/>', [
+            'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
+        ]);
+    }
 }
