@@ -36,7 +36,8 @@ HTML;
 HTML;
 
         $this->assertSameComponent(
-            $expected, '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />'
+            $expected,
+            '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />'
         );
     }
 }
