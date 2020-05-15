@@ -5,22 +5,20 @@ declare(strict_types=1);
 namespace Tests\Support;
 
 use BladeUI\Support\Cron;
-use Tests\ComponentTest;
+use Tests\ComponentTestCase;
 
-class CronTest extends ComponentTest
+class CronTest extends ComponentTestCase
 {
     /** @test */
     public function its_component_can_be_rendered()
     {
-        $view = trim((string) $this->blade('<x-cron schedule="@weekly"/>'));
-
         $expected = <<<Blade
 <span title="Every Sunday at 12:00am">
     @weekly
 </span>
 Blade;
 
-        $this->assertSame($expected, (string) $view);
+        $this->assertSameComponent($expected, '<x-cron schedule="@weekly"/>');
     }
 
     /** @test */
