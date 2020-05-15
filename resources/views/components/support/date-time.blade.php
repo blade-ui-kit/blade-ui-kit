@@ -1,12 +1,12 @@
 @if ($human)
 
-<time datetime="{{ $date->format($format) }}">
+<time {!! $attributes->merge(['datetime' => $date->format($format)]) !!}>
     {{ $date->diffForHumans() }}
 </time>
 
 @else
 
-<span title="{{ $date->diffForHumans() }}">
+<span {!! $attributes->merge(['title' => $date->diffForHumans()]) !!}>
     {{ $date->format($format) }}
 </span>
 
