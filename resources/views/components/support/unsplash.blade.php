@@ -1,1 +1,1 @@
-<img src="{!! $url !!}" {!! $attributes->merge(['alt' => '']) !!}/>
+<img src="{!! $url !!}" {!! $attributes !!}/>

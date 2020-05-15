@@ -21,7 +21,7 @@ final class UnsplashTest extends ComponentTestCase
     {
         $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0';
 
-        $expected = sprintf('<img src="%s" alt=""/>', $url);
+        $expected = sprintf('<img src="%s" />', $url);
 
         Http::fake([
             'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),

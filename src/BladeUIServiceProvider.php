@@ -15,8 +15,17 @@ final class BladeUIServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blade-ui');
+        $this->bootResources();
+        $this->bootComponents();
+    }
 
+    private function bootResources(): void
+    {
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blade-ui');
+    }
+
+    private function bootComponents(): void
+    {
         $config = $this->app->make('config')->get('blade-ui-kit');
 
         $this->loadViewComponentsAs($config['prefix'], $config['components']);

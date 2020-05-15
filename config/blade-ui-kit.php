@@ -13,6 +13,7 @@ return [
     */
 
     'components' => [
+        \BladeUI\Forms\Input::class,
         \BladeUI\Support\Cron::class,
         \BladeUI\Support\DateTime::class,
         \BladeUI\Support\Unsplash::class,

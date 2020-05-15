@@ -1,3 +1,3 @@
-<span {!! $attributes->merge(['title' => $translate()]) !!}>
+<span title="{{ $translate() }}" {!! $attributes !!}>
     {{ $schedule }}
 </span>
