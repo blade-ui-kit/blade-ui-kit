@@ -22,6 +22,6 @@ class ComponentPrefixTest extends ComponentTestCase
 </span>
 HTML;
 
-        $this->assertSameComponent($expected, '<x-ui-cron schedule="@weekly"/>');
+        $this->assertComponentRenders($expected, '<x-ui-cron schedule="@weekly"/>');
     }
 }

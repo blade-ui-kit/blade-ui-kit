@@ -16,7 +16,7 @@ abstract class ComponentTestCase extends TestCase
         return [BladeUIServiceProvider::class];
     }
 
-    public function assertSameComponent(string $expected, string $template, array $data = []): void
+    public function assertComponentRenders(string $expected, string $template, array $data = []): void
     {
         $this->assertSame($expected, trim((string) $this->blade($template, $data)));
     }

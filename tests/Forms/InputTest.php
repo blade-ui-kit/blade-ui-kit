@@ -20,7 +20,7 @@ class InputTest extends ComponentTestCase
 />
 HTML;
 
-        $this->assertSameComponent($expected, '<x-input name="search"/>');
+        $this->assertComponentRenders($expected, '<x-input name="search"/>');
     }
 
     /** @test */
@@ -35,7 +35,7 @@ HTML;
 />
 HTML;
 
-        $this->assertSameComponent(
+        $this->assertComponentRenders(
             $expected,
             '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />'
         );

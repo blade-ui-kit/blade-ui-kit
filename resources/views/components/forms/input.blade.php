@@ -1,6 +1,6 @@
 <input
     name="{{ $name }}"
-    type="{{ $type ?? 'text' }}"
-    id="{{ $id ?? $name }}"
-    {!! $attributes !!}
+    type="{{ $type }}"
+    id="{{ $id }}"
+    {{ $attributes }}
 />

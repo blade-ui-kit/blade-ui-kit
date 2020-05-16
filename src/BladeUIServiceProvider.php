@@ -10,13 +10,18 @@ final class BladeUIServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/blade-ui-kit.php', 'blade-ui-kit');
+        $this->registerConfig();
     }
 
     public function boot(): void
     {
         $this->bootResources();
         $this->bootComponents();
+    }
+
+    private function registerConfig(): void
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../config/blade-ui-kit.php', 'blade-ui-kit');
     }
 
     private function bootResources(): void

@@ -1,1 +1,1 @@
-<img src="{!! $url !!}" {!! $attributes !!}/>
+<img src="{!! $url !!}" {{ $attributes }}/>

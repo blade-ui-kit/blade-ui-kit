@@ -13,10 +13,13 @@ return [
     */
 
     'components' => [
-        \BladeUI\Forms\Input::class,
-        \BladeUI\Support\Cron::class,
-        \BladeUI\Support\DateTime::class,
-        \BladeUI\Support\Unsplash::class,
+        BladeUI\Buttons\Button::class,
+        BladeUI\Buttons\Submit::class,
+        BladeUI\Forms\Input::class,
+        BladeUI\Support\Cron::class,
+        BladeUI\Support\DateTime::class,
+        BladeUI\Support\Markdown::class,
+        BladeUI\Support\Unsplash::class,
     ],
 
     /*

@@ -18,7 +18,7 @@ class CronTest extends ComponentTestCase
 </span>
 HTML;
 
-        $this->assertSameComponent($expected, '<x-cron schedule="@weekly"/>');
+        $this->assertComponentRenders($expected, '<x-cron schedule="@weekly"/>');
     }
 
     /** @test */
