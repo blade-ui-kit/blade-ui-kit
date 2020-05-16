@@ -15,6 +15,7 @@ return [
     'components' => [
         BladeUI\Buttons\Button::class,
         BladeUI\Buttons\Submit::class,
+        BladeUI\Forms\Form::class,
         BladeUI\Forms\Input::class,
         BladeUI\Support\Cron::class,
         BladeUI\Support\DateTime::class,
