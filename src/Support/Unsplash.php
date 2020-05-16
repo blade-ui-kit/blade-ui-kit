@@ -10,28 +10,28 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\Component;
 
-final class Unsplash extends Component
+class Unsplash extends Component
 {
     /** @var string */
-    private $photoId;
+    protected $photoId;
 
     /** @var string */
-    private $query;
+    protected $query;
 
     /** @var bool */
-    private $featured;
+    protected $featured;
 
     /** @var string */
-    private $username;
+    protected $username;
 
     /** @var int */
-    private $w;
+    protected $w;
 
     /** @var int */
-    private $h;
+    protected $h;
 
     /** @var int */
-    private $cacheTtl;
+    protected $cacheTtl;
 
     public function __construct(
         string $photoId = 'random',

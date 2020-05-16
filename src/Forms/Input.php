@@ -7,7 +7,7 @@ namespace BladeUI\Forms;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-final class Input extends Component
+class Input extends Component
 {
     /** @var string */
     public $name;

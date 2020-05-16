@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use Lorisleiva\CronTranslator\CronTranslator;
 
-final class Cron extends Component
+class Cron extends Component
 {
     /** @var string */
     public $schedule;

@@ -10,16 +10,16 @@ use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 use League\CommonMark\MarkdownConverterInterface;
 
-final class Markdown extends Component
+class Markdown extends Component
 {
     /** @var string */
-    private $flavor;
+    protected $flavor;
 
     /** @var string */
-    private $htmlInput;
+    protected $htmlInput;
 
     /** @var bool */
-    private $allowUnsafeLinks;
+    protected $allowUnsafeLinks;
 
     public function __construct(string $flavor = 'default', string $htmlInput = 'strip', bool $allowUnsafeLinks = false)
     {

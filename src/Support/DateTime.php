@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-final class DateTime extends Component
+class DateTime extends Component
 {
     /** @var Carbon */
     public $date;
