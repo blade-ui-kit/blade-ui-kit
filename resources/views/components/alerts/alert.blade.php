@@ -1,5 +1,9 @@
 @if (session($type))
     <div role="alert" {{ $attributes }}>
-        {{ $message }}
+        @if ($slot->isEmpty())
+            {{ $message }}
+        @else
+            {{ $slot }}
+        @endif
     </div>
 @endif

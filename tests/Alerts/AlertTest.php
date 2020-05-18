@@ -15,8 +15,8 @@ class AlertTest extends ComponentTestCase
 
         $expected = <<<HTML
 <div role="alert" >
-        Form was successfully submitted.
-    </div>
+                    Form was successfully submitted.
+            </div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-alert/>');
@@ -29,10 +29,30 @@ HTML;
 
         $expected = <<<HTML
 <div role="alert" >
-        Form contains some errors.
-    </div>
+                    Form contains some errors.
+            </div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-alert type="error"/>');
+    }
+
+    /** @test */
+    public function it_can_be_slotted()
+    {
+        session(['success' => 'Form was successfully submitted.']);
+
+        $template = <<<HTML
+<x-alert>
+    {{ \$component->message() }}
+</x-alert>
+HTML;
+
+        $expected = <<<HTML
+<div role="alert" >
+                    Form was successfully submitted.
+            </div>
+HTML;
+
+        $this->assertComponentRenders($expected, $template);
     }
 }
