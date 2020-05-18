@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BladeUI\Forms;
 
-use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
