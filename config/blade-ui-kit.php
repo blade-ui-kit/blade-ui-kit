@@ -13,14 +13,18 @@ return [
     */
 
     'components' => [
-        BladeUI\Buttons\Button::class,
-        BladeUI\Buttons\Submit::class,
-        BladeUI\Forms\Form::class,
-        BladeUI\Forms\Input::class,
-        BladeUI\Support\Cron::class,
-        BladeUI\Support\DateTime::class,
-        BladeUI\Support\Markdown::class,
-        BladeUI\Support\Unsplash::class,
+        'alert' => BladeUI\Alerts\Alert::class,
+        'button' => BladeUI\Buttons\Button::class,
+        'submit' => BladeUI\Buttons\Submit::class,
+        'field' => BladeUI\Forms\Fields\Field::class,
+        'error' => BladeUI\Forms\Error::class,
+        'form' => BladeUI\Forms\Form::class,
+        'input' => BladeUI\Forms\Input::class,
+        'label' => BladeUI\Forms\Label::class,
+        'cron' => BladeUI\Support\Cron::class,
+        'date-time' => BladeUI\Support\DateTime::class,
+        'markdown' => BladeUI\Support\Markdown::class,
+        'unsplash' => BladeUI\Support\Unsplash::class,
     ],
 
     /*

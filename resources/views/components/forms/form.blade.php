@@ -2,5 +2,5 @@
     @csrf
     @method($method)
 
-    {!! $slot !!}
+    {{ $slot }}
 </form>

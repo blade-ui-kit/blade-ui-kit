@@ -3,7 +3,9 @@
 namespace Tests;
 
 use Illuminate\Support\Facades\View as ViewFacade;
+use Illuminate\Support\MessageBag;
 use Illuminate\Support\Str;
+use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\View;
 
 trait InteractsWithViews
@@ -58,5 +60,21 @@ trait InteractsWithViews
         return $view instanceof View
             ? new TestView($view->with($component->data()))
             : new TestView(view($view, $component->data()));
+    }
+
+    /**
+     * Populate the view errors.
+     *
+     * @param  array  $errors
+     * @param  string  $key
+     * @return void
+     */
+    protected function withViewErrors(array $errors, $key = 'default')
+    {
+        $viewErrorBag = new ViewErrorBag();
+
+        $viewErrorBag->put($key, new MessageBag($errors));
+
+        ViewFacade::share('errors', $viewErrorBag);
     }
 }

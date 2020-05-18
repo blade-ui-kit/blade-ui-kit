@@ -1,3 +1,3 @@
 <x-button type="submit">
-    {!! $slot !!}
+    {{ $slot }}
 </x-button>

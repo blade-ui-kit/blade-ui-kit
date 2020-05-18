@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUI;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 
 final class BladeUIServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,10 @@ final class BladeUIServiceProvider extends ServiceProvider
     {
         $config = $this->app->make('config')->get('blade-ui-kit');
 
-        $this->loadViewComponentsAs($config['prefix'], $config['components']);
+        $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) use ($config) {
+            foreach ($config['components'] as $alias => $component) {
+                $blade->component($component, $alias, $config['prefix']);
+            }
+        });
     }
 }

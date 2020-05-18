@@ -1,3 +1,3 @@
-<span title="{{ $translate() }}" {{ $attributes }}>
+<span title="{{ $translate }}" {{ $attributes }}>
     {{ $schedule }}
 </span>
