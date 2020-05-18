@@ -19,7 +19,7 @@ return [
         'field' => BladeUI\Forms\Fields\Field::class,
         'error' => BladeUI\Forms\Error::class,
         'form' => BladeUI\Forms\Form::class,
-        'input' => BladeUI\Forms\Input::class,
+        'input' => \BladeUI\Forms\Inputs\Input::class,
         'label' => BladeUI\Forms\Label::class,
         'cron' => BladeUI\Support\Cron::class,
         'date-time' => BladeUI\Support\DateTime::class,
