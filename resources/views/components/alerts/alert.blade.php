@@ -1,5 +1,5 @@
 @if (session($type))
     <div role="alert" {{ $attributes }}>
-        {{ session()->pull($type) }}
+        {{ $message }}
     </div>
 @endif

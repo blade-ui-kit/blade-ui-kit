@@ -21,4 +21,14 @@ class Alert extends Component
     {
         return view('blade-ui::components.alerts.alert');
     }
+
+    public function message(): string
+    {
+        return (string) session()->get($this->type);
+    }
+
+    public function flash(): string
+    {
+        return (string) session()->pull($this->type);
+    }
 }

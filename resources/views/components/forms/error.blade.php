@@ -1,5 +1,5 @@
-@error($field)
+@error($field, $bag)
     <div {{ $attributes }}>
-        {{ $slot->isEmpty() ? $message : $slot }}
+        {{ $message }}
     </div>
 @enderror
