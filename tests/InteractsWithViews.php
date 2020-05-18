@@ -63,7 +63,7 @@ trait InteractsWithViews
     }
 
     /**
-     * Populate the view errors.
+     * Populate the shared view error bag with the given errors.
      *
      * @param  array  $errors
      * @param  string  $key
@@ -71,10 +71,6 @@ trait InteractsWithViews
      */
     protected function withViewErrors(array $errors, $key = 'default')
     {
-        $viewErrorBag = new ViewErrorBag();
-
-        $viewErrorBag->put($key, new MessageBag($errors));
-
-        ViewFacade::share('errors', $viewErrorBag);
+        ViewFacade::share('errors', (new ViewErrorBag())->put($key, new MessageBag($errors)));
     }
 }

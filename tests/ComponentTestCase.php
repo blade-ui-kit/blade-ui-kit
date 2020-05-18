@@ -11,6 +11,13 @@ abstract class ComponentTestCase extends TestCase
 {
     use InteractsWithViews;
 
+    protected function flashOld(array $input): void
+    {
+        session()->flashInput($input);
+
+        request()->setLaravelSession(session());
+    }
+
     protected function getPackageProviders($app): array
     {
         return [BladeUIServiceProvider::class];

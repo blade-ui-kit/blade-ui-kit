@@ -6,21 +6,21 @@ namespace Tests\Forms\Inputs;
 
 use Tests\ComponentTestCase;
 
-class InputTest extends ComponentTestCase
+class EmailTest extends ComponentTestCase
 {
     /** @test */
     public function its_component_can_be_rendered()
     {
         $expected = <<<HTML
 <input
-    name="search"
-    type="text"
-    id="search"
+    name="email"
+    type="email"
+    id="email"
         
 />
 HTML;
 
-        $this->assertComponentRenders($expected, '<x-input name="search"/>');
+        $this->assertComponentRenders($expected, '<x-input-email/>');
     }
 
     /** @test */
@@ -28,33 +28,33 @@ HTML;
     {
         $expected = <<<HTML
 <input
-    name="confirm_password"
-    type="password"
-    id="confirmPassword"
+    name="email_address"
+    type="email"
+    id="emailAddress"
         class="p-4"
 />
 HTML;
 
         $this->assertComponentRenders(
             $expected,
-            '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />'
+            '<x-input-email name="email_address" id="emailAddress" class="p-4" />'
         );
     }
 
     /** @test */
     public function inputs_can_have_old_values()
     {
-        $this->flashOld(['search' => 'Eloquent']);
+        $this->flashOld(['email' => 'Eloquent']);
 
         $expected = <<<HTML
 <input
-    name="search"
-    type="text"
-    id="search"
+    name="email"
+    type="email"
+    id="email"
     value="Eloquent"    
 />
 HTML;
 
-        $this->assertComponentRenders($expected, '<x-input name="search"/>');
+        $this->assertComponentRenders($expected, '<x-input-email/>');
     }
 }

@@ -1,6 +1,6 @@
 <input
     name="{{ $name }}"
-    type="{{ $type }}"
+    type="email"
     id="{{ $id }}"
     @if($value)value="{{ $value }}"@endif
     {{ $attributes }}
