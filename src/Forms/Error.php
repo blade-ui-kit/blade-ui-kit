@@ -25,4 +25,11 @@ class Error extends Component
     {
         return view('blade-ui::components.forms.error');
     }
+
+    public function messages(ViewErrorBag $errors): array
+    {
+        $bag = $errors->getBag($this->bag);
+
+        return $bag->has($this->field) ? $bag->get($this->field) : [];
+    }
 }
