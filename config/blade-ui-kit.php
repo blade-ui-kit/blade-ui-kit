@@ -20,6 +20,7 @@ return [
         'form' => BladeUI\Forms\Form::class,
         'label' => BladeUI\Forms\Label::class,
         'input' => BladeUI\Forms\Inputs\Input::class,
+        'checkbox' => BladeUI\Forms\Inputs\Checkbox::class,
         'input-email' => BladeUI\Forms\Inputs\Email::class,
         'input-password' => BladeUI\Forms\Inputs\Password::class,
         'cron' => BladeUI\Support\Cron::class,
