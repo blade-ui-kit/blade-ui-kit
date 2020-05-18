@@ -53,20 +53,15 @@ class Unsplash extends Component
 
     public function render(): View
     {
-        $url = $this->fetchPhoto();
-
         return view('blade-ui::components.support.unsplash', [
-            'url' => $url,
+            'url' => $this->fetchPhoto(),
         ]);
     }
 
-    /**
-     * @throws \Exception
-     */
     private function fetchPhoto(): string
     {
         if (! $accessKey = config('services.unsplash.access_key')) {
-            throw new Exception('Please define your Unsplash access key in the services.php config file.');
+            return '';
         }
 
         return Cache::remember($this->photoId, $this->cacheTtl, function () use ($accessKey) {
