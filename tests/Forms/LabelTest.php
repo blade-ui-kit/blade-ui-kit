@@ -19,16 +19,4 @@ HTML;
 
         $this->assertComponentRenders($expected, '<x-label for="first_name"/>');
     }
-
-    /** @test */
-    public function it_can_be_slotted()
-    {
-        $expected = <<<HTML
-<label for="first_name" >
-    <span>First Name</span>
-</label>
-HTML;
-
-        $this->assertComponentRenders($expected, '<x-label for="first_name"><span>First Name</span></x-label>');
-    }
 }
