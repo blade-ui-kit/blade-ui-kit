@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUI\Support;
 
+use BladeUI\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
-use Illuminate\View\Component;
 
 class Unsplash extends Component
 {

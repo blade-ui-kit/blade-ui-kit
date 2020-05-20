@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BladeUI\Support;
 
+use BladeUI\Component;
 use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 use League\CommonMark\MarkdownConverterInterface;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BladeUI\Support;
 
+use BladeUI\Component;
 use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
 use Lorisleiva\CronTranslator\CronTranslator;
 
 class Cron extends Component

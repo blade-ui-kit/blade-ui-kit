@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BladeUI\Forms;
 
+use BladeUI\Component;
 use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
 
 class Form extends Component
 {

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace BladeUI\Forms;
 
-use Illuminate\View\Component;
+use BladeUI\Component;
+use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\View;
 
 class Error extends Component

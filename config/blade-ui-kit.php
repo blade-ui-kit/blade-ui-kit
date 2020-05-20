@@ -19,6 +19,7 @@ return [
         'error' => BladeUI\Forms\Error::class,
         'form' => BladeUI\Forms\Form::class,
         'label' => BladeUI\Forms\Label::class,
+        'mapbox' => BladeUI\Maps\Mapbox::class,
         'input' => BladeUI\Forms\Inputs\Input::class,
         'checkbox' => BladeUI\Forms\Inputs\Checkbox::class,
         'input-email' => BladeUI\Forms\Inputs\Email::class,

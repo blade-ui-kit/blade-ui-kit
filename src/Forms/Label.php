@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BladeUI\Forms;
 
+use BladeUI\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
-use Illuminate\View\Component;
 
 class Label extends Component
 {
