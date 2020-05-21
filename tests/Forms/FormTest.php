@@ -9,7 +9,7 @@ use Tests\ComponentTestCase;
 class FormTest extends ComponentTestCase
 {
     /** @test */
-    public function its_component_can_be_rendered()
+    public function the_component_can_be_rendered()
     {
         $template = <<<HTML
 <x-form action="http://example.com">

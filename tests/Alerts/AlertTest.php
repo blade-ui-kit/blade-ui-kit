@@ -9,7 +9,7 @@ use Tests\ComponentTestCase;
 class AlertTest extends ComponentTestCase
 {
     /** @test */
-    public function its_component_can_be_rendered()
+    public function the_component_can_be_rendered()
     {
         session(['success' => 'Form was successfully submitted.']);
 

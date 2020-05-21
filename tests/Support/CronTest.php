@@ -10,7 +10,7 @@ use Tests\ComponentTestCase;
 class CronTest extends ComponentTestCase
 {
     /** @test */
-    public function its_component_can_be_rendered()
+    public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
 <span title="Every Sunday at 12:00am" >

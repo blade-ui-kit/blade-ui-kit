@@ -17,7 +17,7 @@ class DateTimeTest extends ComponentTestCase
     }
 
     /** @test */
-    public function its_component_can_be_rendered()
+    public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
 <span title="2 hours from now" >
