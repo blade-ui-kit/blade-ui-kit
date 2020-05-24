@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
+        "gajus/dindent": "^2.0",
         "guzzlehttp/guzzle": "^6.5",
         "league/commonmark": "^1.4",
         "lorisleiva/cron-translator": "^0.1.1",

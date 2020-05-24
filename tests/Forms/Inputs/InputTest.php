@@ -11,32 +11,17 @@ class InputTest extends ComponentTestCase
     /** @test */
     public function the_component_can_be_rendered()
     {
-        $expected = <<<HTML
-<input
-    name="search"
-    type="text"
-    id="search"
-        
-/>
-HTML;
-
-        $this->assertComponentRenders($expected, '<x-input name="search"/>');
+        $this->assertComponentRenders(
+            '<input name="search" type="text" id="search" />',
+            '<x-input name="search" />'
+        );
     }
 
     /** @test */
     public function specific_attributes_can_be_overwritten()
     {
-        $expected = <<<HTML
-<input
-    name="confirm_password"
-    type="password"
-    id="confirmPassword"
-        class="p-4"
-/>
-HTML;
-
         $this->assertComponentRenders(
-            $expected,
+            '<input name="confirm_password" type="password" id="confirmPassword" class="p-4" />',
             '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />'
         );
     }
@@ -46,15 +31,9 @@ HTML;
     {
         $this->flashOld(['search' => 'Eloquent']);
 
-        $expected = <<<HTML
-<input
-    name="search"
-    type="text"
-    id="search"
-    value="Eloquent"    
-/>
-HTML;
-
-        $this->assertComponentRenders($expected, '<x-input name="search"/>');
+        $this->assertComponentRenders(
+            '<input name="search" type="text" id="search" value="Eloquent" />',
+            '<x-input name="search" />'
+        );
     }
 }

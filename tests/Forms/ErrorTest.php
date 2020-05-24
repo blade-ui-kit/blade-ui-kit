@@ -15,8 +15,8 @@ class ErrorTest extends ComponentTestCase
 
         $expected = <<<HTML
 <div class="text-red-500">
-                    Incorrect first name.
-            </div>
+    Incorrect first name.
+</div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-error field="first_name" class="text-red-500"/>');
@@ -39,11 +39,11 @@ HTML;
 
         $expected = <<<HTML
 <div>
-                    <ul>
-                    <li>Incorrect first name.</li>
-                    <li>Needs at least 5 characters.</li>
-            </ul>
-            </div>
+    <ul>
+        <li>Incorrect first name.</li>
+        <li>Needs at least 5 characters.</li>
+    </ul>
+</div>
 HTML;
 
         $this->assertComponentRenders($expected, $template);

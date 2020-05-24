@@ -19,8 +19,10 @@ HTML;
 
         $expected = <<<HTML
 <form method="POST" action="http://example.com">
-    <input type="hidden" name="_token" value="">    <input type="hidden" name="_method" value="POST">
+    <input type="hidden" name="_token" value="">
+    <input type="hidden" name="_method" value="POST">
     Form fields...
+
 </form>
 HTML;
 
@@ -38,8 +40,10 @@ HTML;
 
         $expected = <<<HTML
 <form method="POST" action="http://example.com">
-    <input type="hidden" name="_token" value="">    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden" name="_token" value="">
+    <input type="hidden" name="_method" value="PUT">
     Form fields...
+
 </form>
 HTML;
 

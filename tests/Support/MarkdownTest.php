@@ -24,9 +24,9 @@ HTML;
         $expected = <<<HTML
 <div>
     <h1>Hello World</h1>
-<p>Blade UI components are <strong>awesome</strong>.</p>
-<p>Check them out <a href="https://github.com/blade-ui-kit">here</a>.</p>
 
+    <p>Blade UI components are <strong>awesome</strong>.</p>
+    <p>Check them out <a href="https://github.com/blade-ui-kit">here</a>.</p>
 </div>
 HTML;
 
@@ -38,14 +38,13 @@ HTML;
     {
         $template = <<<HTML
 <x-markdown flavor="github">
-Blade UI components are ~~cool~~ **awesome**.
+Blade UI components are ~~cool~~, **awesome**.
 </x-markdown>
 HTML;
 
         $expected = <<<HTML
 <div>
-    <p>Blade UI components are <del>cool</del> <strong>awesome</strong>.</p>
-
+    <p>Blade UI components are <del>cool</del>, <strong>awesome</strong>.</p>
 </div>
 HTML;
 

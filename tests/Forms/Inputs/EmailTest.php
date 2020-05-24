@@ -11,32 +11,17 @@ class EmailTest extends ComponentTestCase
     /** @test */
     public function the_component_can_be_rendered()
     {
-        $expected = <<<HTML
-<input
-    name="email"
-    type="email"
-    id="email"
-        
-/>
-HTML;
-
-        $this->assertComponentRenders($expected, '<x-input-email/>');
+        $this->assertComponentRenders(
+            '<input name="email" type="email" id="email" />',
+            '<x-input-email/>'
+        );
     }
 
     /** @test */
     public function specific_attributes_can_be_overwritten()
     {
-        $expected = <<<HTML
-<input
-    name="email_address"
-    type="email"
-    id="emailAddress"
-        class="p-4"
-/>
-HTML;
-
         $this->assertComponentRenders(
-            $expected,
+            '<input name="email_address" type="email" id="emailAddress" class="p-4" />',
             '<x-input-email name="email_address" id="emailAddress" class="p-4" />'
         );
     }
@@ -46,15 +31,9 @@ HTML;
     {
         $this->flashOld(['email' => 'Eloquent']);
 
-        $expected = <<<HTML
-<input
-    name="email"
-    type="email"
-    id="email"
-    value="Eloquent"    
-/>
-HTML;
-
-        $this->assertComponentRenders($expected, '<x-input-email/>');
+        $this->assertComponentRenders(
+            '<input name="email" type="email" id="email" value="Eloquent" />',
+            '<x-input-email/>'
+        );
     }
 }

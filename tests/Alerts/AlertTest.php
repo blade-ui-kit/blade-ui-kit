@@ -15,8 +15,8 @@ class AlertTest extends ComponentTestCase
 
         $expected = <<<HTML
 <div role="alert">
-                    Form was successfully submitted.
-            </div>
+    Form was successfully submitted.
+</div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-alert/>');
@@ -29,8 +29,8 @@ HTML;
 
         $expected = <<<HTML
 <div role="alert">
-                    Form contains some errors.
-            </div>
+    Form contains some errors.
+</div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-alert type="error"/>');
@@ -50,9 +50,9 @@ HTML;
 
         $expected = <<<HTML
 <div role="alert">
-                    <span>Hello World</span>
+    <span>Hello World</span>
     Form was successfully submitted.
-            </div>
+</div>
 HTML;
 
         $this->assertComponentRenders($expected, $template);
