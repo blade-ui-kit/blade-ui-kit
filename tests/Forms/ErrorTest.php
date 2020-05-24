@@ -38,7 +38,7 @@ HTML;
 HTML;
 
         $expected = <<<HTML
-<div >
+<div>
                     <ul>
                     <li>Incorrect first name.</li>
                     <li>Needs at least 5 characters.</li>

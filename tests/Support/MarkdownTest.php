@@ -22,7 +22,7 @@ Check them out [here](https://github.com/blade-ui-kit).
 HTML;
 
         $expected = <<<HTML
-<div >
+<div>
     <h1>Hello World</h1>
 <p>Blade UI components are <strong>awesome</strong>.</p>
 <p>Check them out <a href="https://github.com/blade-ui-kit">here</a>.</p>
@@ -43,7 +43,7 @@ Blade UI components are ~~cool~~ **awesome**.
 HTML;
 
         $expected = <<<HTML
-<div >
+<div>
     <p>Blade UI components are <del>cool</del> <strong>awesome</strong>.</p>
 
 </div>

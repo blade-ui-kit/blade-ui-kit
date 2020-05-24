@@ -14,7 +14,7 @@ class AlertTest extends ComponentTestCase
         session()->flash('status', 'Form was successfully submitted.');
 
         $expected = <<<HTML
-<div role="alert" >
+<div role="alert">
                     Form was successfully submitted.
             </div>
 HTML;
@@ -28,7 +28,7 @@ HTML;
         session()->flash('error', 'Form contains some errors.');
 
         $expected = <<<HTML
-<div role="alert" >
+<div role="alert">
                     Form contains some errors.
             </div>
 HTML;
@@ -49,7 +49,7 @@ HTML;
 HTML;
 
         $expected = <<<HTML
-<div role="alert" >
+<div role="alert">
                     <span>Hello World</span>
     Form was successfully submitted.
             </div>

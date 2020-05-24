@@ -17,7 +17,7 @@ class ComponentPrefixTest extends ComponentTestCase
     public function we_can_set_a_config_prefix()
     {
         $expected = <<<HTML
-<span title="Every Sunday at 12:00am" >
+<span title="Every Sunday at 12:00am">
     @weekly
 </span>
 HTML;

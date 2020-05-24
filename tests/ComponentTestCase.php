@@ -25,6 +25,9 @@ abstract class ComponentTestCase extends TestCase
 
     public function assertComponentRenders(string $expected, string $template, array $data = []): void
     {
-        $this->assertSame($expected, trim((string) $this->blade($template, $data)));
+        $cleaned = trim((string) $this->blade($template, $data));
+        $cleaned = str_replace(' >', '>', $cleaned);
+
+        $this->assertSame($expected, $cleaned);
     }
 }

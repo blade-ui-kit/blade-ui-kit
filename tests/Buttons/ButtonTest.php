@@ -12,7 +12,7 @@ class ButtonTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<button type="button" >
+<button type="button">
     Click me
 </button>
 HTML;
@@ -24,7 +24,7 @@ HTML;
     public function it_can_have_a_specific_type()
     {
         $expected = <<<HTML
-<button type="submit" >
+<button type="submit">
     Click me
 </button>
 HTML;

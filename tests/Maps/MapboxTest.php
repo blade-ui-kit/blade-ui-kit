@@ -19,7 +19,7 @@ class MapboxTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<div id="map" ></div>
+<div id="map"></div>
 <script>
     window.onload = function () {
         mapboxgl.accessToken = 'testing';
@@ -36,7 +36,7 @@ HTML;
     public function options_can_be_passed()
     {
         $expected = <<<HTML
-<div id="custom-map" ></div>
+<div id="custom-map"></div>
 <script>
     window.onload = function () {
         mapboxgl.accessToken = 'testing';
@@ -53,7 +53,7 @@ HTML;
     public function markers_can_be_placed()
     {
         $expected = <<<HTML
-<div id="map" ></div>
+<div id="map"></div>
 <script>
     window.onload = function () {
         mapboxgl.accessToken = 'testing';

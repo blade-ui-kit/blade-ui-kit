@@ -14,7 +14,7 @@ class SubmitTest extends ComponentTestCase
         $this->artisan('view:clear');
 
         $expected = <<<HTML
-<button type="submit" >
+<button type="submit">
     Click me
 </button>
 HTML;

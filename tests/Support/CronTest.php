@@ -13,7 +13,7 @@ class CronTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<span title="Every Sunday at 12:00am" >
+<span title="Every Sunday at 12:00am">
     @weekly
 </span>
 HTML;

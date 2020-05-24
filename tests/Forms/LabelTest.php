@@ -12,7 +12,7 @@ class LabelTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<label for="first_name" >
+<label for="first_name">
     First name
 </label>
 HTML;
