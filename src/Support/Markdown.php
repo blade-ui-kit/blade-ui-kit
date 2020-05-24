@@ -38,7 +38,7 @@ class Markdown extends Component
         return $this->converter()->convertToHtml($markdown);
     }
 
-    private function converter(): MarkdownConverterInterface
+    protected function converter(): MarkdownConverterInterface
     {
         $options = [
             'html_input' => $this->htmlInput,

@@ -57,7 +57,7 @@ class Unsplash extends Component
         ]);
     }
 
-    private function fetchPhoto(): string
+    protected function fetchPhoto(): string
     {
         if (! $accessKey = config('services.unsplash.access_key')) {
             return '';
