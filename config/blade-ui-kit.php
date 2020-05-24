@@ -24,6 +24,7 @@ return [
         'checkbox' => BladeUI\Forms\Inputs\Checkbox::class,
         'input-email' => BladeUI\Forms\Inputs\Email::class,
         'input-password' => BladeUI\Forms\Inputs\Password::class,
+        'textarea' => BladeUI\Forms\Inputs\Textarea::class,
         'cron' => BladeUI\Support\Cron::class,
         'date-time' => BladeUI\Support\DateTime::class,
         'markdown' => BladeUI\Support\Markdown::class,
