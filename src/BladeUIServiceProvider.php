@@ -12,7 +12,7 @@ final class BladeUIServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->registerConfig();
+        $this->mergeConfigFrom(__DIR__ . '/../config/blade-ui-kit.php', 'blade-ui-kit');
     }
 
     public function boot(): void
@@ -20,11 +20,7 @@ final class BladeUIServiceProvider extends ServiceProvider
         $this->bootResources();
         $this->bootComponents();
         $this->bootDirectives();
-    }
-
-    private function registerConfig(): void
-    {
-        $this->mergeConfigFrom(__DIR__ . '/../config/blade-ui-kit.php', 'blade-ui-kit');
+        $this->bootPublishing();
     }
 
     private function bootResources(): void
@@ -34,11 +30,9 @@ final class BladeUIServiceProvider extends ServiceProvider
 
     private function bootComponents(): void
     {
-        $config = $this->app->make('config')->get('blade-ui-kit');
-
-        $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) use ($config) {
-            foreach ($config['components'] as $alias => $component) {
-                $blade->component($component, $alias, $config['prefix']);
+        $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
+            foreach (config('blade-ui-kit.components', []) as $alias => $component) {
+                $blade->component($component, $alias, config('blade-ui-kit.prefix', ''));
 
                 foreach ($component::styles() as $style) {
                     BladeUI::addStyle($style);
@@ -51,7 +45,7 @@ final class BladeUIServiceProvider extends ServiceProvider
         });
     }
 
-    protected function bootDirectives()
+    private function bootDirectives(): void
     {
         Blade::directive('bladeUIStyles', function () {
             return "<?php echo BladeUI\\BladeUI::outputStyles(); ?>";
@@ -60,5 +54,18 @@ final class BladeUIServiceProvider extends ServiceProvider
         Blade::directive('bladeUIScripts', function () {
             return "<?php echo BladeUI\\BladeUI::outputScripts(); ?>";
         });
+    }
+
+    private function bootPublishing(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/blade-ui-kit.php' => $this->app->configPath('blade-ui-kit.php'),
+            ], 'blade-ui-config');
+
+            $this->publishes([
+                __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/blade-ui-kit'),
+            ], 'blade-ui-views');
+        }
     }
 }
