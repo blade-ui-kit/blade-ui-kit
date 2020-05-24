@@ -12,7 +12,7 @@ class Alert extends Component
     /** @var string */
     public $type;
 
-    public function __construct(string $type = 'success')
+    public function __construct(string $type = 'status')
     {
         $this->type = $type;
     }
@@ -22,13 +22,8 @@ class Alert extends Component
         return view('blade-ui::components.alerts.alert');
     }
 
-    public function message(): string
+    public function message()
     {
-        return (string) session()->get($this->type);
-    }
-
-    public function flash(): string
-    {
-        return (string) session()->pull($this->type);
+        return session()->get($this->type);
     }
 }
