@@ -37,7 +37,7 @@ HTML;
 HTML;
 
         $expected = <<<HTML
-<form method="PUT" action="http://example.com" >
+<form method="POST" action="http://example.com" >
     <input type="hidden" name="_token" value="">    <input type="hidden" name="_method" value="PUT">
     Form fields...
 </form>
