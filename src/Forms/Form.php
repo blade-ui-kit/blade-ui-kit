@@ -15,10 +15,14 @@ class Form extends Component
     /** @var string */
     public $method;
 
-    public function __construct(string $action, string $method = 'POST')
+    /** @var bool */
+    public $hasFiles;
+
+    public function __construct(string $action, string $method = 'POST', bool $hasFiles = false)
     {
         $this->action = $action;
-        $this->method = $method;
+        $this->method = strtoupper($method);
+        $this->hasFiles = $hasFiles;
     }
 
     public function render(): View
