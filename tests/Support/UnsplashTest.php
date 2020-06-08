@@ -7,7 +7,7 @@ namespace Tests\Support;
 use Illuminate\Support\Facades\Http;
 use Tests\ComponentTestCase;
 
-final class UnsplashTest extends ComponentTestCase
+class UnsplashTest extends ComponentTestCase
 {
     protected function getEnvironmentSetUp($app): void
     {

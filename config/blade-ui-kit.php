@@ -16,6 +16,7 @@ return [
         'alert' => BladeUI\Alerts\Alert::class,
         'button' => BladeUI\Buttons\Button::class,
         'submit' => BladeUI\Buttons\Submit::class,
+        'simple-mde' => BladeUI\Editors\SimpleMDE::class,
         'error' => BladeUI\Forms\Error::class,
         'form' => BladeUI\Forms\Form::class,
         'label' => BladeUI\Forms\Label::class,
