@@ -15,6 +15,7 @@ return [
     'components' => [
         'alert' => BladeUI\Alerts\Alert::class,
         'button' => BladeUI\Buttons\Button::class,
+        'logout' => BladeUI\Buttons\Logout::class,
         'submit' => BladeUI\Buttons\Submit::class,
         'simple-mde' => BladeUI\Editors\SimpleMDE::class,
         'error' => BladeUI\Forms\Error::class,
