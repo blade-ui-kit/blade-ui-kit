@@ -33,6 +33,7 @@ return [
         'textarea' => BladeUI\Forms\Inputs\Textarea::class,
         'cron' => BladeUI\Support\Cron::class,
         'markdown' => BladeUI\Support\Markdown::class,
+        'avatar' => BladeUI\Support\Unavatar::class,
         'unsplash' => BladeUI\Support\Unsplash::class,
     ],
 
