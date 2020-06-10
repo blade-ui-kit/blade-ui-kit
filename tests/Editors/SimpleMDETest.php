@@ -26,7 +26,7 @@ HTML;
     }
 
     /** @test */
-    public function inputs_can_have_old_values()
+    public function editor_can_have_old_values()
     {
         $this->flashOld(['about' => 'About me text']);
 
