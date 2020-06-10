@@ -7,6 +7,7 @@ namespace BladeUI;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
+use Livewire\Livewire;
 
 final class BladeUIServiceProvider extends ServiceProvider
 {
@@ -18,7 +19,8 @@ final class BladeUIServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->bootResources();
-        $this->bootComponents();
+        $this->bootBladeComponents();
+        $this->bootLivewireComponents();
         $this->bootDirectives();
         $this->bootPublishing();
     }
@@ -28,7 +30,7 @@ final class BladeUIServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blade-ui');
     }
 
-    private function bootComponents(): void
+    private function bootBladeComponents(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
             foreach (config('blade-ui-kit.components', []) as $alias => $component) {
@@ -43,6 +45,22 @@ final class BladeUIServiceProvider extends ServiceProvider
                 }
             }
         });
+    }
+
+    private function bootLivewireComponents(): void
+    {
+        // Skip if Livewire isn't installed.
+        if (! class_exists(Livewire::class)) {
+            return;
+        }
+
+        foreach (config('blade-ui-kit.livewire', []) as $alias => $component) {
+            if ($prefix = config('blade-ui-kit.prefix', '')) {
+                $alias = "$prefix-$alias";
+            }
+
+            Livewire::component($alias, $component);
+        }
     }
 
     private function bootDirectives(): void

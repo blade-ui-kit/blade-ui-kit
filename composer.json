@@ -27,7 +27,9 @@
         "gajus/dindent": "^2.0",
         "guzzlehttp/guzzle": "^6.5",
         "league/commonmark": "^1.4",
+        "livewire/livewire": "^1.2",
         "lorisleiva/cron-translator": "^0.1.1",
+        "nesbot/carbon": "^2.35",
         "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^8.5|^9.0"
     },

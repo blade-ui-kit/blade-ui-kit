@@ -17,6 +17,7 @@ return [
         'button' => BladeUI\Buttons\Button::class,
         'logout' => BladeUI\Buttons\Logout::class,
         'submit' => BladeUI\Buttons\Submit::class,
+        'countdown' => BladeUI\DateTime\Countdown::class,
         'date-time' => \BladeUI\DateTime\DateTime::class,
         'pikaday' => \BladeUI\DateTime\Pikaday::class,
         'simple-mde' => BladeUI\Editors\SimpleMDE::class,
@@ -33,6 +34,20 @@ return [
         'cron' => BladeUI\Support\Cron::class,
         'markdown' => BladeUI\Support\Markdown::class,
         'unsplash' => BladeUI\Support\Unsplash::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Livewire Components
+    |--------------------------------------------------------------------------
+    |
+    | Below you reference all the Livewire components that should be loaded
+    | for your app. By default all components from Blade UI Kit are loaded in.
+    |
+    */
+
+    'livewire' => [
+        //
     ],
 
     /*
