@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUI\Editors;
 
 use BladeUI\Component;
+use Illuminate\Contracts\View\View;
 
 class SimpleMDE extends Component
 {
@@ -20,7 +21,7 @@ class SimpleMDE extends Component
         $this->id = $id ?? $name;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('blade-ui::components.editors.simple-mde');
     }

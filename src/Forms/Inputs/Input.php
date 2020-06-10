@@ -12,16 +12,16 @@ class Input extends Component
     /** @var string */
     public $name;
 
-    /** @var string|null */
+    /** @var string */
     public $id;
 
-    /** @var string|null */
+    /** @var string */
     public $type;
 
-    /** @var null */
+    /** @var string */
     public $value;
 
-    public function __construct(string $name, string $id = null, string $type = 'text', $value = null)
+    public function __construct(string $name, string $id = null, string $type = 'text', string $value = '')
     {
         $this->name = $name;
         $this->id = $id ?? $name;

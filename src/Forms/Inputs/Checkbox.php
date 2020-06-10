@@ -8,12 +8,12 @@ use Illuminate\Contracts\View\View;
 
 class Checkbox extends Input
 {
-    /** @var @bool */
+    /** @var bool */
     public $checked;
 
     public function __construct(string $name, string $id = null, bool $checked = false)
     {
-        parent::__construct($name, $id, 'email');
+        parent::__construct($name, $id, 'checkbox');
 
         $this->checked = old($name, $checked);
     }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUI\Editors;
 
 use BladeUI\Component;
+use Illuminate\Contracts\View\View;
 
 class Trix extends Component
 {
@@ -24,7 +25,7 @@ class Trix extends Component
         $this->styling = $styling;
     }
 
-    public function render()
+    public function render(): View
     {
         return view('blade-ui::components.editors.trix');
     }

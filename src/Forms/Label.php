@@ -23,7 +23,7 @@ class Label extends Component
         return view('blade-ui::components.forms.label');
     }
 
-    public function fallback()
+    public function fallback(): string
     {
         return Str::ucfirst(str_replace('_', ' ', $this->for));
     }

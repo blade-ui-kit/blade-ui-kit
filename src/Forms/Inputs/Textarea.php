@@ -12,7 +12,7 @@ class Textarea extends Component
     /** @var string */
     public $name;
 
-    /** @var string|null */
+    /** @var string */
     public $id;
 
     /** @var int */

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUI\Buttons;
 
 use BladeUI\Component;
+use Illuminate\Contracts\View\View;
 
 class Logout extends Component
 {
@@ -16,7 +17,7 @@ class Logout extends Component
         $this->action = $action ?? route('logout');
     }
 
-    public function render()
+    public function render(): View
     {
         return view('blade-ui::components.buttons.logout');
     }
