@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Support;
+namespace BladeUI\DateTime;
 
 use BladeUI\Component;
 use Carbon\Carbon;
@@ -28,6 +28,6 @@ class DateTime extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.support.date-time');
+        return view('blade-ui::components.date-time.date-time');
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Support;
+namespace Tests\DateTime;
 
 use Carbon\Carbon;
 use Tests\ComponentTestCase;

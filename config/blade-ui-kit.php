@@ -29,7 +29,7 @@ return [
         'input-password' => BladeUI\Forms\Inputs\Password::class,
         'textarea' => BladeUI\Forms\Inputs\Textarea::class,
         'cron' => BladeUI\Support\Cron::class,
-        'date-time' => BladeUI\Support\DateTime::class,
+        'date-time' => \BladeUI\DateTime\DateTime::class,
         'markdown' => BladeUI\Support\Markdown::class,
         'unsplash' => BladeUI\Support\Unsplash::class,
     ],
