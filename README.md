@@ -13,7 +13,7 @@
     <img src="https://poser.pugx.org/blade-ui-kit/blade-ui-kit/d/total.svg" alt="Total Downloads">
 </a>
 
-A set of out-of-the-box components to utilise in your Laravel Blade views.
+A set of renderless components to utilise in your Laravel Blade views.
 
 - [Requirements](#requirements)
 - [Installation](#installation)

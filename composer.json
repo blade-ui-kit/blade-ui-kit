@@ -1,6 +1,6 @@
 {
     "name": "blade-ui-kit/blade-ui-kit",
-    "description": "A set of out-of-the-box components to utilise in your Laravel Blade views.",
+    "description": "A set of renderless components to utilise in your Laravel Blade views.",
     "keywords": ["Blade", "UI", "Laravel"],
     "homepage": "https://github.com/blade-ui-kit/blade-ui-kit",
     "license": "MIT",
