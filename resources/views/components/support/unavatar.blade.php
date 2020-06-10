@@ -1,1 +1,1 @@
-<img src="{{ $unavatarUrl() }}" {{ $attributes }}/>
+<img src="{{ $url() }}" {{ $attributes }}/>

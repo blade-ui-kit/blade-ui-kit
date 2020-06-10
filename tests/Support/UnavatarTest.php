@@ -13,25 +13,34 @@ class UnavatarTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<img src="https://unavatar.now.sh/driesvints?" />',
-            '<x-avatar src="driesvints"/>'
+            '<x-avatar search="driesvints"/>'
         );
     }
 
     /** @test */
-    public function the_component_accepts_providers()
+    public function it_can_have_a_given_avatar_image()
+    {
+        $this->assertComponentRenders(
+            '<img src="https://example.com/image.png" />',
+            '<x-avatar search="driesvints" src="https://example.com/image.png"/>'
+        );
+    }
+
+    /** @test */
+    public function it_accepts_providers()
     {
         $this->assertComponentRenders(
             '<img src="https://unavatar.now.sh/gravatar/dries.vints@gmail.com?" />',
-            '<x-avatar src="dries.vints@gmail.com" provider="gravatar"/>'
+            '<x-avatar search="dries.vints@gmail.com" provider="gravatar"/>'
         );
     }
 
     /** @test */
-    public function the_component_accepts_fallbacks()
+    public function it_accepts_fallbacks()
     {
         $this->assertComponentRenders(
             '<img src="https://unavatar.now.sh/driesvints?fallback=https%3A%2F%2Fexample.com%2Fimage.png" />',
-            '<x-avatar src="driesvints" fallback="https://example.com/image.png"/>'
+            '<x-avatar search="driesvints" fallback="https://example.com/image.png"/>'
         );
     }
 }
