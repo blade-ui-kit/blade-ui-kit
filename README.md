@@ -31,7 +31,7 @@ A set of renderless components to utilise in your Laravel Blade views.
 
 ## Installation
 
-> Proper documentation is coming soon but for now you'll have to figure out things on your own a bit. You can see how you can use the components by looking at [the tests](./tests). Please note that some components like Mapbox and Unsplash require you to set up additional settings in your `services.php` file. Other components like cron and markdown require you to install additional libraries. Please reference the component classes and [`composer.json`](./composer.json) for these until the docs are released.
+Proper documentation is coming soon but for now you'll have to figure out things on your own a bit. You can see how you can use the components by looking at [the tests](./tests). Please note that some components like Mapbox and Unsplash require you to set up additional settings in your `services.php` file. Other components like cron and markdown require you to install additional libraries. Please reference the component classes and [`composer.json`](./composer.json) for these until the docs are released.
 
 First make sure to configure the repository in your `composer.json` by running:
 
