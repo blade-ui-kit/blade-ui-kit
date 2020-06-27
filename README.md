@@ -39,6 +39,12 @@ First make sure to configure the repository in your `composer.json` by running:
 composer config repositories.blade-ui-kit vcs https://github.com/blade-ui-kit/blade-ui-kit
 ```
 
+Before installing a new package it's always a good idea to clear your config cache:
+
+```bash
+php artisan config:clear
+```
+
 Then install the package by running:
 
 ```bash
