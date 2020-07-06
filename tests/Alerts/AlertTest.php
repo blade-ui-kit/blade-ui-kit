@@ -57,4 +57,28 @@ HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
+
+    /** @test */
+    public function multiple_messages_can_be_used()
+    {
+        session()->flash('status', [
+            'Form was successfully submitted.',
+            "We have sent you a confirmation email.",
+        ]);
+
+        $template = <<<HTML
+<x-alert>
+    <span>Hello World</span>
+    {{ implode(' ', \$component->messages()) }}
+</x-alert>
+HTML;
+        $expected = <<<HTML
+<div role="alert">
+    <span>Hello World</span>
+    Form was successfully submitted. We have sent you a confirmation email.
+</div>
+HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
 }

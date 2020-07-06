@@ -1,7 +1,7 @@
-@if (session()->has($type))
+@if ($exists())
     <div role="alert" {{ $attributes }}>
         @if ($slot->isEmpty())
-            {{ $message }}
+            {{ $message() }}
         @else
             {{ $slot }}
         @endif

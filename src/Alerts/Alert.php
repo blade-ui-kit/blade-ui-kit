@@ -6,6 +6,7 @@ namespace BladeUI\Alerts;
 
 use BladeUI\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 
 class Alert extends Component
 {
@@ -22,8 +23,18 @@ class Alert extends Component
         return view('blade-ui::components.alerts.alert');
     }
 
-    public function message()
+    public function message(): string
     {
-        return session()->get($this->type);
+        return (string) Arr::first($this->messages());
+    }
+
+    public function messages(): array
+    {
+        return (array) session()->get($this->type);
+    }
+
+    public function exists(): bool
+    {
+        return session()->has($this->type) && ! empty($this->messages());
     }
 }
