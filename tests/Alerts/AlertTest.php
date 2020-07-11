@@ -11,7 +11,7 @@ class AlertTest extends ComponentTestCase
     /** @test */
     public function the_component_can_be_rendered()
     {
-        session()->flash('status', 'Form was successfully submitted.');
+        session()->flash('alert', 'Form was successfully submitted.');
 
         $expected = <<<HTML
 <div role="alert">
@@ -39,7 +39,7 @@ HTML;
     /** @test */
     public function it_can_be_slotted()
     {
-        session()->flash('status', 'Form was successfully submitted.');
+        session()->flash('alert', 'Form was successfully submitted.');
 
         $template = <<<HTML
 <x-alert>
@@ -61,7 +61,7 @@ HTML;
     /** @test */
     public function multiple_messages_can_be_used()
     {
-        session()->flash('status', [
+        session()->flash('alert', [
             'Form was successfully submitted.',
             "We have sent you a confirmation email.",
         ]);

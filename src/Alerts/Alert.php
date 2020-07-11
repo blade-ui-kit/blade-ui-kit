@@ -13,7 +13,7 @@ class Alert extends Component
     /** @var string */
     public $type;
 
-    public function __construct(string $type = 'status')
+    public function __construct(string $type = 'alert')
     {
         $this->type = $type;
     }
