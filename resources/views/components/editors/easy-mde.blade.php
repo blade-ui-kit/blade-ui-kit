@@ -6,7 +6,7 @@
 
 <script>
     window.onload = function () {
-        var simplemde = new SimpleMDE({
+        var easyMDE = new EasyMDE({
             element: document.getElementById("{{ $id }}")
         });
     }

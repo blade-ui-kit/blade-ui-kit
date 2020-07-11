@@ -6,7 +6,7 @@ namespace Tests\Editors;
 
 use Tests\ComponentTestCase;
 
-class SimpleMDETest extends ComponentTestCase
+class EasyMDETest extends ComponentTestCase
 {
     /** @test */
     public function the_component_can_be_rendered()
@@ -15,14 +15,14 @@ class SimpleMDETest extends ComponentTestCase
 <textarea name="about" id="about"></textarea>
 <script>
     window.onload = function () {
-        var simplemde = new SimpleMDE({
+        var easyMDE = new EasyMDE({
             element: document.getElementById("about")
         });
     }
 </script>
 HTML;
 
-        $this->assertComponentRenders($expected, '<x-simple-mde name="about"/>');
+        $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
     }
 
     /** @test */
@@ -34,13 +34,13 @@ HTML;
 <textarea name="about" id="about">About me text</textarea>
 <script>
     window.onload = function () {
-        var simplemde = new SimpleMDE({
+        var easyMDE = new EasyMDE({
             element: document.getElementById("about")
         });
     }
 </script>
 HTML;
 
-        $this->assertComponentRenders($expected, '<x-simple-mde name="about"/>');
+        $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
     }
 }

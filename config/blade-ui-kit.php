@@ -20,7 +20,7 @@ return [
         'countdown' => BladeUI\DateTime\Countdown::class,
         'date-time' => BladeUI\DateTime\DateTime::class,
         'pikaday' => BladeUI\DateTime\Pikaday::class,
-        'simple-mde' => BladeUI\Editors\SimpleMDE::class,
+        'easy-mde' => BladeUI\Editors\EasyMDE::class,
         'trix' => BladeUI\Editors\Trix::class,
         'error' => BladeUI\Forms\Error::class,
         'form' => BladeUI\Forms\Form::class,

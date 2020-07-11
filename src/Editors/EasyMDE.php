@@ -7,7 +7,7 @@ namespace BladeUI\Editors;
 use BladeUI\Component;
 use Illuminate\Contracts\View\View;
 
-class SimpleMDE extends Component
+class EasyMDE extends Component
 {
     /** @var string */
     public $name;
@@ -23,16 +23,16 @@ class SimpleMDE extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.editors.simple-mde');
+        return view('blade-ui::components.editors.easy-mde');
     }
 
     public static function styles(): array
     {
-        return ['https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css'];
+        return ['https://unpkg.com/easymde/dist/easymde.min.css'];
     }
 
     public static function scripts(): array
     {
-        return ['https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js'];
+        return ['https://unpkg.com/easymde/dist/easymde.min.js'];
     }
 }
