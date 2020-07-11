@@ -21,11 +21,19 @@ class Markdown extends Component
     /** @var bool */
     protected $allowUnsafeLinks;
 
-    public function __construct(string $flavor = 'default', string $htmlInput = 'strip', bool $allowUnsafeLinks = false)
-    {
+    /** @var array */
+    protected $options;
+
+    public function __construct(
+        string $flavor = 'default',
+        string $htmlInput = 'strip',
+        bool $allowUnsafeLinks = false,
+        array $options = []
+    ) {
         $this->flavor = $flavor;
         $this->htmlInput = $htmlInput;
         $this->allowUnsafeLinks = $allowUnsafeLinks;
+        $this->options = $options;
     }
 
     public function render(): View
@@ -40,10 +48,10 @@ class Markdown extends Component
 
     protected function converter(): MarkdownConverterInterface
     {
-        $options = [
+        $options = array_merge($this->options, [
             'html_input' => $this->htmlInput,
             'allow_unsafe_links' => $this->allowUnsafeLinks,
-        ];
+        ]);
 
         if ($this->flavor === 'github') {
             return new GithubFlavoredMarkdownConverter($options);

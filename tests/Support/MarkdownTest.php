@@ -50,4 +50,26 @@ HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
+
+    /** @test */
+    public function options_can_be_passed()
+    {
+        $template = <<<HTML
+<x-markdown :options="['enable_em' => false]">
+# Hello World
+
+Blade UI components are <em>awesome</em>.
+</x-markdown>
+HTML;
+
+        $expected = <<<HTML
+<div>
+    <h1>Hello World</h1>
+
+    <p>Blade UI components are awesome.</p>
+</div>
+HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
 }
