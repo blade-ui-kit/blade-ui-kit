@@ -26,7 +26,7 @@ A set of renderless components to utilise in your Laravel Blade views.
 
 ## Requirements
 
-- PHP 7.2 or higher
+- PHP 7.3 or higher
 - Laravel 7.0 or higher
 
 ## Installation
