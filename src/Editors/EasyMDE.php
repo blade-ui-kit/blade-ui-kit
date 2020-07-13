@@ -15,15 +15,30 @@ class EasyMDE extends Component
     /** @var string */
     public $id;
 
-    public function __construct(string $name, string $id = null)
+    /** @var array */
+    public $options;
+
+    public function __construct(string $name, string $id = null, array $options = [])
     {
         $this->name = $name;
         $this->id = $id ?? $name;
+        $this->options = $options;
     }
 
     public function render(): View
     {
-        return view('blade-ui::components.editors.easy-mde');
+        return view('blade-ui::components.editors.easy-mde', [
+            'optionString' => $this->getOptionString(),
+        ]);
+    }
+
+    private function getOptionString()
+    {
+        if (empty($this->options)) {
+            return '';
+        }
+
+        return ', ...' . json_encode((object) $this->options);
     }
 
     public static function styles(): array

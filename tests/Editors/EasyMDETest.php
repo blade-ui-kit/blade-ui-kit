@@ -43,4 +43,21 @@ HTML;
 
         $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
     }
+
+    /** @test */
+    public function editor_can_have_options()
+    {
+        $expected = <<<HTML
+<textarea name="about" id="about"></textarea>
+<script>
+    window.onload = function () {
+        var easyMDE = new EasyMDE({
+            element: document.getElementById("about"), ...{"minHeight":"500px"}
+        });
+    }
+</script>
+HTML;
+
+        $this->assertComponentRenders($expected, '<x-easy-mde name="about" :options="[\'minHeight\' => \'500px\']"/>');
+    }
 }

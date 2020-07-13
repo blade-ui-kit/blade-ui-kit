@@ -7,7 +7,7 @@
 <script>
     window.onload = function () {
         var easyMDE = new EasyMDE({
-            element: document.getElementById("{{ $id }}")
+            element: document.getElementById("{{ $id }}"){!! $optionString !!}
         });
     }
 </script>
