@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Support;
+namespace BladeUI\Markdown;
 
 use BladeUI\Component;
 use Illuminate\Contracts\View\View;
@@ -38,7 +38,7 @@ class Markdown extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.support.markdown');
+        return view('blade-ui::components.markdown.markdown');
     }
 
     public function toHtml(string $markdown): string
