@@ -14,9 +14,7 @@ return [
 
     'components' => [
         'alert' => BladeUI\Alerts\Alert::class,
-        'button' => BladeUI\Buttons\Button::class,
         'logout' => BladeUI\Buttons\Logout::class,
-        'submit' => BladeUI\Buttons\Submit::class,
         'countdown' => BladeUI\DateTime\Countdown::class,
         'date-time' => BladeUI\DateTime\DateTime::class,
         'pikaday' => BladeUI\DateTime\Pikaday::class,
