@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/blade-ui-kit/art/blob/master/socialcard.png" width="1280" title="Social Card Blade UI Kit">
+</p>
+
 # Blade UI Kit
 
 <a href="https://github.com/blade-ui-kit/blade-ui-kit/actions?query=workflow%3ATests">
