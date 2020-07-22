@@ -26,8 +26,8 @@ class Markdown extends Component
 
     public function __construct(
         string $flavor = 'default',
-        string $htmlInput = 'strip',
-        bool $allowUnsafeLinks = false,
+        string $htmlInput = 'allow',
+        bool $allowUnsafeLinks = true,
         array $options = []
     ) {
         $this->flavor = $flavor;

@@ -55,10 +55,10 @@ HTML;
     public function options_can_be_passed()
     {
         $template = <<<HTML
-<x-markdown :options="['enable_em' => false]">
+<x-markdown :options="['use_asterisk' => false]">
 # Hello World
 
-Blade UI components are <em>awesome</em>.
+Blade UI components are *awesome*.
 </x-markdown>
 HTML;
 
@@ -66,7 +66,7 @@ HTML;
 <div>
     <h1>Hello World</h1>
 
-    <p>Blade UI components are awesome.</p>
+    <p>Blade UI components are *awesome*.</p>
 </div>
 HTML;
 
