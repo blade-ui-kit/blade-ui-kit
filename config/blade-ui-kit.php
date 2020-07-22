@@ -30,6 +30,7 @@ return [
         'input-password' => BladeUI\Forms\Inputs\Password::class,
         'textarea' => BladeUI\Forms\Inputs\Textarea::class,
         'markdown' => BladeUI\Markdown\Markdown::class,
+        'toc' => BladeUI\Markdown\ToC::class,
         'cron' => BladeUI\Support\Cron::class,
         'avatar' => BladeUI\Support\Unavatar::class,
         'unsplash' => BladeUI\Support\Unsplash::class,
