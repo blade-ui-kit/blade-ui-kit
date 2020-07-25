@@ -35,7 +35,7 @@ class ToC extends Component
                 return [
                     'level' => strlen(trim(Str::before($line, '# '))) + 1,
                     'title' => $title = trim(Str::after($line, '# ')),
-                    'slug' => Str::slug($title),
+                    'anchor' => Str::slug($title),
                 ];
             });
     }

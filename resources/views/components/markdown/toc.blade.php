@@ -20,7 +20,7 @@
                 @endif
             @endif
 
-            <a href="{{ $url }}#{{ $item['slug'] }}">
+            <a href="{{ $url }}#{{ $item['anchor'] }}">
                 {{ $item['title'] }}
             </a>
 
