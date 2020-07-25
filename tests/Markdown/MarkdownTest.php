@@ -72,4 +72,44 @@ HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
+
+    /** @test */
+    public function anchors_can_be_generated()
+    {
+        $template = <<<HTML
+<x-markdown anchors>
+# Hello World
+
+Blade UI components are *awesome*.
+
+## Foo Title
+
+Some content.
+
+### Baz Title
+
+Other content.
+</x-markdown>
+HTML;
+
+        $expected = <<<HTML
+<div>
+    <h1>Hello World</h1>
+
+    <p>Blade UI components are <em>awesome</em>.</p>
+    <p><a class="anchor" name="foo-title"></a></p>
+    <h2>
+        Foo Title
+    </h2>
+    <p>Some content.</p>
+    <p><a class="anchor" name="baz-title"></a></p>
+    <h3>
+        Baz Title
+    </h3>
+    <p>Other content.</p>
+</div>
+HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
 }

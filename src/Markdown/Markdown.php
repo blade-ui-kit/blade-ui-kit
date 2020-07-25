@@ -6,6 +6,7 @@ namespace BladeUI\Markdown;
 
 use BladeUI\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 use League\CommonMark\MarkdownConverterInterface;
@@ -24,16 +25,24 @@ class Markdown extends Component
     /** @var array */
     protected $options;
 
+    /** @var bool */
+    protected $anchors;
+
+    /** @var string */
+    protected $url;
+
     public function __construct(
         string $flavor = 'default',
         string $htmlInput = 'allow',
         bool $allowUnsafeLinks = true,
-        array $options = []
+        array $options = [],
+        bool $anchors = false
     ) {
         $this->flavor = $flavor;
         $this->htmlInput = $htmlInput;
         $this->allowUnsafeLinks = $allowUnsafeLinks;
         $this->options = $options;
+        $this->anchors = $anchors;
     }
 
     public function render(): View
@@ -43,6 +52,10 @@ class Markdown extends Component
 
     public function toHtml(string $markdown): string
     {
+        if ($this->anchors) {
+            $markdown = $this->generateAnchors($markdown);
+        }
+
         return $this->converter()->convertToHtml($markdown);
     }
 
@@ -58,5 +71,30 @@ class Markdown extends Component
         }
 
         return new CommonMarkConverter($options);
+    }
+
+    protected function generateAnchors(string $markdown): string
+    {
+        return collect(explode(PHP_EOL, $markdown))
+            ->map(function (string $line) {
+                // For levels 2 to 6.
+                $anchors = [
+                    '## ',
+                    '### ',
+                    '#### ',
+                    '##### ',
+                    '###### ',
+                ];
+
+                if (! Str::startsWith($line, $anchors)) {
+                    return $line;
+                }
+
+                $title = trim(Str::after($line, '# '));
+                $anchor = '<a class="anchor" name="' . Str::slug($title) . '"></a>';
+
+                return $anchor . PHP_EOL . $line;
+            })
+            ->implode(PHP_EOL);
     }
 }
