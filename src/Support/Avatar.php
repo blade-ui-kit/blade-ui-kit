@@ -7,7 +7,7 @@ namespace BladeUI\Support;
 use BladeUI\Component;
 use Illuminate\Contracts\View\View;
 
-class Unavatar extends Component
+class Avatar extends Component
 {
     /** @var string */
     public $search;
@@ -31,7 +31,7 @@ class Unavatar extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.support.unavatar');
+        return view('blade-ui::components.support.avatar');
     }
 
     public function url(): string

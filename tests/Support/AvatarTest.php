@@ -6,7 +6,7 @@ namespace Tests\Support;
 
 use Tests\ComponentTestCase;
 
-class UnavatarTest extends ComponentTestCase
+class AvatarTest extends ComponentTestCase
 {
     /** @test */
     public function the_component_can_be_rendered()
