@@ -21,7 +21,7 @@ class ToC extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.markdown.toc');
+        return view('blade-ui-kit::components.markdown.toc');
     }
 
     public function items(string $markdown): Collection

@@ -35,7 +35,7 @@ class Mapbox extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.maps.mapbox');
+        return view('blade-ui-kit::components.maps.mapbox');
     }
 
     public function options(): array

@@ -31,6 +31,6 @@ class Input extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.inputs.input');
+        return view('blade-ui-kit::components.forms.inputs.input');
     }
 }

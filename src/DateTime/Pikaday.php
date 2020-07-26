@@ -40,7 +40,7 @@ class Pikaday extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.date-time.pikaday');
+        return view('blade-ui-kit::components.date-time.pikaday');
     }
 
     public static function styles(): array

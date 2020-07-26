@@ -27,6 +27,6 @@ class Form extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.form');
+        return view('blade-ui-kit::components.forms.form');
     }
 }

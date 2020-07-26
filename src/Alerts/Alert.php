@@ -20,7 +20,7 @@ class Alert extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.alerts.alert');
+        return view('blade-ui-kit::components.alerts.alert');
     }
 
     public function message(): string

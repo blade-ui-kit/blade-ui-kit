@@ -27,7 +27,7 @@ final class BladeUIServiceProvider extends ServiceProvider
 
     private function bootResources(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blade-ui');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blade-ui-kit');
     }
 
     private function bootBladeComponents(): void

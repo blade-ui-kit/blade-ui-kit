@@ -26,7 +26,7 @@ class Countdown extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.date-time.countdown');
+        return view('blade-ui-kit::components.date-time.countdown');
     }
 
     public function days(): string

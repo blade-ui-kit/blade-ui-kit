@@ -20,7 +20,7 @@ class Cron extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.support.cron');
+        return view('blade-ui-kit::components.support.cron');
     }
 
     public function translate(): string

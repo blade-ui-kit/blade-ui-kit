@@ -20,6 +20,6 @@ class Checkbox extends Input
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.inputs.checkbox');
+        return view('blade-ui-kit::components.forms.inputs.checkbox');
     }
 }

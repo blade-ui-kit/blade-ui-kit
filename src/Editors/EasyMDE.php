@@ -23,7 +23,7 @@ class EasyMDE extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.editors.easy-mde');
+        return view('blade-ui-kit::components.editors.easy-mde');
     }
 
     public static function styles(): array

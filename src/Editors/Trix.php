@@ -27,7 +27,7 @@ class Trix extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.editors.trix');
+        return view('blade-ui-kit::components.editors.trix');
     }
 
     public static function styles(): array

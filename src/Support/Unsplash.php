@@ -52,7 +52,7 @@ class Unsplash extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.support.unsplash', [
+        return view('blade-ui-kit::components.support.unsplash', [
             'url' => $this->fetchPhoto(),
         ]);
     }

@@ -15,6 +15,6 @@ class Password extends Input
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.inputs.password');
+        return view('blade-ui-kit::components.forms.inputs.password');
     }
 }

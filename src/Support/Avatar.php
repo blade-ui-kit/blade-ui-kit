@@ -31,7 +31,7 @@ class Avatar extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.support.avatar');
+        return view('blade-ui-kit::components.support.avatar');
     }
 
     public function url(): string

@@ -15,6 +15,6 @@ class Email extends Input
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.inputs.email');
+        return view('blade-ui-kit::components.forms.inputs.email');
     }
 }

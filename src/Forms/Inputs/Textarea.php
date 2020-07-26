@@ -27,6 +27,6 @@ class Textarea extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.inputs.textarea');
+        return view('blade-ui-kit::components.forms.inputs.textarea');
     }
 }

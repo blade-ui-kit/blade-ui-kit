@@ -28,6 +28,6 @@ class DateTime extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.date-time.date-time');
+        return view('blade-ui-kit::components.date-time.date-time');
     }
 }

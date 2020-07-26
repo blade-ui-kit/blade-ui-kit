@@ -20,7 +20,7 @@ class Label extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.label');
+        return view('blade-ui-kit::components.forms.label');
     }
 
     public function fallback(): string

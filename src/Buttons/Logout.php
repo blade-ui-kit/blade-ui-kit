@@ -19,6 +19,6 @@ class Logout extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.buttons.logout');
+        return view('blade-ui-kit::components.buttons.logout');
     }
 }

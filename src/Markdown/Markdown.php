@@ -47,7 +47,7 @@ class Markdown extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.markdown.markdown');
+        return view('blade-ui-kit::components.markdown.markdown');
     }
 
     public function toHtml(string $markdown): string

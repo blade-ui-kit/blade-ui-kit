@@ -24,7 +24,7 @@ class Error extends Component
 
     public function render(): View
     {
-        return view('blade-ui::components.forms.error');
+        return view('blade-ui-kit::components.forms.error');
     }
 
     public function messages(ViewErrorBag $errors): array
