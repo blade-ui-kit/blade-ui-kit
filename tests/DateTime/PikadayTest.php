@@ -12,15 +12,9 @@ class PikadayTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<input name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="" />
-<script>
-    window.onload = function () {
-        var picker = new Pikaday({
-            field: document.getElementById('birthday'),
-            format: 'DD/MM/YYYY'
-        });
-    }
-</script>
+<input x-data="
+{ initPikaday: function () { new Pikaday({ field: document.getElementById('birthday'), format: 'DD/MM/YYYY' }); }
+}" x-init="initPikaday()" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-pikaday name="birthday"/>');
@@ -32,15 +26,9 @@ HTML;
         $this->flashOld(['birthday' => '23/03/1989']);
 
         $expected = <<<HTML
-<input name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
-<script>
-    window.onload = function () {
-        var picker = new Pikaday({
-            field: document.getElementById('birthday'),
-            format: 'DD/MM/YYYY'
-        });
-    }
-</script>
+<input x-data="
+{ initPikaday: function () { new Pikaday({ field: document.getElementById('birthday'), format: 'DD/MM/YYYY' }); }
+}" x-init="initPikaday()" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-pikaday name="birthday"/>');

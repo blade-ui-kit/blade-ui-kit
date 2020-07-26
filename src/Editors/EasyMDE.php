@@ -28,11 +28,16 @@ class EasyMDE extends Component
 
     public static function styles(): array
     {
-        return ['https://unpkg.com/easymde/dist/easymde.min.css'];
+        return [
+            'https://unpkg.com/easymde/dist/easymde.min.css',
+        ];
     }
 
     public static function scripts(): array
     {
-        return ['https://unpkg.com/easymde/dist/easymde.min.js'];
+        return [
+            'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
+            'https://unpkg.com/easymde/dist/easymde.min.js',
+        ];
     }
 }

@@ -1,4 +1,14 @@
 <input
+    x-data="
+{
+    initPikaday: function () {
+        new Pikaday({
+            field: document.getElementById('{{ $id }}'),
+            format: '{{ $format }}'
+        });
+    }
+}"
+    x-init="initPikaday()"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"
@@ -6,12 +16,3 @@
     value="{{ old($name, $value) }}"
     {{ $attributes }}
 />
-
-<script>
-    window.onload = function () {
-        var picker = new Pikaday({
-            field: document.getElementById('{{ $id }}'),
-            format: '{{ $format }}'
-        });
-    }
-</script>

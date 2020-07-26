@@ -19,14 +19,9 @@ class MapboxTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<div id="map"></div>
-<script>
-    window.onload = function () {
-        mapboxgl.accessToken = 'testing';
-        var map = new mapboxgl.Map({"container":"map","style":"mapbox:\/\/styles\/mapbox\/streets-v11"});
-
-            }
-</script>
+<div x-data="
+{ initMapbox: function () { mapboxgl.accessToken = 'testing'; var map = new mapboxgl.Map({&quot;container&quot;:&quot;map&quot;,&quot;style&quot;:&quot;mapbox:\/\/styles\/mapbox\/streets-v11&quot;}); }
+}" x-init="initMapbox()" id="map"></div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-mapbox/>');
@@ -36,14 +31,9 @@ HTML;
     public function options_can_be_passed()
     {
         $expected = <<<HTML
-<div id="custom-map"></div>
-<script>
-    window.onload = function () {
-        mapboxgl.accessToken = 'testing';
-        var map = new mapboxgl.Map({"container":"custom-map","style":"mapbox:\/\/styles\/mapbox\/streets-v11","zoom":0});
-
-            }
-</script>
+<div x-data="
+{ initMapbox: function () { mapboxgl.accessToken = 'testing'; var map = new mapboxgl.Map({&quot;container&quot;:&quot;custom-map&quot;,&quot;style&quot;:&quot;mapbox:\/\/styles\/mapbox\/streets-v11&quot;,&quot;zoom&quot;:0}); }
+}" x-init="initMapbox()" id="custom-map"></div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-mapbox id="custom-map" :options="[\'zoom\' => 0]"/>');
@@ -53,17 +43,9 @@ HTML;
     public function markers_can_be_placed()
     {
         $expected = <<<HTML
-<div id="map"></div>
-<script>
-    window.onload = function () {
-        mapboxgl.accessToken = 'testing';
-        var map = new mapboxgl.Map({"container":"map","style":"mapbox:\/\/styles\/mapbox\/streets-v11"});
-
-                    new mapboxgl.Marker()
-                .setLngLat([13.41053,52.52437])
-                .addTo(map);
-            }
-</script>
+<div x-data="
+{ initMapbox: function () { mapboxgl.accessToken = 'testing'; var map = new mapboxgl.Map({&quot;container&quot;:&quot;map&quot;,&quot;style&quot;:&quot;mapbox:\/\/styles\/mapbox\/streets-v11&quot;}); new mapboxgl.Marker() .setLngLat([13.41053,52.52437]) .addTo(map); }
+}" x-init="initMapbox()" id="map"></div>
 HTML;
 
         $this->assertComponentRenders($expected, '<x-mapbox :markers="[[13.4105300, 52.5243700]]"/>');

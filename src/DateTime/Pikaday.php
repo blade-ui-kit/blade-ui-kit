@@ -45,13 +45,16 @@ class Pikaday extends Component
 
     public static function styles(): array
     {
-        return ['https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css'];
+        return [
+            'https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css',
+        ];
     }
 
     public static function scripts(): array
     {
         return [
-            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js',
+            'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
+            'https://cdn.jsdelivr.net/npm/moment@2.26.0/moment.min.js',
             'https://cdn.jsdelivr.net/npm/pikaday/pikaday.js',
         ];
     }

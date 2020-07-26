@@ -48,11 +48,16 @@ class Mapbox extends Component
 
     public static function styles(): array
     {
-        return ['https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css'];
+        return [
+            'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
+        ];
     }
 
     public static function scripts(): array
     {
-        return ['https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'];
+        return [
+            'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
+            'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js',
+        ];
     }
 }

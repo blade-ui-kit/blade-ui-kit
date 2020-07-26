@@ -1,14 +1,18 @@
-<div id="{{ $id }}" {{ $attributes }}></div>
-
-<script>
-    window.onload = function () {
+<div
+    x-data="
+{
+    initMapbox: function () {
         mapboxgl.accessToken = '{{ config('services.mapbox.public_token') }}';
-        var map = new mapboxgl.Map(@json($options()));
+        var map = new mapboxgl.Map({{ json_encode($options()) }});
 
         @foreach ($markers as $marker)
             new mapboxgl.Marker()
-                .setLngLat(@json($marker))
-                .addTo(map);
+                .setLngLat({{ json_encode($marker) }})
+                    .addTo(map);
         @endforeach
     }
-</script>
+}"
+    x-init="initMapbox()"
+    id="{{ $id }}"
+    {{ $attributes }}
+></div>

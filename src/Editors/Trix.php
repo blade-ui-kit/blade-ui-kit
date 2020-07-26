@@ -32,11 +32,15 @@ class Trix extends Component
 
     public static function styles(): array
     {
-        return ['https://unpkg.com/trix@1.2.3/dist/trix.css'];
+        return [
+            'https://unpkg.com/trix@1.2.3/dist/trix.css',
+        ];
     }
 
     public static function scripts(): array
     {
-        return ['https://unpkg.com/trix@1.2.3/dist/trix.js'];
+        return [
+            'https://unpkg.com/trix@1.2.3/dist/trix.js',
+        ];
     }
 }
