@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use BladeUI\BladeUIServiceProvider;
+use BladeUI\BladeUIKitServiceProvider;
 use Gajus\Dindent\Indenter;
 use Orchestra\Testbench\TestCase;
 
@@ -21,7 +21,7 @@ abstract class ComponentTestCase extends TestCase
 
     protected function getPackageProviders($app): array
     {
-        return [BladeUIServiceProvider::class];
+        return [BladeUIKitServiceProvider::class];
     }
 
     public function assertComponentRenders(string $expected, string $template, array $data = []): void

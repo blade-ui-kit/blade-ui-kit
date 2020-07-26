@@ -9,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 use Livewire\Livewire;
 
-final class BladeUIServiceProvider extends ServiceProvider
+final class BladeUIKitServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
@@ -37,11 +37,11 @@ final class BladeUIServiceProvider extends ServiceProvider
                 $blade->component($component, $alias, config('blade-ui-kit.prefix', ''));
 
                 foreach ($component::styles() as $style) {
-                    BladeUI::addStyle($style);
+                    BladeUIKit::addStyle($style);
                 }
 
                 foreach ($component::scripts() as $script) {
-                    BladeUI::addScript($script);
+                    BladeUIKit::addScript($script);
                 }
             }
         });

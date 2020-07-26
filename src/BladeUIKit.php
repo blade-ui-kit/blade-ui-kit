@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BladeUI;
 
-final class BladeUI
+final class BladeUIKit
 {
     /** @var array  */
     private static $styles = [];

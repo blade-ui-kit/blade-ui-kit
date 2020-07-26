@@ -46,7 +46,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BladeUI\\BladeUIServiceProvider"
+                "BladeUI\\BladeUIKitServiceProvider"
             ]
         }
     },
