@@ -12,6 +12,13 @@ abstract class ComponentTestCase extends TestCase
 {
     use InteractsWithViews;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->artisan('view:clear');
+    }
+
     protected function flashOld(array $input): void
     {
         session()->flashInput($input);

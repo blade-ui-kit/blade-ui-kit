@@ -14,6 +14,7 @@ return [
 
     'components' => [
         'alert' => BladeUIKit\Alerts\Alert::class,
+        'form-button' => BladeUIKit\Buttons\FormButton::class,
         'logout' => BladeUIKit\Buttons\Logout::class,
         'countdown' => BladeUIKit\DateTime\Countdown::class,
         'date-time' => BladeUIKit\DateTime\DateTime::class,
