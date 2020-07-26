@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Forms;
+namespace BladeUIKit\Forms;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\View;
 

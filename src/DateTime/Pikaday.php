@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\DateTime;
+namespace BladeUIKit\DateTime;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Contracts\View\View;
 
 class Pikaday extends Component

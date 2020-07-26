@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Support;
+namespace BladeUIKit\Support;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;

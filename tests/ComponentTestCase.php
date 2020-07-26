@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use BladeUI\BladeUIKitServiceProvider;
+use BladeUIKit\BladeUIKitServiceProvider;
 use Gajus\Dindent\Indenter;
 use Orchestra\Testbench\TestCase;
 

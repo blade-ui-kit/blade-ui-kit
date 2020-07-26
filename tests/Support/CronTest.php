@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
-use BladeUI\Support\Cron;
+use BladeUIKit\Support\Cron;
 use Tests\ComponentTestCase;
 
 class CronTest extends ComponentTestCase

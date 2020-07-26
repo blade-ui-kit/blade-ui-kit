@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Maps;
+namespace BladeUIKit\Maps;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Contracts\View\View;
 
 class Mapbox extends Component

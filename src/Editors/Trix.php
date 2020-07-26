@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Editors;
+namespace BladeUIKit\Editors;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Contracts\View\View;
 
 class Trix extends Component

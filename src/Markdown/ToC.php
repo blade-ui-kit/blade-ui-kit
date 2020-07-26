@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Markdown;
+namespace BladeUIKit\Markdown;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;

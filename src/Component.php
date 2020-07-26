@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BladeUI;
+namespace BladeUIKit;
 
 use Illuminate\View\Component as IlluminateComponent;
 

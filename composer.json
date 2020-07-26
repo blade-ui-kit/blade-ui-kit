@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BladeUI\\": "src"
+            "BladeUIKit\\": "src"
         }
     },
     "autoload-dev": {
@@ -46,7 +46,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BladeUI\\BladeUIKitServiceProvider"
+                "BladeUIKit\\BladeUIKitServiceProvider"
             ]
         }
     },

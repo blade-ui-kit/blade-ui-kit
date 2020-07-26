@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BladeUI;
+namespace BladeUIKit;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -66,11 +66,11 @@ final class BladeUIKitServiceProvider extends ServiceProvider
     private function bootDirectives(): void
     {
         Blade::directive('bladeUIStyles', function () {
-            return "<?php echo BladeUI\\BladeUI::outputStyles(); ?>";
+            return "<?php echo BladeUIKit\\BladeUIKit::outputStyles(); ?>";
         });
 
         Blade::directive('bladeUIScripts', function () {
-            return "<?php echo BladeUI\\BladeUI::outputScripts(); ?>";
+            return "<?php echo BladeUIKit\\BladeUIKit::outputScripts(); ?>";
         });
     }
 

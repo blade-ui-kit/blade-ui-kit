@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Buttons;
+namespace BladeUIKit\Buttons;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Contracts\View\View;
 
 class Logout extends Component

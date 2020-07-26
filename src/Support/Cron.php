@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Support;
+namespace BladeUIKit\Support;
 
-use BladeUI\Component;
+use BladeUIKit\Component;
 use Illuminate\Contracts\View\View;
 use Lorisleiva\CronTranslator\CronTranslator;
 
