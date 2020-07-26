@@ -26,15 +26,19 @@ final class BladeUIKit
 
     public static function outputStyles(): string
     {
+        if (static::disableScripts()) {
+            return '';
+        }
+
         return collect(static::$styles)->map(function (string $style) {
             return '<link href="' . $style . '" rel="stylesheet" />';
         })->implode(PHP_EOL);
     }
 
-    public static function addScript(string $style): void
+    public static function addScript(string $script): void
     {
-        if (! in_array($style, static::$scripts)) {
-            static::$scripts[] = $style;
+        if (! in_array($script, static::$scripts)) {
+            static::$scripts[] = $script;
         }
     }
 
@@ -45,8 +49,17 @@ final class BladeUIKit
 
     public static function outputScripts(): string
     {
+        if (static::disableScripts()) {
+            return '';
+        }
+
         return collect(static::$scripts)->map(function (string $script) {
             return '<script src="' . $script . '"></script>';
         })->implode(PHP_EOL);
+    }
+
+    private static function disableScripts(): bool
+    {
+        return ! config('app.debug');
     }
 }
