@@ -29,6 +29,7 @@ return [
         'input-email' => BladeUIKit\Forms\Inputs\Email::class,
         'input-password' => BladeUIKit\Forms\Inputs\Password::class,
         'textarea' => BladeUIKit\Forms\Inputs\Textarea::class,
+        'html' => BladeUIKit\Layouts\Html::class,
         'markdown' => BladeUIKit\Markdown\Markdown::class,
         'toc' => BladeUIKit\Markdown\ToC::class,
         'avatar' => BladeUIKit\Support\Avatar::class,
