@@ -1,13 +1,6 @@
 <textarea
-    x-data="
-{
-    initEasyMDE: function () {
-        new EasyMDE({
-            element: document.getElementById('{{ $id }}')
-        });
-    }
-}"
-    x-init="initEasyMDE()"
+    x-data
+    x-init="new EasyMDE({ element: $el })"
     name="{{ $name }}"
     id="{{ $id }}"
     {{ $attributes }}

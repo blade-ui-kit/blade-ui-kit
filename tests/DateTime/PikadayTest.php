@@ -12,9 +12,7 @@ class PikadayTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<input x-data="
-{ initPikaday: function () { new Pikaday({ field: document.getElementById('birthday'), format: 'DD/MM/YYYY' }); }
-}" x-init="initPikaday()" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="" />
+<input x-data x-init="new Pikaday({ field: \$el, format: 'DD/MM/YYYY' })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-pikaday name="birthday"/>');
@@ -26,9 +24,7 @@ HTML;
         $this->flashOld(['birthday' => '23/03/1989']);
 
         $expected = <<<HTML
-<input x-data="
-{ initPikaday: function () { new Pikaday({ field: document.getElementById('birthday'), format: 'DD/MM/YYYY' }); }
-}" x-init="initPikaday()" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
+<input x-data x-init="new Pikaday({ field: \$el, format: 'DD/MM/YYYY' })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-pikaday name="birthday"/>');

@@ -1,14 +1,6 @@
 <input
-    x-data="
-{
-    initPikaday: function () {
-        new Pikaday({
-            field: document.getElementById('{{ $id }}'),
-            format: '{{ $format }}'
-        });
-    }
-}"
-    x-init="initPikaday()"
+    x-data
+    x-init="new Pikaday({ field: $el, format: '{{ $format }}' })"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"
