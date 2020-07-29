@@ -33,8 +33,10 @@ final class BladeUIKitServiceProvider extends ServiceProvider
     private function bootBladeComponents(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
+            $prefix = config('blade-ui-kit.prefix', '');
+
             foreach (config('blade-ui-kit.components', []) as $alias => $component) {
-                $blade->component($component, $alias, config('blade-ui-kit.prefix', ''));
+                $blade->component($component, $alias, $prefix);
 
                 foreach ($component::styles() as $style) {
                     BladeUIKit::addStyle($style);
@@ -54,10 +56,10 @@ final class BladeUIKitServiceProvider extends ServiceProvider
             return;
         }
 
+        $prefix = config('blade-ui-kit.prefix', '');
+
         foreach (config('blade-ui-kit.livewire', []) as $alias => $component) {
-            if ($prefix = config('blade-ui-kit.prefix', '')) {
-                $alias = "$prefix-$alias";
-            }
+            $alias = $prefix ? "$prefix-$alias" : $alias;
 
             Livewire::component($alias, $component);
         }
