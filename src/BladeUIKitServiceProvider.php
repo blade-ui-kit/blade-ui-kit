@@ -79,11 +79,11 @@ final class BladeUIKitServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/blade-ui-kit.php' => $this->app->configPath('blade-ui-kit.php'),
-            ], 'blade-ui-config');
+            ], 'blade-ui-kit-config');
 
             $this->publishes([
                 __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/blade-ui-kit'),
-            ], 'blade-ui-views');
+            ], 'blade-ui-kit-views');
         }
     }
 }
