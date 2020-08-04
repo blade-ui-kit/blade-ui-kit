@@ -26,6 +26,7 @@ return [
         'label' => BladeUIKit\Forms\Label::class,
         'input' => BladeUIKit\Forms\Inputs\Input::class,
         'checkbox' => BladeUIKit\Forms\Inputs\Checkbox::class,
+        'color-picker' => BladeUIKit\Forms\Inputs\ColorPicker::class,
         'input-email' => BladeUIKit\Forms\Inputs\Email::class,
         'input-password' => BladeUIKit\Forms\Inputs\Password::class,
         'textarea' => BladeUIKit\Forms\Inputs\Textarea::class,
