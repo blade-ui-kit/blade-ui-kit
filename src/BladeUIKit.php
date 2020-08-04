@@ -24,9 +24,9 @@ final class BladeUIKit
         return static::$styles;
     }
 
-    public static function outputStyles(): string
+    public static function outputStyles(bool $force = false): string
     {
-        if (static::disableScripts()) {
+        if (! $force && static::disableScripts()) {
             return '';
         }
 
@@ -47,9 +47,9 @@ final class BladeUIKit
         return static::$scripts;
     }
 
-    public static function outputScripts(): string
+    public static function outputScripts(bool $force = false): string
     {
-        if (static::disableScripts()) {
+        if (! $force && static::disableScripts()) {
             return '';
         }
 

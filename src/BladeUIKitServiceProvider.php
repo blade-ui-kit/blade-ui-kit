@@ -78,12 +78,12 @@ final class BladeUIKitServiceProvider extends ServiceProvider
 
     private function bootDirectives(): void
     {
-        Blade::directive('bukStyles', function () {
-            return "<?php echo BladeUIKit\\BladeUIKit::outputStyles(); ?>";
+        Blade::directive('bukStyles', function (string $expression) {
+            return "<?php echo BladeUIKit\\BladeUIKit::outputStyles($expression); ?>";
         });
 
-        Blade::directive('bukScripts', function () {
-            return "<?php echo BladeUIKit\\BladeUIKit::outputScripts(); ?>";
+        Blade::directive('bukScripts', function (string $expression) {
+            return "<?php echo BladeUIKit\\BladeUIKit::outputScripts($expression); ?>";
         });
     }
 
