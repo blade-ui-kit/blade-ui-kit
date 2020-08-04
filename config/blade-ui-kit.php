@@ -34,6 +34,7 @@ return [
         'mapbox' => BladeUIKit\Maps\Mapbox::class,
         'markdown' => BladeUIKit\Markdown\Markdown::class,
         'toc' => BladeUIKit\Markdown\ToC::class,
+        'dropdown' => BladeUIKit\Navigation\Dropdown::class,
         'avatar' => BladeUIKit\Support\Avatar::class,
         'cron' => BladeUIKit\Support\Cron::class,
         'unsplash' => BladeUIKit\Support\Unsplash::class,
