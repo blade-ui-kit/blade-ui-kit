@@ -70,4 +70,47 @@ return [
 
     'prefix' => '',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Third Party Asset Libraries
+    |--------------------------------------------------------------------------
+    |
+    | These settings hold reference to all third party libraries and their
+    | asset files served through a CDN. Individual components can require
+    | these asset files through their static `$assets` property.
+    |
+    */
+
+    'assets' => [
+
+        'alpine' => 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
+
+        'easy-mde' => [
+            'https://unpkg.com/easymde/dist/easymde.min.css',
+            'https://unpkg.com/easymde/dist/easymde.min.js',
+        ],
+
+        'pikaday' => [
+            'https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css',
+            'https://cdn.jsdelivr.net/npm/moment@2.26.0/moment.min.js',
+            'https://cdn.jsdelivr.net/npm/pikaday/pikaday.js',
+        ],
+
+        'trix' => [
+            'https://unpkg.com/trix@1.2.3/dist/trix.css',
+            'https://unpkg.com/trix@1.2.3/dist/trix.js',
+        ],
+
+        'pickr' => [
+            'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css',
+            'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js',
+        ],
+
+        'mapbox' => [
+            'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
+            'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js',
+        ],
+
+    ],
+
 ];

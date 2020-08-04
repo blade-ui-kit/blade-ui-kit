@@ -11,6 +11,8 @@ class ColorPicker extends Input
     /** @var array */
     public $options;
 
+    protected static $assets = ['alpine', 'pickr'];
+
     public function __construct(string $name, string $id = null, string $value = '', array $options = [])
     {
         parent::__construct($name, $id, 'hidden', $value);
@@ -57,21 +59,6 @@ class ColorPicker extends Input
             '9F7AEA',
             'ED64A6',
             'FFFFFF',
-        ];
-    }
-
-    public static function styles(): array
-    {
-        return [
-            'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css',
-        ];
-    }
-
-    public static function scripts(): array
-    {
-        return [
-            'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
-            'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js',
         ];
     }
 }

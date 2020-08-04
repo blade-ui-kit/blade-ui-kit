@@ -24,6 +24,8 @@ class Pikaday extends Component
     /** @var string */
     public $placeholder;
 
+    protected static $assets = ['alpine', 'pikaday'];
+
     public function __construct(
         string $name,
         string $id = null,
@@ -41,21 +43,5 @@ class Pikaday extends Component
     public function render(): View
     {
         return view('blade-ui-kit::components.date-time.pikaday');
-    }
-
-    public static function styles(): array
-    {
-        return [
-            'https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css',
-        ];
-    }
-
-    public static function scripts(): array
-    {
-        return [
-            'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
-            'https://cdn.jsdelivr.net/npm/moment@2.26.0/moment.min.js',
-            'https://cdn.jsdelivr.net/npm/pikaday/pikaday.js',
-        ];
     }
 }

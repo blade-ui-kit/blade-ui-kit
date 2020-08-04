@@ -18,6 +18,8 @@ class Countdown extends Component
     /** @var DateTimeInterface */
     public $expires;
 
+    protected static $assets = ['alpine'];
+
     public function __construct(DateTimeInterface $expires)
     {
         $this->id = 'timer-' . Str::random(6);
@@ -52,12 +54,5 @@ class Countdown extends Component
     public function difference(): DateInterval
     {
         return $this->expires->diff(now());
-    }
-
-    public static function scripts(): array
-    {
-        return [
-            'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
-        ];
     }
 }

@@ -18,6 +18,8 @@ class Trix extends Component
     /** @var string */
     public $styling;
 
+    protected static $assets = ['trix'];
+
     public function __construct(string $name, string $id = null, string $styling = 'trix-content')
     {
         $this->name = $name;
@@ -28,19 +30,5 @@ class Trix extends Component
     public function render(): View
     {
         return view('blade-ui-kit::components.editors.trix');
-    }
-
-    public static function styles(): array
-    {
-        return [
-            'https://unpkg.com/trix@1.2.3/dist/trix.css',
-        ];
-    }
-
-    public static function scripts(): array
-    {
-        return [
-            'https://unpkg.com/trix@1.2.3/dist/trix.js',
-        ];
     }
 }

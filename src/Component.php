@@ -8,13 +8,11 @@ use Illuminate\View\Component as IlluminateComponent;
 
 abstract class Component extends IlluminateComponent
 {
-    public static function styles(): array
-    {
-        return [];
-    }
+    /** @var array */
+    protected static $assets = [];
 
-    public static function scripts(): array
+    public static function assets(): array
     {
-        return [];
+        return static::$assets;
     }
 }

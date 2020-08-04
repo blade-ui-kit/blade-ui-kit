@@ -15,6 +15,8 @@ class EasyMDE extends Component
     /** @var string */
     public $id;
 
+    protected static $assets = ['alpine', 'easy-mde'];
+
     public function __construct(string $name, string $id = null)
     {
         $this->name = $name;
@@ -24,20 +26,5 @@ class EasyMDE extends Component
     public function render(): View
     {
         return view('blade-ui-kit::components.editors.easy-mde');
-    }
-
-    public static function styles(): array
-    {
-        return [
-            'https://unpkg.com/easymde/dist/easymde.min.css',
-        ];
-    }
-
-    public static function scripts(): array
-    {
-        return [
-            'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
-            'https://unpkg.com/easymde/dist/easymde.min.js',
-        ];
     }
 }

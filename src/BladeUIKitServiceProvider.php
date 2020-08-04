@@ -6,6 +6,7 @@ namespace BladeUIKit;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
 use Livewire\Livewire;
 
@@ -34,16 +35,26 @@ final class BladeUIKitServiceProvider extends ServiceProvider
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
             $prefix = config('blade-ui-kit.prefix', '');
+            $assets = config('blade-ui-kit.assets', []);
 
+            /** @var Component $component */
             foreach (config('blade-ui-kit.components', []) as $alias => $component) {
                 $blade->component($component, $alias, $prefix);
 
-                foreach ($component::styles() as $style) {
-                    BladeUIKit::addStyle($style);
-                }
+                foreach ($component::assets() as $asset) {
+                    $files = (array) ($assets[$asset] ?? []);
 
-                foreach ($component::scripts() as $script) {
-                    BladeUIKit::addScript($script);
+                    collect($files)->filter(function (string $file) {
+                        return Str::endsWith($file, '.css');
+                    })->each(function (string $style) {
+                        BladeUIKit::addStyle($style);
+                    });
+
+                    collect($files)->filter(function (string $file) {
+                        return Str::endsWith($file, '.js');
+                    })->each(function (string $script) {
+                        BladeUIKit::addScript($script);
+                    });
                 }
             }
         });
