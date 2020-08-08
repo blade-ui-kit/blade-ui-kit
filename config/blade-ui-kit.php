@@ -91,9 +91,12 @@ return [
             'https://unpkg.com/easymde/dist/easymde.min.js',
         ],
 
+        'moment' => [
+            'https://cdn.jsdelivr.net/npm/moment@2.26.0/moment.min.js',
+        ],
+
         'pikaday' => [
             'https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css',
-            'https://cdn.jsdelivr.net/npm/moment@2.26.0/moment.min.js',
             'https://cdn.jsdelivr.net/npm/pikaday/pikaday.js',
         ],
 

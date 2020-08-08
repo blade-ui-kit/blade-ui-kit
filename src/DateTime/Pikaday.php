@@ -24,7 +24,7 @@ class Pikaday extends Component
     /** @var string */
     public $placeholder;
 
-    protected static $assets = ['alpine', 'pikaday'];
+    protected static $assets = ['alpine', 'moment', 'pikaday'];
 
     public function __construct(
         string $name,
