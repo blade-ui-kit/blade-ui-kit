@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace BladeUIKit\DateTime;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use DateInterval;
 use DateTimeInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 
-class Countdown extends Component
+class Countdown extends BladeComponent
 {
     /** @var string */
     public $id;

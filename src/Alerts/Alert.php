@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Alerts;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Arr;
 
-class Alert extends Component
+class Alert extends BladeComponent
 {
     /** @var string */
     public $type;

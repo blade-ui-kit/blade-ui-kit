@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Support;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
-class Unsplash extends Component
+class Unsplash extends BladeComponent
 {
     /** @var string */
     protected $photoId;

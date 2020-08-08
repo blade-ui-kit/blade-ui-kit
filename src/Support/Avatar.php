@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Support;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Avatar extends Component
+class Avatar extends BladeComponent
 {
     /** @var string */
     public $search;

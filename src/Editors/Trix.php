@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Editors;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Trix extends Component
+class Trix extends BladeComponent
 {
     /** @var string */
     public $name;

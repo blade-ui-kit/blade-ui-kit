@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Support;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 use Lorisleiva\CronTranslator\CronTranslator;
 
-class Cron extends Component
+class Cron extends BladeComponent
 {
     /** @var string */
     public $schedule;

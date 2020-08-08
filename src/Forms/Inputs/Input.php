@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Forms\Inputs;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Input extends Component
+class Input extends BladeComponent
 {
     /** @var string */
     public $name;

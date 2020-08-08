@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\DateTime;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Pikaday extends Component
+class Pikaday extends BladeComponent
 {
     /** @var string */
     public $name;

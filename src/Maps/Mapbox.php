@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Maps;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Mapbox extends Component
+class Mapbox extends BladeComponent
 {
     /** @var string */
     public $id;

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Buttons;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Logout extends Component
+class Logout extends BladeComponent
 {
     /** @var string */
     public $action;

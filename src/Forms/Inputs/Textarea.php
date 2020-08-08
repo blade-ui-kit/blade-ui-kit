@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Forms\Inputs;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Textarea extends Component
+class Textarea extends BladeComponent
 {
     /** @var string */
     public $name;

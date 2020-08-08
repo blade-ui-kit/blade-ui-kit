@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Layouts;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Html extends Component
+class Html extends BladeComponent
 {
     /** @var string */
     protected $title;

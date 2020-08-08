@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Forms;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\View;
 
-class Error extends Component
+class Error extends BladeComponent
 {
     /** @var string */
     public $field;

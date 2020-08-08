@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Forms;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 
-class Label extends Component
+class Label extends BladeComponent
 {
     /** @var string */
     public $for;

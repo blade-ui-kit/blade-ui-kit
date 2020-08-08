@@ -6,7 +6,7 @@ namespace BladeUIKit;
 
 use Illuminate\View\Component as IlluminateComponent;
 
-abstract class Component extends IlluminateComponent
+abstract class BladeComponent extends IlluminateComponent
 {
     /** @var array */
     protected static $assets = [];

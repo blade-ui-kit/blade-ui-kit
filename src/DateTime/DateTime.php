@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace BladeUIKit\DateTime;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\View\View;
 
-class DateTime extends Component
+class DateTime extends BladeComponent
 {
     /** @var CarbonInterface */
     public $date;
@@ -19,11 +19,21 @@ class DateTime extends Component
     /** @var bool */
     public $human = false;
 
-    public function __construct(CarbonInterface $date, string $format = 'Y-m-d H:i:s', bool $human = false)
-    {
+    /** @var string|null */
+    public $local;
+
+    protected static $assets = ['moment'];
+
+    public function __construct(
+        CarbonInterface $date,
+        string $format = 'Y-m-d H:i:s',
+        bool $human = false,
+        bool $local = null
+    ) {
         $this->date = $date;
         $this->format = $format;
         $this->human = $human;
+        $this->local = $local;
     }
 
     public function render(): View

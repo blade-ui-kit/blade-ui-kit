@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Markdown;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
-class ToC extends Component
+class ToC extends BladeComponent
 {
     /** @var string */
     public $url;

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Forms;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Form extends Component
+class Form extends BladeComponent
 {
     /** @var string */
     public $action;

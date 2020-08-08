@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Markdown;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 use League\CommonMark\MarkdownConverterInterface;
 
-class Markdown extends Component
+class Markdown extends BladeComponent
 {
     /** @var string */
     protected $flavor;

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Navigation;
 
-use BladeUIKit\Component;
+use BladeUIKit\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class Dropdown extends Component
+class Dropdown extends BladeComponent
 {
     protected static $assets = ['alpine'];
 

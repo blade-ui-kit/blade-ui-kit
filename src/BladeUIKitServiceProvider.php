@@ -37,25 +37,11 @@ final class BladeUIKitServiceProvider extends ServiceProvider
             $prefix = config('blade-ui-kit.prefix', '');
             $assets = config('blade-ui-kit.assets', []);
 
-            /** @var Component $component */
+            /** @var BladeComponent $component */
             foreach (config('blade-ui-kit.components', []) as $alias => $component) {
                 $blade->component($component, $alias, $prefix);
 
-                foreach ($component::assets() as $asset) {
-                    $files = (array) ($assets[$asset] ?? []);
-
-                    collect($files)->filter(function (string $file) {
-                        return Str::endsWith($file, '.css');
-                    })->each(function (string $style) {
-                        BladeUIKit::addStyle($style);
-                    });
-
-                    collect($files)->filter(function (string $file) {
-                        return Str::endsWith($file, '.js');
-                    })->each(function (string $script) {
-                        BladeUIKit::addScript($script);
-                    });
-                }
+                $this->registerAssets($component, $assets);
             }
         });
     }
@@ -68,11 +54,33 @@ final class BladeUIKitServiceProvider extends ServiceProvider
         }
 
         $prefix = config('blade-ui-kit.prefix', '');
+        $assets = config('blade-ui-kit.assets', []);
 
         foreach (config('blade-ui-kit.livewire', []) as $alias => $component) {
             $alias = $prefix ? "$prefix-$alias" : $alias;
 
             Livewire::component($alias, $component);
+
+            $this->registerAssets($component, $assets);
+        }
+    }
+
+    private function registerAssets($component, array $assets): void
+    {
+        foreach ($component::assets() as $asset) {
+            $files = (array)($assets[$asset] ?? []);
+
+            collect($files)->filter(function (string $file) {
+                return Str::endsWith($file, '.css');
+            })->each(function (string $style) {
+                BladeUIKit::addStyle($style);
+            });
+
+            collect($files)->filter(function (string $file) {
+                return Str::endsWith($file, '.js');
+            })->each(function (string $script) {
+                BladeUIKit::addScript($script);
+            });
         }
     }
 
