@@ -1,0 +1,10 @@
+<?php
+
+namespace App\View\Components\{{ namespace }};
+
+use {{ parent }} as {{ alias }};
+
+class {{ name }} extends {{ alias }}
+{
+    // Overwrite component parent here...
+}

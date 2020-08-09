@@ -6,6 +6,7 @@ namespace BladeUIKit;
 
 use BladeUIKit\Components\BladeComponent;
 use BladeUIKit\Components\LivewireComponent;
+use BladeUIKit\Console\PublishCommand;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -17,6 +18,12 @@ final class BladeUIKitServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/blade-ui-kit.php', 'blade-ui-kit');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                PublishCommand::class,
+            ]);
+        }
     }
 
     public function boot(): void
