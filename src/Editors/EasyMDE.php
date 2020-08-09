@@ -15,12 +15,25 @@ class EasyMDE extends BladeComponent
     /** @var string */
     public $id;
 
+    /** @var array */
+    public $options;
+
     protected static $assets = ['alpine', 'easy-mde'];
 
-    public function __construct(string $name, string $id = null)
+    public function __construct(string $name, string $id = null, array $options = [])
     {
         $this->name = $name;
         $this->id = $id ?? $name;
+        $this->options = $options;
+    }
+
+    public function jsonOptions(): string
+    {
+        if (empty($this->options)) {
+            return '';
+        }
+
+        return ', ...' . json_encode((object) $this->options);
     }
 
     public function render(): View

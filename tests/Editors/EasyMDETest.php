@@ -29,4 +29,13 @@ HTML;
 
         $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
     }
+
+    /** @test */
+    public function editor_can_have_options()
+    {
+        $this->assertComponentRenders(
+            '<textarea x-data x-init="new EasyMDE({ element: $el , ...{&quot;minHeight&quot;:&quot;500px&quot;} })" name="about" id="about"></textarea>',
+            '<x-easy-mde name="about" :options="[\'minHeight\' => \'500px\']"/>'
+        );
+    }
 }

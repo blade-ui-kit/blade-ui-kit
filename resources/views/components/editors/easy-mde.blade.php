@@ -1,6 +1,6 @@
 <textarea
     x-data
-    x-init="new EasyMDE({ element: $el })"
+    x-init="new EasyMDE({ element: $el {{ $jsonOptions() }} })"
     name="{{ $name }}"
     id="{{ $id }}"
     {{ $attributes }}
