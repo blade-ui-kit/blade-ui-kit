@@ -9,7 +9,7 @@ use Tests\ComponentTestCase;
 class HtmlTest extends ComponentTestCase
 {
     /** @test */
-    public function it_can_render_markdown_to_html()
+    public function it_can_render_to_html()
     {
         $template = <<<HTML
 <x-html class="font-sans" title="Blade UI Kit">
