@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace BladeUIKit;
 
+use BladeUIKit\Components\BladeComponent;
+use BladeUIKit\Components\LivewireComponent;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -56,6 +58,7 @@ final class BladeUIKitServiceProvider extends ServiceProvider
         $prefix = config('blade-ui-kit.prefix', '');
         $assets = config('blade-ui-kit.assets', []);
 
+        /** @var LivewireComponent $component */
         foreach (config('blade-ui-kit.livewire', []) as $alias => $component) {
             $alias = $prefix ? "$prefix-$alias" : $alias;
 
