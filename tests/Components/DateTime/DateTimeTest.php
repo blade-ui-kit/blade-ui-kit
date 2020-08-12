@@ -68,7 +68,7 @@ HTML;
     public function it_can_be_displayed_in_the_local_timezone()
     {
         $expected = <<<HTML
-<span x-data="{ formatLocalTimeZone: function (element, timestamp) { const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; const date = moment.unix(timestamp).tz(timeZone); element.innerHTML = date.format('YYYY-MM-DD hh:mm:ss (z)'); } }" x-init="formatLocalTimeZone(\$el, 1589407200)" title="2 hours from now">
+<span x-data="{ formatLocalTimeZone: function (element, timestamp) { const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; const date = moment.unix(timestamp).tz(timeZone); element.innerHTML = date.format('YYYY-MM-DD HH:mm:ss (z)'); } }" x-init="formatLocalTimeZone(\$el, 1589407200)" title="2 hours from now">
     2020-05-13 23:00:00
 </span>
 HTML;
