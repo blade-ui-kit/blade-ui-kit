@@ -31,7 +31,7 @@ return [
         'input-password' => BladeUIKit\Components\Forms\Inputs\Password::class,
         'textarea' => BladeUIKit\Components\Forms\Inputs\Textarea::class,
         'html' => BladeUIKit\Components\Layouts\Html::class,
-        'og' => BladeUIKit\Components\Layouts\OG::class,
+        'social-meta' => BladeUIKit\Components\Layouts\SocialMeta::class,
         'mapbox' => BladeUIKit\Components\Maps\Mapbox::class,
         'markdown' => BladeUIKit\Components\Markdown\Markdown::class,
         'toc' => BladeUIKit\Components\Markdown\ToC::class,

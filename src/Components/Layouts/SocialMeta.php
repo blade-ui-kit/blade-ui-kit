@@ -7,7 +7,7 @@ namespace BladeUIKit\Components\Layouts;
 use BladeUIKit\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
 
-class OG extends BladeComponent
+class SocialMeta extends BladeComponent
 {
     /** @var string */
     public $title;
@@ -45,6 +45,6 @@ class OG extends BladeComponent
 
     public function render(): View
     {
-        return view('blade-ui-kit::components.layouts.og');
+        return view('blade-ui-kit::components.layouts.social-meta');
     }
 }

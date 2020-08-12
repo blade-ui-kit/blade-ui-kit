@@ -6,13 +6,13 @@ namespace Tests\Components\Layouts;
 
 use Tests\Components\ComponentTestCase;
 
-class OGTest extends ComponentTestCase
+class SocialMetaTest extends ComponentTestCase
 {
     /** @test */
     public function it_can_render_to_html()
     {
         $template = <<<HTML
-<x-og
+<x-social-meta
     title="Hello World"
     description="Blade components are awesome!"
     card="summary"
