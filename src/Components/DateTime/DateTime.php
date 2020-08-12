@@ -28,7 +28,7 @@ class DateTime extends BladeComponent
         CarbonInterface $date,
         string $format = 'Y-m-d H:i:s',
         bool $human = false,
-        bool $local = null
+        $local = null
     ) {
         $this->date = $date;
         $this->format = $format;
