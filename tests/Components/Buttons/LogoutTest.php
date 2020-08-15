@@ -24,7 +24,7 @@ HTML;
 <form method="POST" action="http://localhost/logout">
     <input type="hidden" name="_token" value="">
     <button type="submit">
-    Sign Out </button>
+    Logout </button>
 </form>
 HTML;
 
@@ -35,14 +35,14 @@ HTML;
     public function the_action_text_and_attributes_can_be_set()
     {
         $template = <<<HTML
-<x-logout action="http://example.com" class="text-gray-500">Logout</x-logout>
+<x-logout action="http://example.com" class="text-gray-500">Sign Out</x-logout>
 HTML;
 
         $expected = <<<HTML
 <form method="POST" action="http://example.com">
     <input type="hidden" name="_token" value="">
     <button type="submit" class="text-gray-500">
-    Logout </button>
+    Sign Out </button>
 </form>
 HTML;
 

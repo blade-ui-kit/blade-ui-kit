@@ -2,6 +2,6 @@
     @csrf
 
     <button type="submit" {{ $attributes }}>
-        {{ $slot->isEmpty() ? __('Sign Out') : $slot }}
+        {{ $slot->isEmpty() ? __('Logout') : $slot }}
     </button>
 </form>
