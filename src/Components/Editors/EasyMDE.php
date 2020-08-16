@@ -24,16 +24,25 @@ class EasyMDE extends BladeComponent
     {
         $this->name = $name;
         $this->id = $id ?? $name;
-        $this->options = $options;
+        $this->options = array_merge([
+            ''
+        ], $options);
+    }
+
+    public function options(): array
+    {
+        return array_merge([
+            'forceSync' => true,
+        ], $this->options);
     }
 
     public function jsonOptions(): string
     {
-        if (empty($this->options)) {
+        if (empty($this->options())) {
             return '';
         }
 
-        return ', ...' . json_encode((object) $this->options);
+        return ', ...' . json_encode((object) $this->options());
     }
 
     public function render(): View
