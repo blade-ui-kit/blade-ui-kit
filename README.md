@@ -57,7 +57,7 @@ Then install the package by running:
 composer require blade-ui-kit/blade-ui-kit
 ```
 
-To finish up, add `@bladeUIStyles` just before your closing `</head>` tag and `@bladeUIScripts` just before your closing `</body>` tag.
+To finish up, add `@bukStyles` just before your closing `</head>` tag and `@bukScripts` just before your closing `</body>` tag.
 
 ## Updating
 
