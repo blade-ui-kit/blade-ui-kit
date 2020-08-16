@@ -8,7 +8,7 @@ use BladeUIKit\Components\BladeComponent;
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\View\View;
 
-class DateTime extends BladeComponent
+class Carbon extends BladeComponent
 {
     /** @var CarbonInterface */
     public $date;
@@ -38,6 +38,6 @@ class DateTime extends BladeComponent
 
     public function render(): View
     {
-        return view('blade-ui-kit::components.date-time.date-time');
+        return view('blade-ui-kit::components.date-time.carbon');
     }
 }
