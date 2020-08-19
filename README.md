@@ -54,7 +54,7 @@ php artisan config:clear
 Then install the package by running:
 
 ```bash
-composer require blade-ui-kit/blade-ui-kit
+composer require blade-ui-kit/blade-ui-kit:dev-main
 ```
 
 To finish up, add `@bukStyles` just before your closing `</head>` tag and `@bukScripts` just before your closing `</body>` tag.
