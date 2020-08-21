@@ -19,9 +19,9 @@
 
 > Blade UI Kit is currently under development and not ready yet to run in production. Some things can and probably will change before the first stable minor release.
 
-*Join the Discord server: https://discord.gg/Vev5CyE*
-
 A set of renderless components to utilise in your Laravel Blade views.
+
+*Join the Discord server: https://discord.gg/Vev5CyE*
 
 - [Requirements](#requirements)
 - [Installation](#installation)
