@@ -1,10 +1,10 @@
 <input
     x-data
-    x-init="new Pikaday({ field: $el, format: '{{ $format }}' })"
+    x-init="new Pikaday({ field: $el {{ $jsonOptions() }} })"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"
     placeholder="{{ $placeholder }}"
-    value="{{ old($name, $value) }}"
+    @if($value)value="{{ $value }}"@endif
     {{ $attributes }}
 />

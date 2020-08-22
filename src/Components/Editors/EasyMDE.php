@@ -24,9 +24,7 @@ class EasyMDE extends BladeComponent
     {
         $this->name = $name;
         $this->id = $id ?? $name;
-        $this->options = array_merge([
-            ''
-        ], $options);
+        $this->options = $options;
     }
 
     public function options(): array
