@@ -59,10 +59,6 @@ composer require blade-ui-kit/blade-ui-kit:dev-main
 
 To finish up, add `@bukStyles` just before your closing `</head>` tag and `@bukScripts` just before your closing `</body>` tag.
 
-## Updating
-
-Please refer to [`the upgrade guide`](UPGRADE.md) when updating the library.
-
 ## Changelog
 
 Check out the [CHANGELOG](CHANGELOG.md) in this repository for all the recent changes.
