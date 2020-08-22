@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BladeUIKit\Components\DateTime;
+namespace BladeUIKit\Components\Forms\Inputs;
 
 use BladeUIKit\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
@@ -42,6 +42,6 @@ class Pikaday extends BladeComponent
 
     public function render(): View
     {
-        return view('blade-ui-kit::components.date-time.pikaday');
+        return view('blade-ui-kit::components.forms.inputs.pikaday');
     }
 }

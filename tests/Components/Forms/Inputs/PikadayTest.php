@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Components\DateTime;
+namespace Tests\Components\Forms\Inputs;
 
 use Tests\Components\ComponentTestCase;
 
