@@ -67,9 +67,9 @@ return [
     | By default it's empty. This is useful if you want to avoid
     | collision with components from other libraries.
     |
-    | If set with "ui", for example, you can reference components like:
+    | If set with "buk", for example, you can reference components like:
     |
-    | <x-ui-button />
+    | <x-buk-easy-mde />
     |
     */
 
