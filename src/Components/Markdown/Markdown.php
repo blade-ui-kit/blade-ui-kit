@@ -75,7 +75,13 @@ class Markdown extends BladeComponent
 
     protected function generateAnchors(string $markdown): string
     {
-        return collect(explode(PHP_EOL, $markdown))
+        preg_match_all('(```[a-z]*\n[\s\S]*?\n```)', $markdown, $matches);
+
+        collect($matches[0] ?? [])->each(function (string $match, int $index) use (&$markdown) {
+            $markdown = str_replace($match, "<!--code-block-$index-->", $markdown);
+        });
+
+        $markdown = collect(explode(PHP_EOL, $markdown))
             ->map(function (string $line) {
                 // For levels 2 to 6.
                 $anchors = [
@@ -96,5 +102,11 @@ class Markdown extends BladeComponent
                 return $anchor . PHP_EOL . $line;
             })
             ->implode(PHP_EOL);
+
+        collect($matches[0] ?? [])->each(function (string $match, int $index) use (&$markdown) {
+            $markdown = str_replace("<!--code-block-$index-->", $match, $markdown);
+        });
+
+        return $markdown;
     }
 }

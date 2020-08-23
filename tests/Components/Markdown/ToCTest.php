@@ -25,13 +25,7 @@ Some content.
 
 #### Sub Sub Title level 4
 
-    ## Code Snippet Header
-
 Some content.
-
-```
-## Code Snippet Header
-```
 
 ## Other Sub Title level 2
 
@@ -102,6 +96,39 @@ HTML;
     Sub Sub Title level 3 </a>
     </li>
         </ul>
+    </li>
+</ul>
+HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
+
+    /** @test */
+    public function headings_in_code_blocks_are_skipped()
+    {
+        $template = <<<HTML
+<x-toc>
+# Hello World
+
+Blade UI components are **awesome**.
+
+## Sub Title level 2
+
+    ## Code Snippet Header
+
+Some content.
+
+```
+## Code Snippet Header
+```
+</x-toc>
+HTML;
+
+        $expected = <<<HTML
+<ul>
+    <li>
+    <a href="#sub-title-level-2">
+    Sub Title level 2 </a>
     </li>
 </ul>
 HTML;

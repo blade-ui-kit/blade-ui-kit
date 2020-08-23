@@ -112,4 +112,51 @@ HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
+
+    /** @test */
+    public function anchors_are_not_generated_for_headers_in_code_blocks()
+    {
+        $template = <<<HTML
+<x-markdown anchors>
+# Hello World
+
+Blade UI components are **awesome**.
+
+## Sub Title level 2
+
+    ## Code Snippet Header
+
+Some content.
+
+```
+<div>
+## Code Snippet Header
+
+Some content.
+</div>
+```
+</x-markdown>
+HTML;
+
+        $expected = <<<HTML
+<div>
+    <h1>Hello World</h1>
+
+    <p>Blade UI components are <strong>awesome</strong>.</p>
+    <p><a class="anchor" name="sub-title-level-2"></a></p>
+    <h2>
+        Sub Title level 2
+    </h2>
+    <pre><code>## Code Snippet Header
+</code></pre>
+    <p>Some content.</p>
+    <pre><code>&lt;div&gt;
+## Code Snippet Header Some content.
+&lt;/div&gt;
+</code></pre>
+</div>
+HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
 }
