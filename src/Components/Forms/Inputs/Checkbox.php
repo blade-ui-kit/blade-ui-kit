@@ -15,7 +15,7 @@ class Checkbox extends Input
     {
         parent::__construct($name, $id, 'checkbox');
 
-        $this->checked = old($name, $checked);
+        $this->checked = (bool) old($name, $checked);
     }
 
     public function render(): View
