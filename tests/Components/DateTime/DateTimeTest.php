@@ -7,7 +7,7 @@ namespace Tests\Components\DateTime;
 use Carbon\Carbon;
 use Tests\Components\ComponentTestCase;
 
-class CarbonTest extends ComponentTestCase
+class DateTimeTest extends ComponentTestCase
 {
     protected function tearDown(): void
     {
@@ -27,7 +27,7 @@ HTML;
 
         Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-        $this->assertComponentRenders($expected, '<x-carbon :date="$date"/>', [
+        $this->assertComponentRenders($expected, '<x-date-time :date="$date"/>', [
             'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
         ]);
     }
@@ -43,7 +43,7 @@ HTML;
 
         Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-        $this->assertComponentRenders($expected, '<x-carbon :date="$date" format="d/m/Y H:i"/>', [
+        $this->assertComponentRenders($expected, '<x-date-time :date="$date" format="d/m/Y H:i"/>', [
             'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
         ]);
     }
@@ -59,7 +59,7 @@ HTML;
 
         Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-        $this->assertComponentRenders($expected, '<x-carbon :date="$date" human/>', [
+        $this->assertComponentRenders($expected, '<x-date-time :date="$date" human/>', [
             'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
         ]);
     }
@@ -75,7 +75,7 @@ HTML;
 
         Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-        $this->assertComponentRenders($expected, '<x-carbon :date="$date" local/>', [
+        $this->assertComponentRenders($expected, '<x-date-time :date="$date" local/>', [
             'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
         ]);
     }
