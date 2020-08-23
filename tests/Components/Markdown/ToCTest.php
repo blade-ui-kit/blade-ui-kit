@@ -25,7 +25,13 @@ Some content.
 
 #### Sub Sub Title level 4
 
+    ## Code Snippet Header
+
 Some content.
+
+```
+## Code Snippet Header
+```
 
 ## Other Sub Title level 2
 
