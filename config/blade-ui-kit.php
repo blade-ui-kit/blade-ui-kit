@@ -19,7 +19,7 @@ return [
         'alert' => Components\Alerts\Alert::class,
         'form-button' => Components\Buttons\FormButton::class,
         'logout' => Components\Buttons\Logout::class,
-        'date-time' => Components\DateTime\DateTime::class,
+        'carbon' => Components\DateTime\Carbon::class,
         'countdown' => Components\DateTime\Countdown::class,
         'easy-mde' => Components\Editors\EasyMDE::class,
         'trix' => Components\Editors\Trix::class,
