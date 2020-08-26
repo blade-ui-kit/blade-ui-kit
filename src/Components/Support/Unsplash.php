@@ -23,11 +23,11 @@ class Unsplash extends BladeComponent
     /** @var string */
     protected $username;
 
-    /** @var int */
-    protected $w;
+    /** @var int|null */
+    protected $width;
 
-    /** @var int */
-    protected $h;
+    /** @var int|null */
+    protected $height;
 
     /** @var int */
     protected $ttl;
@@ -37,16 +37,16 @@ class Unsplash extends BladeComponent
         string $query = '',
         bool $featured = false,
         string $username = '',
-        int $w = 0,
-        int $h = 0,
+        int $width = null,
+        int $height = null,
         int $ttl = 3600
     ) {
         $this->photo = $photo;
         $this->query = $query;
         $this->featured = $featured;
         $this->username = $username;
-        $this->w = $w;
-        $this->h = $h;
+        $this->width = $width;
+        $this->height = $height;
         $this->ttl = $ttl;
     }
 
@@ -69,8 +69,8 @@ class Unsplash extends BladeComponent
                 'query' => $this->query,
                 'featured' => $this->featured,
                 'username' => $this->username,
-                'w' => $this->w,
-                'h' => $this->h,
+                'w' => $this->width,
+                'h' => $this->height,
             ]))->json()['urls']['raw'];
         });
     }
