@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Http;
 class Unsplash extends BladeComponent
 {
     /** @var string */
-    protected $photoId;
+    protected $photo;
 
     /** @var string */
     protected $query;
@@ -33,7 +33,7 @@ class Unsplash extends BladeComponent
     protected $cacheTtl;
 
     public function __construct(
-        string $photoId = 'random',
+        string $photo = 'random',
         string $query = '',
         bool $featured = false,
         string $username = '',
@@ -41,7 +41,7 @@ class Unsplash extends BladeComponent
         int $h = 0,
         int $cacheTtl = 3600
     ) {
-        $this->photoId = $photoId;
+        $this->photo = $photo;
         $this->query = $query;
         $this->featured = $featured;
         $this->username = $username;
@@ -63,8 +63,8 @@ class Unsplash extends BladeComponent
             return '';
         }
 
-        return Cache::remember('unsplash.' . $this->photoId, $this->cacheTtl, function () use ($accessKey) {
-            return Http::get("https://api.unsplash.com/photos/{$this->photoId}", array_filter([
+        return Cache::remember('unsplash.' . $this->photo, $this->cacheTtl, function () use ($accessKey) {
+            return Http::get("https://api.unsplash.com/photos/{$this->photo}", array_filter([
                 'client_id' => $accessKey,
                 'query' => $this->query,
                 'featured' => $this->featured,

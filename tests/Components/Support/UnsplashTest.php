@@ -27,6 +27,6 @@ class UnsplashTest extends ComponentTestCase
             'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
         ]);
 
-        $this->assertComponentRenders($expected, '<x-unsplash photo-id="t9Td0zfDTwI"/>');
+        $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI"/>');
     }
 }
