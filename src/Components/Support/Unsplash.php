@@ -30,7 +30,7 @@ class Unsplash extends BladeComponent
     protected $h;
 
     /** @var int */
-    protected $cacheTtl;
+    protected $ttl;
 
     public function __construct(
         string $photo = 'random',
@@ -39,7 +39,7 @@ class Unsplash extends BladeComponent
         string $username = '',
         int $w = 0,
         int $h = 0,
-        int $cacheTtl = 3600
+        int $ttl = 3600
     ) {
         $this->photo = $photo;
         $this->query = $query;
@@ -47,7 +47,7 @@ class Unsplash extends BladeComponent
         $this->username = $username;
         $this->w = $w;
         $this->h = $h;
-        $this->cacheTtl = $cacheTtl;
+        $this->ttl = $ttl;
     }
 
     public function render(): View
@@ -63,7 +63,7 @@ class Unsplash extends BladeComponent
             return '';
         }
 
-        return Cache::remember('unsplash.' . $this->photo, $this->cacheTtl, function () use ($accessKey) {
+        return Cache::remember('unsplash.' . $this->photo, $this->ttl, function () use ($accessKey) {
             return Http::get("https://api.unsplash.com/photos/{$this->photo}", array_filter([
                 'client_id' => $accessKey,
                 'query' => $this->query,
