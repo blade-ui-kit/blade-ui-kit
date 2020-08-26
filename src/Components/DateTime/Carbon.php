@@ -19,7 +19,7 @@ class Carbon extends BladeComponent
     public $format;
 
     /** @var bool */
-    public $human = false;
+    public $human;
 
     /** @var string|null */
     public $local;
