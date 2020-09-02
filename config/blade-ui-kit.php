@@ -36,6 +36,7 @@ return [
         'html' => Components\Layouts\Html::class,
         'social-meta' => Components\Layouts\SocialMeta::class,
         'mapbox' => Components\Maps\Mapbox::class,
+        'google-map' => Components\Maps\GoogleMap::class,
         'markdown' => Components\Markdown\Markdown::class,
         'toc' => Components\Markdown\ToC::class,
         'dropdown' => Components\Navigation\Dropdown::class,
@@ -119,6 +120,8 @@ return [
             'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
             'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js',
         ],
+
+        'google-maps' => 'https://maps.googleapis.com/maps/api/js?key=' . env('GOOGLEMAPS')
 
     ],
 
