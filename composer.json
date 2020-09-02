@@ -45,6 +45,9 @@
         }
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        },
         "laravel": {
             "providers": [
                 "BladeUIKit\\BladeUIKitServiceProvider"
