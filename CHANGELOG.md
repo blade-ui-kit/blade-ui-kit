@@ -6,6 +6,6 @@ This changelog follows [the Keep a Changelog standard](https://keepachangelog.co
 ## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.1.0...main)
 
 
-## 0.1.0 (2020-??-??)
+## 0.1.0 (2020-09-02)
 
 Initial release.
