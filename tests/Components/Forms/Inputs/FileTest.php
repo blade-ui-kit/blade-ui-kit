@@ -22,6 +22,18 @@ class FileTest extends ComponentTestCase
 
                          <input type="file" name="file" id="file" style="display: none;">
                       </div>
+                   
+                    <style>
+                        label:hover {
+                          color: #718096;
+                            }
+                    </style>
+
+                    <script>
+                     document.getElementById(\'file\').onchange = function () {
+                          document.getElementById(\'chosenFile\').innerHTML = this.files[0].name;
+                       };
+                    </script>
 ',
             '<x-file/>'
         );
@@ -40,7 +52,20 @@ class FileTest extends ComponentTestCase
                         </span>
 
                          <input type="file" name="user_resume" id="file" style="display: none;">
-                    </div>',
+                    </div>
+                   
+                    <style>
+                        label:hover {
+                          color: #718096;
+                            }
+                    </style>
+
+                    <script>
+                     document.getElementById(\'file\').onchange = function () {
+                          document.getElementById(\'chosenFile\').innerHTML = this.files[0].name;
+                       };
+                    </script>
+',
             '<x-file name="user_resume" label="Choose Resume" />'
         );
     }
