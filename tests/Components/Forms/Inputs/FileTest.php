@@ -14,28 +14,22 @@ class FileTest extends ComponentTestCase
 
         $expected = <<<HTML
 <div>
-
-                         <label for="file" style=" padding: .5rem; border-radius: 5px;">
-                            Choose File
-                         </label>
-
-                         <span id="chosenFile" class="">
-                         </span>
-
-                         <input type="file" name="file" id="file" style="display: none;">
+<div>
+    <label for="file" style=" padding: .5rem; border-radius: 5px;" class="">
+    Choose Resume </label>
+    <span id="chosenFile" class="">
+    </span>
+    
+    <input type="file" name="user_resume" id="file" style="display: none;">
 </div>
-                   
-                    <style>
-                        label:hover {
-                          color: #718096;
-                            }
-                    </style>
-
-                    <script>
-                     document.getElementById('file').onchange = function () {
-                          document.getElementById('chosenFile').innerHTML = this.files[0].name;
-                       };
-                    </script>
+<style>
+    label:hover { color: #718096; }
+</style>
+<script>
+    document.getElementById('file').onchange = function () {
+        document.getElementById('chosenFile').innerHTML = this.files[0].name;
+    };
+</script>
 HTML;
 
 
@@ -50,27 +44,21 @@ HTML;
     {
         $expected = <<<HTML
 <div>
-                       <label for="file" style=" padding: .5rem; border-radius: 5px;">
-                          Choose Resume
-                       </label>
-
-                        <span id="chosenFile" class="">
-                        </span>
-
-                         <input type="file" name="user_resume" id="file" style="display: none;">
-                    </div>
-                   
-                    <style>
-                        label:hover {
-                          color: #718096;
-                            }
-                    </style>
-
-                    <script>
-                     document.getElementById('file').onchange = function () {
-                          document.getElementById('chosenFile').innerHTML = this.files[0].name;
-                       };
-                    </script>
+    <label for="file" style=" padding: .5rem; border-radius: 5px;" class="">
+    Choose Resume </label>
+    <span id="chosenFile" class="">
+    </span>
+    
+    <input type="file" name="user_resume" id="file" style="display: none;">
+</div>
+<style>
+    label:hover { color: #718096; }
+</style>
+<script>
+    document.getElementById('file').onchange = function () {
+        document.getElementById('chosenFile').innerHTML = this.files[0].name;
+    };
+</script>
 HTML;
 
 
