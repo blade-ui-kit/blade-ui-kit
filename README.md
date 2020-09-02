@@ -17,47 +17,13 @@
     <img src="https://poser.pugx.org/blade-ui-kit/blade-ui-kit/d/total.svg" alt="Total Downloads">
 </a>
 
-> Blade UI Kit is currently under development and not ready yet to run in production. Some things can and probably will change before the first stable minor release.
-
-A set of renderless components to utilise in your Laravel Blade views.
+Blade UI Kit is a set of renderless components to utilise in your Laravel Blade views. In all essence, it's a collection of useful utilities, connecting the dots between different parts of [the TALL stack](https://tallstack.dev). It was made for [Blade](https://laravel.com/docs/blade), Laravel's powerful templating engine.
 
 *Join the Discord server: https://discord.gg/Vev5CyE*
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Updating](#updating)
-- [Changelog](#changelog)
-- [Maintainers](#maintainers)
-- [License](#license)
+## Official Documentation
 
-## Requirements
-
-- PHP 7.3 or higher
-- Laravel 7.0 or higher
-
-## Installation
-
-Proper documentation is coming soon but for now you'll have to figure out things on your own a bit. You can see how you can use the components by looking at [the tests](./tests/Components). Please note that some components like Mapbox and Unsplash require you to set up additional settings in your `services.php` file. Other components like cron and markdown require you to install additional libraries. Please reference the component classes and [`composer.json`](./composer.json) for these until the docs are released.
-
-First make sure to configure the repository in your `composer.json` by running:
-
-```bash
-composer config repositories.blade-ui-kit vcs https://github.com/blade-ui-kit/blade-ui-kit
-```
-
-Before installing a new package it's always a good idea to clear your config cache:
-
-```bash
-php artisan config:clear
-```
-
-Then install the package by running:
-
-```bash
-composer require blade-ui-kit/blade-ui-kit:dev-main
-```
-
-To finish up, add `@bukStyles` just before your closing `</head>` tag and `@bukScripts` just before your closing `</body>` tag.
+Documentation for Blade UI Kit can be found on its [website](https://blade-ui-kit.com/docs).
 
 ## Changelog
 
