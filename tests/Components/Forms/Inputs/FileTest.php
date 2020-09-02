@@ -15,7 +15,7 @@ class FileTest extends ComponentTestCase
         $expected = <<<HTML
 <div>
 
-                         <label for="file">
+                         <label for="file" style=" padding: .5rem; border-radius: 5px;">
                             Choose File
                          </label>
 
@@ -50,7 +50,7 @@ HTML;
     {
         $expected = <<<HTML
 <div>
-                       <label for="file">
+                       <label for="file" style=" padding: .5rem; border-radius: 5px;">
                           Choose Resume
                        </label>
 
