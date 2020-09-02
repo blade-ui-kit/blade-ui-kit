@@ -42,6 +42,7 @@ return [
         'avatar' => Components\Support\Avatar::class,
         'cron' => Components\Support\Cron::class,
         'unsplash' => Components\Support\Unsplash::class,
+        'file' => Components\Forms\Inputs\File::class
     ],
 
     /*
