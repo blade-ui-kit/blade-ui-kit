@@ -1,5 +1,5 @@
 <div>
-    <label for="file" style=" padding: .5rem; border-radius: 5px;" class="{{$buttonContainerClass}}">
+    <label for="file" class="default {{$buttonContainerClass}}">
         {{$label}}
     </label>
 
@@ -10,7 +10,12 @@
 </div>
 
 <style>
-    label:hover {
+    .default {
+        padding: .5rem;
+        border-radius: 5px;
+    }
+
+    .default:hover {
         color: #718096;
     }
 </style>
