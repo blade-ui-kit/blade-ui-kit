@@ -36,6 +36,7 @@ return [
         'html' => Components\Layouts\Html::class,
         'social-meta' => Components\Layouts\SocialMeta::class,
         'mapbox' => Components\Maps\Mapbox::class,
+        'leaflet' => Components\Maps\Leaflet::class,
         'markdown' => Components\Markdown\Markdown::class,
         'toc' => Components\Markdown\ToC::class,
         'dropdown' => Components\Navigation\Dropdown::class,
@@ -118,6 +119,11 @@ return [
         'mapbox' => [
             'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
             'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js',
+        ],
+
+        'leaflet' => [
+            'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css',
+            'https://unpkg.com/leaflet@1.6.0/dist/leaflet.js',
         ],
 
     ],
