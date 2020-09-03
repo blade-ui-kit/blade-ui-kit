@@ -20,7 +20,7 @@ class FileTest extends ComponentTestCase
     <span id="chosenFile" class="">
     </span>
     
-    <input type="file" name="user_resume" id="file" style="display: none;">
+    <input type="file" name="file" id="file" style="display: none;">
 </div>
 <style>
     label:hover { color: #718096; }
