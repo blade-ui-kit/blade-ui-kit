@@ -37,6 +37,7 @@ return [
         'social-meta' => Components\Layouts\SocialMeta::class,
         'mapbox' => Components\Maps\Mapbox::class,
         'google-map' => Components\Maps\GoogleMap::class,
+        'google-map-marker' => Components\Maps\GoogleMapMarker::class,
         'markdown' => Components\Markdown\Markdown::class,
         'toc' => Components\Markdown\ToC::class,
         'dropdown' => Components\Navigation\Dropdown::class,

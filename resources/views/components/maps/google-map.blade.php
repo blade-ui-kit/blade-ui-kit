@@ -8,6 +8,8 @@
             @foreach($googleMarkers() as $marker)
                 var marker = new google.maps.Marker({position: {{ json_encode($marker) }}, map: map});
             @endforeach
+
+            {{ $slot }}
         }
     }"
     x-init="() => initGoogleMap()"
