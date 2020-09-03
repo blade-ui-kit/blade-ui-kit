@@ -14,7 +14,7 @@ class FileTest extends ComponentTestCase
 
         $expected = <<<HTML
 <div>
-    <label for="file" style=" padding: .5rem; border-radius: 5px;" class="">
+    <label for="file" class="default">
     Choose File </label>
     <span id="chosenFile" class="">
     </span>
@@ -22,7 +22,14 @@ class FileTest extends ComponentTestCase
     <input type="file" name="file" id="file" style="display: none;">
 </div>
 <style>
-    label:hover { color: #718096; }
+     .default {
+        padding: .5rem;
+        border-radius: 5px;
+    }
+
+    .default:hover {
+        color: #718096;
+    }
 </style>
 <script>
     document.getElementById('file').onchange = function () {
@@ -43,7 +50,7 @@ HTML;
     {
         $expected = <<<HTML
 <div>
-    <label for="file" style=" padding: .5rem; border-radius: 5px;" class="">
+    <label for="file" class="default">
     Choose Resume </label>
     <span id="chosenFile" class="">
     </span>
@@ -51,7 +58,14 @@ HTML;
     <input type="file" name="user_resume" id="file" style="display: none;">
 </div>
 <style>
-    label:hover { color: #718096; }
+    .default {
+        padding: .5rem;
+        border-radius: 5px;
+    }
+
+    .default:hover {
+        color: #718096;
+    }
 </style>
 <script>
     document.getElementById('file').onchange = function () {
