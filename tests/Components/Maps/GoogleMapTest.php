@@ -32,7 +32,7 @@ HTML;
     initGoogleMap()" id="custom-map"></div>
 HTML;
 
-        $this->assertComponentRenders($expected, '<x-google-map id="custom-map" :options="[\'zoom\' => 0]"/>');
+        $this->assertComponentRenders($expected, '<x-google-map id="custom-map" zoom="0" />');
     }
 
     /** @test */

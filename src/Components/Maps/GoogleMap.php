@@ -19,9 +19,6 @@ class GoogleMap extends BladeComponent
     public $zoom;
 
     /** @var array */
-    public $options;
-
-    /** @var array */
     public $markers;
 
     protected static $assets = ['alpine', 'google-maps'];
@@ -30,13 +27,11 @@ class GoogleMap extends BladeComponent
         string $id = 'map',
         array $center = [33.7633864,-84.3973038],
         int $zoom = 15,
-        array $options = [],
         array $markers = []
     ) {
         $this->id = $id;
         $this->center = $center;
         $this->zoom = $zoom;
-        $this->options = $options;
         $this->markers = $markers;
     }
 
@@ -63,6 +58,6 @@ class GoogleMap extends BladeComponent
                 'lng' => $this->center[1]
             ],
             'zoom' => $this->zoom
-        ], $this->options);
+        ], $this->attributes->getIterator()->getArrayCopy());
     }
 }

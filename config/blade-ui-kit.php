@@ -38,6 +38,8 @@ return [
         'mapbox' => Components\Maps\Mapbox::class,
         'google-map' => Components\Maps\GoogleMap::class,
         'google-map-marker' => Components\Maps\GoogleMapMarker::class,
+        'google-map-circle' => Components\Maps\GoogleMapCircle::class,
+        'google-map-polygon' => Components\Maps\GoogleMapPolygon::class,
         'markdown' => Components\Markdown\Markdown::class,
         'toc' => Components\Markdown\ToC::class,
         'dropdown' => Components\Navigation\Dropdown::class,
