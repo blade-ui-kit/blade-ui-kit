@@ -27,6 +27,7 @@ return [
         'form' => Components\Forms\Form::class,
         'label' => Components\Forms\Label::class,
         'input' => Components\Forms\Inputs\Input::class,
+        'select' => Components\Forms\Inputs\Select::class,
         'checkbox' => Components\Forms\Inputs\Checkbox::class,
         'color-picker' => Components\Forms\Inputs\ColorPicker::class,
         'email' => Components\Forms\Inputs\Email::class,
