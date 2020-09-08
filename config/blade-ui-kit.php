@@ -109,7 +109,7 @@ return [
             'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css',
             'https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js',
         ],
-        
+
         'pikaday' => [
             'https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css',
             'https://cdn.jsdelivr.net/npm/pikaday/pikaday.js',
