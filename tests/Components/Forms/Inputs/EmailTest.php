@@ -36,4 +36,15 @@ class EmailTest extends ComponentTestCase
             '<x-email/>'
         );
     }
+
+    /** @test */
+    public function nested_inputs_can_have_old_values()
+    {
+        $this->flashOld(['profile.email' => 'Eloquent']);
+
+        $this->assertComponentRenders(
+            '<input name="profile[email]" type="email" id="profile[email]" value="Eloquent" />',
+            '<x-email name="profile[email]"/>'
+        );
+    }
 }

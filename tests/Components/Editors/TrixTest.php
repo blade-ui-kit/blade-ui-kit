@@ -37,4 +37,20 @@ HTML;
 
         $this->assertComponentRenders($expected, '<x-trix name="about"/>');
     }
+
+    /** @test */
+    public function nested_editor_can_have_old_values()
+    {
+        $this->flashOld(['profile.about' => 'About me text']);
+
+        $expected = <<<HTML
+<div>
+    <input name="profile[about]" id="profile[about]" value="About me text" type="hidden">
+    <trix-editor input="profile[about]" class="trix-content">
+    </trix-editor>
+</div>
+HTML;
+
+        $this->assertComponentRenders($expected, '<x-trix name="profile[about]"/>');
+    }
 }

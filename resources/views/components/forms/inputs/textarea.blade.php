@@ -3,4 +3,4 @@
     id="{{ $id }}"
     rows="{{ $rows }}"
     {{ $attributes }}
->{{ old($name, $slot) }}</textarea>
+>{{ old($dotName, $slot) }}</textarea>

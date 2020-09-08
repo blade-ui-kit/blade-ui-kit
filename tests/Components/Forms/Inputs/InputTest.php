@@ -36,4 +36,15 @@ class InputTest extends ComponentTestCase
             '<x-input name="search" />'
         );
     }
+
+    /** @test */
+    public function nested_inputs_can_have_old_values()
+    {
+        $this->flashOld(['filters.search' => 'Eloquent']);
+
+        $this->assertComponentRenders(
+            '<input name="filters[search]" type="text" id="filters[search]" value="Eloquent" />',
+            '<x-input name="filters[search]" />'
+        );
+    }
 }

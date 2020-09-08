@@ -36,4 +36,15 @@ class PasswordTest extends ComponentTestCase
             '<x-password/>'
         );
     }
+
+    /** @test */
+    public function nested_inputs_cannot_have_old_values()
+    {
+        $this->flashOld(['login.password' => 'secret']);
+
+        $this->assertComponentRenders(
+            '<input name="login[password]" type="password" id="login[password]" />',
+            '<x-password name="login[password]"/>'
+        );
+    }
 }

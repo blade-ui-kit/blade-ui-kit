@@ -36,4 +36,15 @@ class CheckboxTest extends ComponentTestCase
             '<x-checkbox name="remember_me"/>'
         );
     }
+
+    /** @test */
+    public function nested_inputs_can_have_old_values()
+    {
+        $this->flashOld(['login.remember_me' => true]);
+
+        $this->assertComponentRenders(
+            '<input name="login[remember_me]" type="checkbox" id="login[remember_me]" checked />',
+            '<x-checkbox name="login[remember_me]"/>'
+        );
+    }
 }

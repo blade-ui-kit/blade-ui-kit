@@ -31,6 +31,18 @@ HTML;
     }
 
     /** @test */
+    public function nested_editor_can_have_old_values()
+    {
+        $this->flashOld(['profile.about' => 'About me text']);
+
+        $expected = <<<HTML
+<textarea x-data x-init="new EasyMDE({ element: \$el , ...{&quot;forceSync&quot;:true} })" name="profile[about]" id="profile[about]">About me text</textarea>
+HTML;
+
+        $this->assertComponentRenders($expected, '<x-easy-mde name="profile[about]"/>');
+    }
+
+    /** @test */
     public function editor_can_have_options()
     {
         $this->assertComponentRenders(

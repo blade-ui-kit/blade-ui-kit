@@ -18,7 +18,7 @@ class Error extends BladeComponent
 
     public function __construct(string $field, string $bag = 'default')
     {
-        $this->field = $field;
+        $this->field = trim(str_replace(['[', ']', '..'], '.', $field), '.');
         $this->bag = $bag;
     }
 

@@ -13,6 +13,9 @@ class Textarea extends BladeComponent
     public $name;
 
     /** @var string */
+    public $dotName;
+
+    /** @var string */
     public $id;
 
     /** @var int */
@@ -23,6 +26,7 @@ class Textarea extends BladeComponent
         $this->name = $name;
         $this->id = $id ?? $name;
         $this->rows = $rows;
+        $this->dotName = trim(str_replace(['[', ']', '..'], '.', $name), '.');
     }
 
     public function render(): View

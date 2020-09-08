@@ -13,6 +13,9 @@ class Input extends BladeComponent
     public $name;
 
     /** @var string */
+    public $dotName;
+
+    /** @var string */
     public $id;
 
     /** @var string */
@@ -26,7 +29,8 @@ class Input extends BladeComponent
         $this->name = $name;
         $this->id = $id ?? $name;
         $this->type = $type;
-        $this->value = old($name, $value ?? '');
+        $this->dotName = trim(str_replace(['[', ']', '..'], '.', $name), '.');
+        $this->value = old($this->dotName, $value ?? '');
     }
 
     public function render(): View

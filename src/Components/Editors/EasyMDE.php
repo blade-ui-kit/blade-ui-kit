@@ -13,6 +13,9 @@ class EasyMDE extends BladeComponent
     public $name;
 
     /** @var string */
+    public $dotName;
+
+    /** @var string */
     public $id;
 
     /** @var array */
@@ -25,6 +28,7 @@ class EasyMDE extends BladeComponent
         $this->name = $name;
         $this->id = $id ?? $name;
         $this->options = $options;
+        $this->dotName = trim(str_replace(['[', ']', '..'], '.', $name), '.');
     }
 
     public function options(): array

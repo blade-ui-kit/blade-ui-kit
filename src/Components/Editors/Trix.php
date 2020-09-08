@@ -13,6 +13,9 @@ class Trix extends BladeComponent
     public $name;
 
     /** @var string */
+    public $dotName;
+
+    /** @var string */
     public $id;
 
     /** @var string */
@@ -25,6 +28,7 @@ class Trix extends BladeComponent
         $this->name = $name;
         $this->id = $id ?? $name;
         $this->styling = $styling;
+        $this->dotName = trim(str_replace(['[', ']', '..'], '.', $name), '.');
     }
 
     public function render(): View
