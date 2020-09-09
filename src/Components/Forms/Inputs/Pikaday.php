@@ -22,7 +22,7 @@ class Pikaday extends Input
     public function __construct(
         string $name,
         string $id = null,
-        string $value = '',
+        ?string $value = '',
         string $format = 'DD/MM/YYYY',
         string $placeholder = null,
         array $options = []

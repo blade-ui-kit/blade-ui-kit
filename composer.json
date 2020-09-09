@@ -19,9 +19,9 @@
     "require": {
         "php": "^7.3",
         "ext-json": "*",
-        "illuminate/filesystem": "^7.0",
-        "illuminate/support": "^7.0",
-        "illuminate/view": "^7.0",
+        "illuminate/filesystem": "^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/view": "^7.0|^8.0",
         "nesbot/carbon": "^2.38"
     },
     "require-dev": {
@@ -31,7 +31,7 @@
         "league/commonmark": "^1.4",
         "livewire/livewire": "^1.2",
         "lorisleiva/cron-translator": "^0.1.1",
-        "orchestra/testbench": "^5.0",
+        "orchestra/testbench": "^5.0|^6.0",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
@@ -45,9 +45,6 @@
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "0.1.x-dev"
-        },
         "laravel": {
             "providers": [
                 "BladeUIKit\\BladeUIKitServiceProvider"
