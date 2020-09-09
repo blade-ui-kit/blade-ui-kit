@@ -99,7 +99,7 @@ return [
             'https://unpkg.com/easymde/dist/easymde.min.js',
         ],
       
-        'google-maps' => 'https://maps.googleapis.com/maps/api/js?key=' . env('GOOGLEMAPS')
+        'google-maps' => 'https://maps.googleapis.com/maps/api/js?key=' . env('GOOGLEMAPS'),
 
         'mapbox' => [
             'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
