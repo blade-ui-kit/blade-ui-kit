@@ -43,7 +43,7 @@ class InputTest extends ComponentTestCase
         $this->flashOld(['filters.search' => 'Eloquent']);
 
         $this->assertComponentRenders(
-            '<input name="filters[search]" type="text" id="filters[search]" value="Eloquent" />',
+            '<input name="filters[search]" type="text" id="filters_search" value="Eloquent" />',
             '<x-input name="filters[search]" />'
         );
     }

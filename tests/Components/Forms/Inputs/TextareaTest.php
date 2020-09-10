@@ -43,7 +43,7 @@ class TextareaTest extends ComponentTestCase
         $this->flashOld(['profile.about' => 'About me text']);
 
         $this->assertComponentRenders(
-            '<textarea name="profile[about]" id="profile[about]" rows="3">About me text</textarea>',
+            '<textarea name="profile[about]" id="profile_about" rows="3">About me text</textarea>',
             '<x-textarea name="profile[about]"/>'
         );
     }

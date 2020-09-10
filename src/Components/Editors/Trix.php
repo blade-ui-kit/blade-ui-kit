@@ -6,14 +6,12 @@ namespace BladeUIKit\Components\Editors;
 
 use BladeUIKit\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 
 class Trix extends BladeComponent
 {
     /** @var string */
     public $name;
-
-    /** @var string */
-    public $dotName;
 
     /** @var string */
     public $id;
@@ -26,9 +24,8 @@ class Trix extends BladeComponent
     public function __construct(string $name, string $id = null, string $styling = 'trix-content')
     {
         $this->name = $name;
-        $this->id = $id ?? $name;
+        $this->id = $id ?? str_replace('.', '_', Str::dot($name));
         $this->styling = $styling;
-        $this->dotName = trim(str_replace(['[', ']', '..'], '.', $name), '.');
     }
 
     public function render(): View

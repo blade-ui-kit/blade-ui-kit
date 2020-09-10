@@ -43,7 +43,7 @@ class PasswordTest extends ComponentTestCase
         $this->flashOld(['login.password' => 'secret']);
 
         $this->assertComponentRenders(
-            '<input name="login[password]" type="password" id="login[password]" />',
+            '<input name="login[password]" type="password" id="login_password" />',
             '<x-password name="login[password]"/>'
         );
     }

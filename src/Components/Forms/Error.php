@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUIKit\Components\Forms;
 
 use BladeUIKit\Components\BladeComponent;
+use Illuminate\Support\Str;
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\View;
 
@@ -18,7 +19,7 @@ class Error extends BladeComponent
 
     public function __construct(string $field, string $bag = 'default')
     {
-        $this->field = trim(str_replace(['[', ']', '..'], '.', $field), '.');
+        $this->field = Str::dot($field);
         $this->bag = $bag;
     }
 

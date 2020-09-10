@@ -43,7 +43,7 @@ class EmailTest extends ComponentTestCase
         $this->flashOld(['profile.email' => 'Eloquent']);
 
         $this->assertComponentRenders(
-            '<input name="profile[email]" type="email" id="profile[email]" value="Eloquent" />',
+            '<input name="profile[email]" type="email" id="profile_email" value="Eloquent" />',
             '<x-email name="profile[email]"/>'
         );
     }

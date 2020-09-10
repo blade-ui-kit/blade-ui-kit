@@ -45,8 +45,8 @@ HTML;
 
         $expected = <<<HTML
 <div>
-    <input name="profile[about]" id="profile[about]" value="About me text" type="hidden">
-    <trix-editor input="profile[about]" class="trix-content">
+    <input name="profile[about]" id="profile_about" value="About me text" type="hidden">
+    <trix-editor input="profile_about" class="trix-content">
     </trix-editor>
 </div>
 HTML;
