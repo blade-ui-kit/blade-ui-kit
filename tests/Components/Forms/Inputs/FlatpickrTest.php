@@ -12,7 +12,11 @@ class PikadayTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<input x-data x-init="new Flatpickr({ field: \$el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" />
+<input x-data="{
+    initFlatpickr: function () {
+        flatpickr('#\$el', {&quot;dateFormat&quot;:&quot;d-m-Y&quot;});
+    }
+}" x-init="initFlatpickr()" name="birthday" type="text" id="birthday" placeholder="d-m-Y" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-flatpickr name="birthday"/>');
@@ -24,7 +28,11 @@ HTML;
         $this->flashOld(['birthday' => '23/03/1989']);
 
         $expected = <<<HTML
-<input x-data x-init="new flatpickr({ field: \$el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
+<input x-data="{
+    initFlatpickr: function () {
+        flatpickr('#\$el', {&quot;dateFormat&quot;:&quot;d-m-Y&quot;});
+    }
+}" x-init="initFlatpickr()" name="birthday" type="text" id="birthday" placeholder="d-m-Y" value="23-03-1989" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-flatpickr name="birthday"/>');
