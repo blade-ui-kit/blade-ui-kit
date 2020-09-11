@@ -33,7 +33,7 @@ class Flatpickr extends Input
     ) {
         parent::__construct($name, $id, 'text', $value);
 
-        $enableTime ? $this->format = $format.' H:i' : $this->format = $format;
+        $enableTime ? $this->format = $format . ' H:i' : $this->format = $format;
         $this->enableTime = $enableTime;
         $this->placeholder = $placeholder ?? $this->format;
         $this->options = $options;
