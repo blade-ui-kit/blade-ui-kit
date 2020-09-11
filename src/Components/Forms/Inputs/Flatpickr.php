@@ -14,6 +14,9 @@ class Flatpickr extends Input
     /** @var string */
     public $placeholder;
 
+    /** @var string */
+    public $enableTime;
+
     /** @var array */
     public $options;
 
@@ -23,13 +26,15 @@ class Flatpickr extends Input
         string $name,
         string $id = null,
         ?string $value = '',
-        string $format = 'DD/MM/YYYY',
+        string $format = 'd/m/Y',
+        bool $enableTime = false,
         string $placeholder = null,
         array $options = []
     ) {
         parent::__construct($name, $id, 'text', $value);
 
         $this->format = $format;
+        $this->enableTime = $enableTime;
         $this->placeholder = $placeholder ?? $format;
         $this->options = $options;
     }
@@ -37,7 +42,8 @@ class Flatpickr extends Input
     public function options(): array
     {
         return array_merge([
-            'format' => $this->format,
+            'dateFormat' => $this->format,
+            'enableTime' => $this->enableTime,
         ], $this->options);
     }
 
@@ -47,7 +53,7 @@ class Flatpickr extends Input
             return '';
         }
 
-        return ', ...' . json_encode((object) $this->options());
+        return json_encode((object) $this->options());
     }
 
     public function render(): View

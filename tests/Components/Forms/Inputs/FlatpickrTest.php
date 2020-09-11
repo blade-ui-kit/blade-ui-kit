@@ -24,7 +24,7 @@ HTML;
         $this->flashOld(['birthday' => '23/03/1989']);
 
         $expected = <<<HTML
-<input x-data x-init="new Flatpickr({ field: \$el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
+<input x-data x-init="new flatpickr({ field: \$el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-flatpickr name="birthday"/>');
