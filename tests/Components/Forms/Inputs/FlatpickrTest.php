@@ -6,17 +6,13 @@ namespace Tests\Components\Forms\Inputs;
 
 use Tests\Components\ComponentTestCase;
 
-class PikadayTest extends ComponentTestCase
+class FlatpickrTest extends ComponentTestCase
 {
     /** @test */
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
-<input x-data="{
-    initFlatpickr: function () {
-        flatpickr('#\$el', {&quot;dateFormat&quot;:&quot;d-m-Y&quot;});
-    }
-}" x-init="initFlatpickr()" name="birthday" type="text" id="birthday" placeholder="d-m-Y" />
+<input x-data="{ initFlatpickr: function () { flatpickr('#birthday', {&quot;dateFormat&quot;:&quot;d-m-Y&quot;,&quot;enableTime&quot;:false}); } }" x-init="initFlatpickr()" name="birthday" type="text" id="birthday" placeholder="d-m-Y" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-flatpickr name="birthday"/>');
@@ -25,16 +21,22 @@ HTML;
     /** @test */
     public function flatpickr_can_have_old_values()
     {
-        $this->flashOld(['birthday' => '23/03/1989']);
+        $this->flashOld(['birthday' => '23-03-1989']);
 
         $expected = <<<HTML
-<input x-data="{
-    initFlatpickr: function () {
-        flatpickr('#\$el', {&quot;dateFormat&quot;:&quot;d-m-Y&quot;});
-    }
-}" x-init="initFlatpickr()" name="birthday" type="text" id="birthday" placeholder="d-m-Y" value="23-03-1989" />
+<input x-data="{ initFlatpickr: function () { flatpickr('#birthday', {&quot;dateFormat&quot;:&quot;d-m-Y&quot;,&quot;enableTime&quot;:false}); } }" x-init="initFlatpickr()" name="birthday" type="text" id="birthday" placeholder="d-m-Y" value="23-03-1989" />
 HTML;
 
         $this->assertComponentRenders($expected, '<x-flatpickr name="birthday"/>');
+    }
+
+    /** @test */
+    public function flatpickr_can_have_time()
+    {
+        $expected = <<<HTML
+<input x-data="{ initFlatpickr: function () { flatpickr('#birthday', {&quot;dateFormat&quot;:&quot;d-m-Y H:i&quot;,&quot;enableTime&quot;:true}); } }" x-init="initFlatpickr()" name="birthday" type="text" id="birthday" placeholder="d-m-Y H:i" />
+HTML;
+
+        $this->assertComponentRenders($expected, '<x-flatpickr name="birthday" enableTime />');
     }
 }

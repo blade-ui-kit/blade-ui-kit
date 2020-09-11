@@ -26,16 +26,16 @@ class Flatpickr extends Input
         string $name,
         string $id = null,
         ?string $value = '',
-        string $format = 'd/m/Y',
+        string $format = 'd-m-Y',
         bool $enableTime = false,
         string $placeholder = null,
         array $options = []
     ) {
         parent::__construct($name, $id, 'text', $value);
 
-        $this->format = $format;
+        $enableTime ? $this->format = $format.' H:i' : $this->format = $format;
         $this->enableTime = $enableTime;
-        $this->placeholder = $placeholder ?? $format;
+        $this->placeholder = $placeholder ?? $this->format;
         $this->options = $options;
     }
 
