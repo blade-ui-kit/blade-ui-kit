@@ -34,8 +34,8 @@ HTML;
         $this->assertComponentRenders($expected, $template);
     }
 
-    public function test_action_is_optional() {
-
+    public function test_action_is_optional()
+    {
         $template = <<<HTML
 <x-form-button>
     Sign Out
