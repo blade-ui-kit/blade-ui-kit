@@ -34,6 +34,26 @@ HTML;
         $this->assertComponentRenders($expected, $template);
     }
 
+    public function test_action_is_optional() {
+
+        $template = <<<HTML
+<x-form-button>
+    Sign Out
+</x-form-button>
+HTML;
+
+        $expected = <<<HTML
+<form method="POST" action="http://localhost:8000">
+    <input type="hidden" name="_token" value="">
+    <input type="hidden" name="_method" value="POST">
+    <button type="submit">
+    Sign Out </button>
+</form>
+HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
+
     /** @test */
     public function the_method_and_attributes_can_be_set()
     {
