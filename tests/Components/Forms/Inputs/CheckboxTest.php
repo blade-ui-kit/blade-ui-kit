@@ -32,7 +32,7 @@ class CheckboxTest extends ComponentTestCase
         $this->flashOld(['remember_me' => true]);
 
         $this->assertComponentRenders(
-            '<input name="remember_me" type="checkbox" id="remember_me" checked />',
+            '<input name="remember_me" type="checkbox" id="remember_me" value="1" checked />',
             '<x-checkbox name="remember_me"/>',
         );
     }
