@@ -13,7 +13,7 @@ class ColorPicker extends Input
 
     protected static $assets = ['alpine', 'pickr'];
 
-    public function __construct(string $name, string $id = null, string $value = '', array $options = [])
+    public function __construct(string $name, string $id = null, ?string $value = '', array $options = [])
     {
         parent::__construct($name, $id, 'hidden', $value);
 

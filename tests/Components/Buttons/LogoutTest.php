@@ -24,7 +24,7 @@ HTML;
 <form method="POST" action="http://localhost/logout">
     <input type="hidden" name="_token" value="">
     <button type="submit">
-    Logout </button>
+    Log out </button>
 </form>
 HTML;
 

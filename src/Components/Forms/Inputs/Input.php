@@ -21,12 +21,12 @@ class Input extends BladeComponent
     /** @var string */
     public $value;
 
-    public function __construct(string $name, string $id = null, string $type = 'text', string $value = '')
+    public function __construct(string $name, string $id = null, string $type = 'text', ?string $value = '')
     {
         $this->name = $name;
         $this->id = $id ?? $name;
         $this->type = $type;
-        $this->value = old($name, $value);
+        $this->value = old($name, $value ?? '');
     }
 
     public function render(): View
