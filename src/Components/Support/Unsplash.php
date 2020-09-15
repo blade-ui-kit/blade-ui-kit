@@ -6,6 +6,7 @@ namespace BladeUIKit\Components\Support;
 
 use BladeUIKit\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
@@ -63,15 +64,22 @@ class Unsplash extends BladeComponent
             return '';
         }
 
-        return Cache::remember('unsplash.'.$this->photo, $this->ttl, function () use ($accessKey) {
+        $photo = Cache::remember('unsplash.'.$this->photo, $this->ttl, function () use ($accessKey) {
             return Http::get("https://api.unsplash.com/photos/{$this->photo}", array_filter([
                 'client_id' => $accessKey,
                 'query' => $this->query,
                 'featured' => $this->featured,
                 'username' => $this->username,
-                'w' => $this->width,
-                'h' => $this->height,
             ]))->json()['urls']['raw'];
         });
+
+        if ($this->width || $this->height) {
+            $photo .= '&'.Arr::query(array_filter([
+                'w' => $this->width,
+                'h' => $this->height,
+            ]));
+        }
+
+        return $photo;
     }
 }

@@ -29,4 +29,18 @@ class UnsplashTest extends ComponentTestCase
 
         $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI"/>');
     }
+
+    /** @test */
+    public function it_can_set_a_specific_width_or_height()
+    {
+        $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0&';
+
+        $expected = sprintf('<img src="%s" />', $url.'&w=200');
+
+        Http::fake([
+            'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
+        ]);
+
+        $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI" width="200"/>');
+    }
 }
