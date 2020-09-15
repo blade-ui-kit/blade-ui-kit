@@ -71,7 +71,7 @@ class Unsplash extends BladeComponent
                 'username' => $this->username,
                 'w' => $this->width,
                 'h' => $this->height,
-            ]))->json()['urls']['raw'];
+            ]))->json()['urls'][($this->width || $this->height ? 'custom' : 'raw')];
         });
     }
 }
