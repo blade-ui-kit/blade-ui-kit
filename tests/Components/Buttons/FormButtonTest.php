@@ -34,8 +34,8 @@ HTML;
         $this->assertComponentRenders($expected, $template);
     }
 
-    public function test_action_is_optional() {
-
+    public function test_action_is_optional()
+    {
         $template = <<<HTML
 <x-form-button>
     Sign Out
@@ -43,7 +43,7 @@ HTML;
 HTML;
 
         $expected = <<<HTML
-<form method="POST" action="http://localhost:8000">
+<form method="POST" action="http://localhost">
     <input type="hidden" name="_token" value="">
     <input type="hidden" name="_method" value="POST">
     <button type="submit">
