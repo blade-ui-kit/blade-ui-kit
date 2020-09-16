@@ -29,13 +29,14 @@ HTML;
         $this->assertComponentRenders($expected, $template);
     }
 
-    public function the_component_can_be_rendered_without_setting_action() {
+    public function the_component_can_be_rendered_without_setting_action()
+    {
         $template = <<<HTML
         <x-form>
             Form fields...
         </x-form>
         HTML;
-        
+
         $expected = <<<HTML
         <form method="POST" action="http://localhost">
             <input type="hidden" name="_token" value="">
@@ -44,10 +45,9 @@ HTML;
         
         </form>
         HTML;
-        
+
         $this->assertComponentRenders($expected, $template);
     }
-
 
     /** @test */
     public function the_method_can_be_set()
