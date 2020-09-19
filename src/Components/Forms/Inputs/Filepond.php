@@ -5,7 +5,7 @@ namespace BladeUIKit\Components\Forms\Inputs;
 
 
 use BladeUIKit\Components\BladeComponent;
-use Illuminate\Support\Str;
+use Illuminate\Contracts\View\View;
 
 class Filepond extends BladeComponent
 {
@@ -19,7 +19,7 @@ class Filepond extends BladeComponent
         $this->options = $options;
     }
 
-    public function render()
+    public function render() :View
     {
         return view('blade-ui-kit::components.forms.inputs.filepond');
     }
