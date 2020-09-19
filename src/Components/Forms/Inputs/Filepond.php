@@ -5,7 +5,6 @@ namespace BladeUIKit\Components\Forms\Inputs;
 
 
 use BladeUIKit\Components\BladeComponent;
-use Illuminate\Support\Str;
 
 class Filepond extends BladeComponent
 {
