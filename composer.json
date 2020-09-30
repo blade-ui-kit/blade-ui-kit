@@ -19,7 +19,7 @@
     "require": {
         "php": "^7.3",
         "ext-json": "*",
-        "illuminate/collections": "^8.2",
+        "illuminate/collections": "^7.0|^8.0",
         "illuminate/filesystem": "^7.0|^8.0",
         "illuminate/support": "^7.0|^8.0",
         "illuminate/view": "^7.0|^8.0",
