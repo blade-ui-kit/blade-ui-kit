@@ -17,6 +17,8 @@ class SocialMetaTest extends ComponentTestCase
     description="Blade components are awesome!"
     card="summary"
     image="http://example.com/social.jpg"
+    keywords="PHP, Blade, Laravel"
+    author="John Doe"
 />
 HTML;
 
@@ -29,6 +31,8 @@ HTML;
 <meta property="og:image" content="http://example.com/social.jpg" />
 <meta property="og:url" content="http://localhost" />
 <meta property="og:locale" content="en" />
+<meta name="keywords" content="PHP, Blade, Laravel">
+<meta name="author" content="John Doe">
 HTML;
 
         $this->assertComponentRenders($expected, $template);

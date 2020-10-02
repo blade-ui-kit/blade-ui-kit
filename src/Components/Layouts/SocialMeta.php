@@ -14,6 +14,12 @@ class SocialMeta extends BladeComponent
 
     /** @var string */
     public $description;
+    
+    /** @var string */
+    public $keywords;
+    
+    /** @var string */
+    public $author;
 
     /** @var string */
     public $type;
@@ -30,6 +36,8 @@ class SocialMeta extends BladeComponent
     public function __construct(
         string $title,
         string $description = '',
+        string $keywords = '',
+        string $author = '',
         string $type = 'website',
         string $card = 'summary_large_image',
         string $image = '',
@@ -37,6 +45,8 @@ class SocialMeta extends BladeComponent
     ) {
         $this->title = $title;
         $this->description = $description;
+        $this->keywords = $keywords;
+        $this->author = $author;
         $this->type = $type;
         $this->card = $card;
         $this->image = $image;

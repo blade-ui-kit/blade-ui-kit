@@ -8,6 +8,14 @@
     <meta property="og:description" content="{{ $description }}">
 @endif
 
+@if ($keywords)
+    <meta name="keywords" content="{{ $keywords }}">
+@endif
+
+@if ($auther)
+    <meta name="author" content="{{$author}}">
+@endif
+
 @if ($image)
     <meta property="og:image" content="{{ $image }}" />
 @endif
