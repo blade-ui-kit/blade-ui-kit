@@ -8,6 +8,13 @@
     <meta property="og:description" content="{{ $description }}">
 @endif
 
+@if ($image)
+    <meta property="og:image" content="{{ $image }}" />
+@endif
+
+<meta property="og:url" content="{{ $url }}" />
+<meta property="og:locale" content="{{ app()->getLocale() }}" />
+
 @if ($keywords)
     <meta name="keywords" content="{{ $keywords }}">
 @endif
@@ -15,10 +22,3 @@
 @if ($auther)
     <meta name="author" content="{{$author}}">
 @endif
-
-@if ($image)
-    <meta property="og:image" content="{{ $image }}" />
-@endif
-
-<meta property="og:url" content="{{ $url }}" />
-<meta property="og:locale" content="{{ app()->getLocale() }}" />
