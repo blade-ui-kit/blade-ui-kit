@@ -11,10 +11,10 @@
     <img src="https://github.com/blade-ui-kit/blade-ui-kit/workflows/Code%20Style/badge.svg" alt="Code Style">
 </a>
 <a href="https://packagist.org/packages/blade-ui-kit/blade-ui-kit">
-    <img src="https://poser.pugx.org/blade-ui-kit/blade-ui-kit/v/stable.svg" alt="Latest Stable Version">
+    <img src="https://img.shields.io/packagist/v/blade-ui-kit/blade-ui-kit" alt="Latest Stable Version">
 </a>
 <a href="https://packagist.org/packages/blade-ui-kit/blade-ui-kit">
-    <img src="https://poser.pugx.org/blade-ui-kit/blade-ui-kit/d/total.svg" alt="Total Downloads">
+    <img src="https://img.shields.io/packagist/dt/blade-ui-kit/blade-ui-kit" alt="Total Downloads">
 </a>
 
 Blade UI Kit is a set of renderless components to utilise in your Laravel Blade views. In all essence, it's a collection of useful utilities, connecting the dots between different parts of [the TALL stack](https://tallstack.dev). It was made for [Blade](https://laravel.com/docs/blade), Laravel's powerful templating engine.
