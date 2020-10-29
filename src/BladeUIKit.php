@@ -6,10 +6,10 @@ namespace BladeUIKit;
 
 final class BladeUIKit
 {
-    /** @var array  */
+    /** @var array */
     private static $styles = [];
 
-    /** @var array  */
+    /** @var array */
     private static $scripts = [];
 
     public static function addStyle(string $style): void
