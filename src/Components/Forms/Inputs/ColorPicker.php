@@ -28,7 +28,7 @@ class ColorPicker extends Input
     public function options(): array
     {
         return array_merge([
-            'el' => '#' . $this->id,
+            'el' => '#'.$this->id,
             'default' => $this->value,
             'theme' => 'classic',
             'swatches' => $this->swatches(),

@@ -17,7 +17,7 @@ final class BladeUIKitServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/blade-ui-kit.php', 'blade-ui-kit');
+        $this->mergeConfigFrom(__DIR__.'/../config/blade-ui-kit.php', 'blade-ui-kit');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
@@ -37,7 +37,7 @@ final class BladeUIKitServiceProvider extends ServiceProvider
 
     private function bootResources(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blade-ui-kit');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'blade-ui-kit');
     }
 
     private function bootBladeComponents(): void
@@ -78,7 +78,7 @@ final class BladeUIKitServiceProvider extends ServiceProvider
     private function registerAssets($component, array $assets): void
     {
         foreach ($component::assets() as $asset) {
-            $files = (array)($assets[$asset] ?? []);
+            $files = (array) ($assets[$asset] ?? []);
 
             collect($files)->filter(function (string $file) {
                 return Str::endsWith($file, '.css');
@@ -109,11 +109,11 @@ final class BladeUIKitServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/blade-ui-kit.php' => $this->app->configPath('blade-ui-kit.php'),
+                __DIR__.'/../config/blade-ui-kit.php' => $this->app->configPath('blade-ui-kit.php'),
             ], 'blade-ui-kit-config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/blade-ui-kit'),
+                __DIR__.'/../resources/views' => $this->app->resourcePath('views/vendor/blade-ui-kit'),
             ], 'blade-ui-kit-views');
         }
     }

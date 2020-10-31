@@ -39,11 +39,11 @@ final class PublishCommand extends Command
         }
 
         $class = str_replace('BladeUIKit\\Components\\', '', $component);
-        $view = str_replace(['_', '.-'], ['-', '/'], Str::snake(str_replace('\\', '.', $class))) . '.blade.php';
+        $view = str_replace(['_', '.-'], ['-', '/'], Str::snake(str_replace('\\', '.', $class))).'.blade.php';
 
         if ($this->option('view') || ! $this->option('class')) {
-            $originalView = __DIR__ . '/../../resources/views/components/' . $view;
-            $publishedView = $this->laravel->resourcePath('views/vendor/blade-ui-kit/components/' . $view);
+            $originalView = __DIR__.'/../../resources/views/components/'.$view;
+            $publishedView = $this->laravel->resourcePath('views/vendor/blade-ui-kit/components/'.$view);
             $path = Str::beforeLast($publishedView, '/');
 
             if (! $this->option('force') && $filesystem->exists($publishedView)) {
@@ -61,7 +61,7 @@ final class PublishCommand extends Command
 
         if ($this->option('class') || ! $this->option('view')) {
             $path = $this->laravel->basePath('app/View/Components');
-            $destination = $path . '/' . str_replace('\\', '/', $class) . '.php';
+            $destination = $path.'/'.str_replace('\\', '/', $class).'.php';
 
             if (! $this->option('force') && $filesystem->exists($destination)) {
                 $this->error("The class at [$destination] already exists.");
@@ -71,10 +71,10 @@ final class PublishCommand extends Command
 
             $filesystem->ensureDirectoryExists(Str::beforeLast($destination, '/'));
 
-            $stub = $filesystem->get(__DIR__ . '/stubs/Component.stub');
+            $stub = $filesystem->get(__DIR__.'/stubs/Component.stub');
             $namespace = Str::beforeLast($class, '\\');
             $name = Str::afterLast($class, '\\');
-            $alias = 'Original' . $name;
+            $alias = 'Original'.$name;
 
             $stub = str_replace(
                 ['{{ namespace }}', '{{ name }}', '{{ parent }}', '{{ alias }}'],
@@ -93,7 +93,7 @@ final class PublishCommand extends Command
 
             $originalConfig = $filesystem->get($config);
 
-            $modifiedConfig = str_replace($component, 'App\\View\\Components\\' . $class, $originalConfig);
+            $modifiedConfig = str_replace($component, 'App\\View\\Components\\'.$class, $originalConfig);
 
             $filesystem->put($config, $modifiedConfig);
         }

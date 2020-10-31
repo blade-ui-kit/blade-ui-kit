@@ -16,11 +16,11 @@ class ComponentPrefixTest extends ComponentTestCase
     /** @test */
     public function we_can_set_a_config_prefix()
     {
-        $expected = <<<HTML
-<span title="Every Sunday at 12:00am">
-    @weekly
-</span>
-HTML;
+        $expected = <<<'HTML'
+            <span title="Every Sunday at 12:00am">
+                @weekly
+            </span>
+            HTML;
 
         $this->assertComponentRenders($expected, '<x-ui-cron schedule="@weekly"/>');
     }

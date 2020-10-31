@@ -12,11 +12,11 @@ class CronTest extends ComponentTestCase
     /** @test */
     public function the_component_can_be_rendered()
     {
-        $expected = <<<HTML
-<span title="Every Sunday at 12:00am">
-    @weekly
-</span>
-HTML;
+        $expected = <<<'HTML'
+            <span title="Every Sunday at 12:00am">
+                @weekly
+            </span>
+            HTML;
 
         $this->assertComponentRenders($expected, '<x-cron schedule="@weekly"/>');
     }
@@ -32,11 +32,11 @@ HTML;
     /** @test */
     public function its_component_can_be_rendered_as_human_readable()
     {
-        $expected = <<<HTML
-<span title="@weekly">
-    Every Sunday at 12:00am
-</span>
-HTML;
+        $expected = <<<'HTML'
+            <span title="@weekly">
+                Every Sunday at 12:00am
+            </span>
+            HTML;
 
         $this->assertComponentRenders($expected, '<x-cron schedule="@weekly" human/>');
     }

@@ -22,7 +22,7 @@ class Countdown extends BladeComponent
 
     public function __construct(DateTimeInterface $expires)
     {
-        $this->id = 'timer-' . Str::random(6);
+        $this->id = 'timer-'.Str::random(6);
         $this->expires = $expires;
     }
 

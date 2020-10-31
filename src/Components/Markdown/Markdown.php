@@ -97,9 +97,9 @@ class Markdown extends BladeComponent
                 }
 
                 $title = trim(Str::after($line, '# '));
-                $anchor = '<a class="anchor" name="' . Str::slug($title) . '"></a>';
+                $anchor = '<a class="anchor" name="'.Str::slug($title).'"></a>';
 
-                return $anchor . PHP_EOL . $line;
+                return $anchor.PHP_EOL.$line;
             })
             ->implode(PHP_EOL);
 

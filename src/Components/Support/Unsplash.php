@@ -63,7 +63,7 @@ class Unsplash extends BladeComponent
             return '';
         }
 
-        return Cache::remember('unsplash.' . $this->photo, $this->ttl, function () use ($accessKey) {
+        return Cache::remember('unsplash.'.$this->photo, $this->ttl, function () use ($accessKey) {
             return Http::get("https://api.unsplash.com/photos/{$this->photo}", array_filter([
                 'client_id' => $accessKey,
                 'query' => $this->query,

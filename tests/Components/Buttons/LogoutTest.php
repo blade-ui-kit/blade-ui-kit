@@ -16,17 +16,17 @@ class LogoutTest extends ComponentTestCase
             // ...
         })->name('logout');
 
-        $template = <<<HTML
-<x-logout />
-HTML;
+        $template = <<<'HTML'
+            <x-logout />
+            HTML;
 
-        $expected = <<<HTML
-<form method="POST" action="http://localhost/logout">
-    <input type="hidden" name="_token" value="">
-    <button type="submit">
-    Log out </button>
-</form>
-HTML;
+        $expected = <<<'HTML'
+            <form method="POST" action="http://localhost/logout">
+                <input type="hidden" name="_token" value="">
+                <button type="submit">
+                Log out </button>
+            </form>
+            HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
@@ -34,17 +34,17 @@ HTML;
     /** @test */
     public function the_action_text_and_attributes_can_be_set()
     {
-        $template = <<<HTML
-<x-logout action="http://example.com" class="text-gray-500">Sign Out</x-logout>
-HTML;
+        $template = <<<'HTML'
+            <x-logout action="http://example.com" class="text-gray-500">Sign Out</x-logout>
+            HTML;
 
-        $expected = <<<HTML
-<form method="POST" action="http://example.com">
-    <input type="hidden" name="_token" value="">
-    <button type="submit" class="text-gray-500">
-    Sign Out </button>
-</form>
-HTML;
+        $expected = <<<'HTML'
+            <form method="POST" action="http://example.com">
+                <input type="hidden" name="_token" value="">
+                <button type="submit" class="text-gray-500">
+                Sign Out </button>
+            </form>
+            HTML;
 
         $this->assertComponentRenders($expected, $template);
     }

@@ -42,7 +42,7 @@ abstract class ComponentTestCase extends TestCase
         $indented = $indenter->indent($blade);
         $cleaned = str_replace(
             [' >', "\n/>", ' </div>', '> ', "\n>"],
-            ['>', ' />', "\n</div>", ">\n    ", ">"],
+            ['>', ' />', "\n</div>", ">\n    ", '>'],
             $indented
         );
 

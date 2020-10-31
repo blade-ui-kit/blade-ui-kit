@@ -13,11 +13,11 @@ class AlertTest extends ComponentTestCase
     {
         session()->flash('alert', 'Form was successfully submitted.');
 
-        $expected = <<<HTML
-<div role="alert">
-    Form was successfully submitted.
-</div>
-HTML;
+        $expected = <<<'HTML'
+            <div role="alert">
+                Form was successfully submitted.
+            </div>
+            HTML;
 
         $this->assertComponentRenders($expected, '<x-alert/>');
     }
@@ -27,11 +27,11 @@ HTML;
     {
         session()->flash('error', 'Form contains some errors.');
 
-        $expected = <<<HTML
-<div role="alert">
-    Form contains some errors.
-</div>
-HTML;
+        $expected = <<<'HTML'
+            <div role="alert">
+                Form contains some errors.
+            </div>
+            HTML;
 
         $this->assertComponentRenders($expected, '<x-alert type="error"/>');
     }
@@ -41,19 +41,19 @@ HTML;
     {
         session()->flash('alert', 'Form was successfully submitted.');
 
-        $template = <<<HTML
-<x-alert>
-    <span>Hello World</span>
-    {{ \$component->message() }}
-</x-alert>
-HTML;
+        $template = <<<'HTML'
+            <x-alert>
+                <span>Hello World</span>
+                {{ $component->message() }}
+            </x-alert>
+            HTML;
 
-        $expected = <<<HTML
-<div role="alert">
-    <span>Hello World</span>
-    Form was successfully submitted.
-</div>
-HTML;
+        $expected = <<<'HTML'
+            <div role="alert">
+                <span>Hello World</span>
+                Form was successfully submitted.
+            </div>
+            HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
@@ -63,21 +63,21 @@ HTML;
     {
         session()->flash('alert', [
             'Form was successfully submitted.',
-            "We have sent you a confirmation email.",
+            'We have sent you a confirmation email.',
         ]);
 
-        $template = <<<HTML
-<x-alert>
-    <span>Hello World</span>
-    {{ implode(' ', \$component->messages()) }}
-</x-alert>
-HTML;
-        $expected = <<<HTML
-<div role="alert">
-    <span>Hello World</span>
-    Form was successfully submitted. We have sent you a confirmation email.
-</div>
-HTML;
+        $template = <<<'HTML'
+            <x-alert>
+                <span>Hello World</span>
+                {{ implode(' ', $component->messages()) }}
+            </x-alert>
+            HTML;
+        $expected = <<<'HTML'
+            <div role="alert">
+                <span>Hello World</span>
+                Form was successfully submitted. We have sent you a confirmation email.
+            </div>
+            HTML;
 
         $this->assertComponentRenders($expected, $template);
     }

@@ -40,7 +40,7 @@ class EasyMDE extends BladeComponent
             return '';
         }
 
-        return ', ...' . json_encode((object) $this->options());
+        return ', ...'.json_encode((object) $this->options());
     }
 
     public function render(): View

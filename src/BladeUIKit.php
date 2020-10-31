@@ -31,7 +31,7 @@ final class BladeUIKit
         }
 
         return collect(static::$styles)->map(function (string $style) {
-            return '<link href="' . $style . '" rel="stylesheet" />';
+            return '<link href="'.$style.'" rel="stylesheet" />';
         })->implode(PHP_EOL);
     }
 
@@ -54,7 +54,7 @@ final class BladeUIKit
         }
 
         return collect(static::$scripts)->map(function (string $script) {
-            return '<script src="' . $script . '"></script>';
+            return '<script src="'.$script.'"></script>';
         })->implode(PHP_EOL);
     }
 

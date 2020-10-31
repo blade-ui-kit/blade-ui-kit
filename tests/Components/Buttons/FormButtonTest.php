@@ -16,20 +16,20 @@ class FormButtonTest extends ComponentTestCase
             // ...
         })->name('logout');
 
-        $template = <<<HTML
-<x-form-button :action="route('logout')">
-    Sign Out
-</x-form-button>
-HTML;
+        $template = <<<'HTML'
+            <x-form-button :action="route('logout')">
+                Sign Out
+            </x-form-button>
+            HTML;
 
-        $expected = <<<HTML
-<form method="POST" action="http://localhost/logout">
-    <input type="hidden" name="_token" value="">
-    <input type="hidden" name="_method" value="POST">
-    <button type="submit">
-    Sign Out </button>
-</form>
-HTML;
+        $expected = <<<'HTML'
+            <form method="POST" action="http://localhost/logout">
+                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_method" value="POST">
+                <button type="submit">
+                Sign Out </button>
+            </form>
+            HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
@@ -37,20 +37,20 @@ HTML;
     /** @test */
     public function the_method_and_attributes_can_be_set()
     {
-        $template = <<<HTML
-<x-form-button method="DELETE" action="http://example.com" class="text-gray-500">
-    Logout
-</x-form-button>
-HTML;
+        $template = <<<'HTML'
+            <x-form-button method="DELETE" action="http://example.com" class="text-gray-500">
+                Logout
+            </x-form-button>
+            HTML;
 
-        $expected = <<<HTML
-<form method="POST" action="http://example.com">
-    <input type="hidden" name="_token" value="">
-    <input type="hidden" name="_method" value="DELETE">
-    <button type="submit" class="text-gray-500">
-    Logout </button>
-</form>
-HTML;
+        $expected = <<<'HTML'
+            <form method="POST" action="http://example.com">
+                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="text-gray-500">
+                Logout </button>
+            </form>
+            HTML;
 
         $this->assertComponentRenders($expected, $template);
     }
