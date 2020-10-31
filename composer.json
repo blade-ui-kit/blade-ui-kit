@@ -25,7 +25,6 @@
         "nesbot/carbon": "^2.38"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
         "gajus/dindent": "^2.0",
         "guzzlehttp/guzzle": "^6.5",
         "league/commonmark": "^1.4",
@@ -54,11 +53,6 @@
     "suggest": {
         "league/commonmark": "Required to use the markdown component (^1.4).",
         "lorisleiva/cron-translator": "Required to use the cron component (^0.1.1)."
-    },
-    "scripts": {
-        "format": [
-            "vendor/bin/php-cs-fixer fix"
-        ]
     },
     "config": {
         "sort-packages": true
