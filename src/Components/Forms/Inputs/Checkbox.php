@@ -11,9 +11,9 @@ class Checkbox extends Input
     /** @var bool */
     public $checked;
 
-    public function __construct(string $name, string $id = null, bool $checked = false)
+    public function __construct(string $name, string $id = null, bool $checked = false, ?string $value = '')
     {
-        parent::__construct($name, $id, 'checkbox');
+        parent::__construct($name, $id, 'checkbox', $value);
 
         $this->checked = (bool) old($name, $checked);
     }
