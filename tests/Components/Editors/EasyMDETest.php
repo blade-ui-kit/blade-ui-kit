@@ -35,7 +35,7 @@ class EasyMDETest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<textarea x-data x-init="new EasyMDE({ element: $el , ...{&quot;forceSync&quot;:true,&quot;minHeight&quot;:&quot;500px&quot;} })" name="about" id="about"></textarea>',
-            '<x-easy-mde name="about" :options="[\'minHeight\' => \'500px\']"/>'
+            '<x-easy-mde name="about" :options="[\'minHeight\' => \'500px\']"/>',
         );
     }
 }

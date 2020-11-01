@@ -79,7 +79,7 @@ final class PublishCommand extends Command
             $stub = str_replace(
                 ['{{ namespace }}', '{{ name }}', '{{ parent }}', '{{ alias }}'],
                 [$namespace, $name, $component, $alias],
-                $stub
+                $stub,
             );
 
             $filesystem->put($destination, $stub);

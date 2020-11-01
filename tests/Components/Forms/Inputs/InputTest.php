@@ -13,7 +13,7 @@ class InputTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="search" type="text" id="search" />',
-            '<x-input name="search" />'
+            '<x-input name="search" />',
         );
     }
 
@@ -22,7 +22,7 @@ class InputTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="confirm_password" type="password" id="confirmPassword" class="p-4" />',
-            '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />'
+            '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />',
         );
     }
 
@@ -33,7 +33,7 @@ class InputTest extends ComponentTestCase
 
         $this->assertComponentRenders(
             '<input name="search" type="text" id="search" value="Eloquent" />',
-            '<x-input name="search" />'
+            '<x-input name="search" />',
         );
     }
 }

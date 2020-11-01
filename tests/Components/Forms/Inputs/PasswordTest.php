@@ -13,7 +13,7 @@ class PasswordTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="password" type="password" id="password" />',
-            '<x-password/>'
+            '<x-password/>',
         );
     }
 
@@ -22,7 +22,7 @@ class PasswordTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="confirm_password" type="password" id="confirmPassword" class="p-4" />',
-            '<x-password name="confirm_password" id="confirmPassword" class="p-4" />'
+            '<x-password name="confirm_password" id="confirmPassword" class="p-4" />',
         );
     }
 
@@ -33,7 +33,7 @@ class PasswordTest extends ComponentTestCase
 
         $this->assertComponentRenders(
             '<input name="password" type="password" id="password" />',
-            '<x-password/>'
+            '<x-password/>',
         );
     }
 }

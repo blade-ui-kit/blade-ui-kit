@@ -43,7 +43,7 @@ abstract class ComponentTestCase extends TestCase
         $cleaned = str_replace(
             [' >', "\n/>", ' </div>', '> ', "\n>"],
             ['>', ' />', "\n</div>", ">\n    ", '>'],
-            $indented
+            $indented,
         );
 
         $this->assertSame($expected, $cleaned);

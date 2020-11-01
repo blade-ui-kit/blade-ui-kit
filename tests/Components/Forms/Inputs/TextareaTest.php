@@ -13,7 +13,7 @@ class TextareaTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<textarea name="about" id="about" rows="3"></textarea>',
-            '<x-textarea name="about"/>'
+            '<x-textarea name="about"/>',
         );
     }
 
@@ -22,7 +22,7 @@ class TextareaTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<textarea name="about" id="aboutMe" rows="5" cols="8" class="p-4">About me text</textarea>',
-            '<x-textarea name="about" id="aboutMe" rows="5" cols="8" class="p-4">About me text</x-textarea>'
+            '<x-textarea name="about" id="aboutMe" rows="5" cols="8" class="p-4">About me text</x-textarea>',
         );
     }
 
@@ -33,7 +33,7 @@ class TextareaTest extends ComponentTestCase
 
         $this->assertComponentRenders(
             '<textarea name="about" id="about" rows="3">About me text</textarea>',
-            '<x-textarea name="about"/>'
+            '<x-textarea name="about"/>',
         );
     }
 }

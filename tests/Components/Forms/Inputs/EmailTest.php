@@ -13,7 +13,7 @@ class EmailTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="email" type="email" id="email" />',
-            '<x-email/>'
+            '<x-email/>',
         );
     }
 
@@ -22,7 +22,7 @@ class EmailTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="email_address" type="email" id="emailAddress" class="p-4" />',
-            '<x-email name="email_address" id="emailAddress" class="p-4" />'
+            '<x-email name="email_address" id="emailAddress" class="p-4" />',
         );
     }
 
@@ -33,7 +33,7 @@ class EmailTest extends ComponentTestCase
 
         $this->assertComponentRenders(
             '<input name="email" type="email" id="email" value="Eloquent" />',
-            '<x-email/>'
+            '<x-email/>',
         );
     }
 }

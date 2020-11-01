@@ -13,7 +13,7 @@ class CheckboxTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="remember_me" type="checkbox" id="remember_me" />',
-            '<x-checkbox name="remember_me"/>'
+            '<x-checkbox name="remember_me"/>',
         );
     }
 
@@ -22,7 +22,7 @@ class CheckboxTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<input name="remember_me" type="checkbox" id="rememberMe" class="p-4" />',
-            '<x-checkbox name="remember_me" id="rememberMe" class="p-4" />'
+            '<x-checkbox name="remember_me" id="rememberMe" class="p-4" />',
         );
     }
 
@@ -33,7 +33,7 @@ class CheckboxTest extends ComponentTestCase
 
         $this->assertComponentRenders(
             '<input name="remember_me" type="checkbox" id="remember_me" checked />',
-            '<x-checkbox name="remember_me"/>'
+            '<x-checkbox name="remember_me"/>',
         );
     }
 }

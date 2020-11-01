@@ -13,7 +13,7 @@ class AvatarTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<img src="https://unavatar.now.sh/johndoe?" />',
-            '<x-avatar search="johndoe"/>'
+            '<x-avatar search="johndoe"/>',
         );
     }
 
@@ -22,7 +22,7 @@ class AvatarTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<img src="https://example.com/image.png" />',
-            '<x-avatar search="johndoe" src="https://example.com/image.png"/>'
+            '<x-avatar search="johndoe" src="https://example.com/image.png"/>',
         );
     }
 
@@ -31,7 +31,7 @@ class AvatarTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<img src="https://unavatar.now.sh/gravatar/john@example.com?" />',
-            '<x-avatar search="john@example.com" provider="gravatar"/>'
+            '<x-avatar search="john@example.com" provider="gravatar"/>',
         );
     }
 
@@ -40,7 +40,7 @@ class AvatarTest extends ComponentTestCase
     {
         $this->assertComponentRenders(
             '<img src="https://unavatar.now.sh/johndoe?fallback=https%3A%2F%2Fexample.com%2Fimage.png" />',
-            '<x-avatar search="johndoe" fallback="https://example.com/image.png"/>'
+            '<x-avatar search="johndoe" fallback="https://example.com/image.png"/>',
         );
     }
 }
