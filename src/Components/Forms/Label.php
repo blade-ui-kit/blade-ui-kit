@@ -13,9 +13,13 @@ class Label extends BladeComponent
     /** @var string */
     public $for;
 
-    public function __construct(string $for)
+    /** @var string|null */
+    public $fallback;
+
+    public function __construct(string $for, string $fallback = null)
     {
         $this->for = $for;
+        $this->fallback = $fallback;
     }
 
     public function render(): View
@@ -25,6 +29,6 @@ class Label extends BladeComponent
 
     public function fallback(): string
     {
-        return Str::ucfirst(str_replace('_', ' ', $this->for));
+        return $this->fallback ?? Str::ucfirst(str_replace('_', ' ', $this->for));
     }
 }

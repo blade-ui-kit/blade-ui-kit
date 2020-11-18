@@ -19,4 +19,16 @@ class LabelTest extends ComponentTestCase
 
         $this->assertComponentRenders($expected, '<x-label for="first_name"/>');
     }
+
+    /** @test */
+    public function the_component_can_accept_a_fallback_label()
+    {
+        $expected = <<<'HTML'
+            <label for="password_confirmation">
+                Confirm password
+            </label>
+            HTML;
+
+        $this->assertComponentRenders($expected, '<x-label for="password_confirmation" fallback="Confirm password"/>');
+    }
 }
