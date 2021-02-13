@@ -13,12 +13,20 @@ class Cron extends BladeComponent
     /** @var string */
     public $schedule;
 
+    /** @var string */
+    public $locale = 'en';
+
+    /** @var bool */
+    public $use24hour = false;
+
     /** @var bool */
     public $human = false;
 
-    public function __construct(string $schedule, bool $human = false)
+    public function __construct(string $schedule, string $locale = 'en', bool $use24hour = false, bool $human = false)
     {
         $this->schedule = $schedule;
+        $this->locale = $locale;
+        $this->use24hour = $use24hour;
         $this->human = $human;
     }
 
@@ -29,6 +37,6 @@ class Cron extends BladeComponent
 
     public function translate(): string
     {
-        return CronTranslator::translate($this->schedule);
+        return CronTranslator::translate($this->schedule, $this->locale, $this->use24hour);
     }
 }
