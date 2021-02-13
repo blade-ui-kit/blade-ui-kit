@@ -13,16 +13,16 @@ class Cron extends BladeComponent
     /** @var string */
     public $schedule;
 
+    /** @var bool */
+    public $human = false;
+
     /** @var string */
     public $locale = 'en';
 
     /** @var bool */
     public $use24hour = false;
 
-    /** @var bool */
-    public $human = false;
-
-    public function __construct(string $schedule, string $locale = 'en', bool $use24hour = false, bool $human = false)
+    public function __construct(string $schedule, bool $human = false, string $locale = 'en', bool $use24hour = false)
     {
         $this->schedule = $schedule;
         $this->locale = $locale;
