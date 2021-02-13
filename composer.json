@@ -26,7 +26,7 @@
         "gajus/dindent": "^2.0",
         "guzzlehttp/guzzle": "^6.5",
         "league/commonmark": "^1.4",
-        "lorisleiva/cron-translator": "^0.1.1",
+        "lorisleiva/cron-translator": "^0.2.0",
         "orchestra/testbench": "^5.0|^6.0",
         "phpunit/phpunit": "^9.0"
     },
@@ -49,7 +49,7 @@
     },
     "suggest": {
         "league/commonmark": "Required to use the markdown component (^1.4).",
-        "lorisleiva/cron-translator": "Required to use the cron component (^0.1.1)."
+        "lorisleiva/cron-translator": "Required to use the cron component (^0.2.0)."
     },
     "config": {
         "sort-packages": true
