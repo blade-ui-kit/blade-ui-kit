@@ -27,6 +27,7 @@ return [
         'easy-mde' => Components\Editors\EasyMDE::class,
         'email' => Components\Forms\Inputs\Email::class,
         'error' => Components\Forms\Error::class,
+        'flat-pickr' => Components\Forms\Inputs\FlatPickr::class,
         'form' => Components\Forms\Form::class,
         'form-button' => Components\Buttons\FormButton::class,
         'html' => Components\Layouts\Html::class,
@@ -93,6 +94,11 @@ return [
         'easy-mde' => [
             'https://unpkg.com/easymde/dist/easymde.min.css',
             'https://unpkg.com/easymde/dist/easymde.min.js',
+        ],
+
+        'flat-pickr' => [
+            'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css',
+            'https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js',
         ],
 
         'mapbox' => [
