@@ -39,7 +39,7 @@ class FlatPickr extends Input
         return array_merge([
             'dateFormat' => $this->format,
             'altInput' => true,
-            'enableTime' => true
+            'enableTime' => true,
         ], $this->options);
     }
 
