@@ -32,6 +32,7 @@ final class BladeUIKitServiceProvider extends ServiceProvider
         $this->bootBladeComponents();
         $this->bootLivewireComponents();
         $this->bootDirectives();
+        $this->bootMacros();
         $this->bootPublishing();
     }
 
@@ -102,6 +103,13 @@ final class BladeUIKitServiceProvider extends ServiceProvider
 
         Blade::directive('bukScripts', function (string $expression) {
             return "<?php echo BladeUIKit\\BladeUIKit::outputScripts($expression); ?>";
+        });
+    }
+
+    private function bootMacros(): void
+    {
+        Str::macro('dot', function ($subject) {
+            return trim(str_replace(['[', ']', '..'], '.', $subject), '.');
         });
     }
 

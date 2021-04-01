@@ -48,4 +48,18 @@ class ErrorTest extends ComponentTestCase
 
         $this->assertComponentRenders($expected, $template);
     }
+
+    /** @test */
+    public function it_supports_field_names_in_array_notation()
+    {
+        $this->withViewErrors(['profile.first_name' => 'Incorrect first name.']);
+
+        $expected = <<<HTML
+<div class="text-red-500">
+    Incorrect first name.
+</div>
+HTML;
+
+        $this->assertComponentRenders($expected, '<x-error field="profile[first_name]" class="text-red-500"/>');
+    }
 }

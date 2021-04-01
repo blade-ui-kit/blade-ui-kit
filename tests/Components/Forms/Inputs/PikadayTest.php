@@ -29,4 +29,16 @@ class PikadayTest extends ComponentTestCase
 
         $this->assertComponentRenders($expected, '<x-pikaday name="birthday"/>');
     }
+
+    /** @test */
+    public function nested_pikaday_can_have_old_values()
+    {
+        $this->flashOld(['profile.birthday' => '23/03/1989']);
+
+        $expected = <<<HTML
+<input x-data x-init="new Pikaday({ field: \$el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })" name="profile[birthday]" type="text" id="profile_birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
+HTML;
+
+        $this->assertComponentRenders($expected, '<x-pikaday name="profile[birthday]"/>');
+    }
 }

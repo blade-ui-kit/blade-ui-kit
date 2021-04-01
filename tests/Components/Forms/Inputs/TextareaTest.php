@@ -36,4 +36,15 @@ class TextareaTest extends ComponentTestCase
             '<x-textarea name="about"/>',
         );
     }
+
+    /** @test */
+    public function nested_inputs_can_have_old_values()
+    {
+        $this->flashOld(['profile.about' => 'About me text']);
+
+        $this->assertComponentRenders(
+            '<textarea name="profile[about]" id="profile_about" rows="3">About me text</textarea>',
+            '<x-textarea name="profile[about]"/>'
+        );
+    }
 }
