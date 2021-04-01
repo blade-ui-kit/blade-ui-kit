@@ -15,7 +15,7 @@ class FormButton extends BladeComponent
     /** @var string */
     public $method;
 
-    public function __construct(string $action, string $method = 'POST')
+    public function __construct(string $action = null, string $method = 'POST')
     {
         $this->action = $action;
         $this->method = strtoupper($method);
