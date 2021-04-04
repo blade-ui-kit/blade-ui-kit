@@ -37,6 +37,7 @@ return [
         'markdown' => Components\Markdown\Markdown::class,
         'password' => Components\Forms\Inputs\Password::class,
         'pikaday' => Components\Forms\Inputs\Pikaday::class,
+        'quill' => Components\Editors\Quill::class,
         'social-meta' => Components\Layouts\SocialMeta::class,
         'textarea' => Components\Forms\Inputs\Textarea::class,
         'toc' => Components\Markdown\ToC::class,
@@ -119,6 +120,11 @@ return [
             'https://unpkg.com/trix@1.2.3/dist/trix.css',
             'https://unpkg.com/trix@1.2.3/dist/trix.js',
         ],
+
+        'quill' => [
+            'https://cdn.quilljs.com/1.3.6/quill.snow.css',
+            'https://cdn.quilljs.com/1.3.6/quill.js'
+        ]
 
     ],
 
