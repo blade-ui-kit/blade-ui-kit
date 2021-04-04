@@ -32,6 +32,7 @@ return [
         'html' => Components\Layouts\Html::class,
         'input' => Components\Forms\Inputs\Input::class,
         'label' => Components\Forms\Label::class,
+        'leaflet' => Components\Maps\Leaflet::class,
         'logout' => Components\Buttons\Logout::class,
         'mapbox' => Components\Maps\Mapbox::class,
         'markdown' => Components\Markdown\Markdown::class,
@@ -93,6 +94,11 @@ return [
         'easy-mde' => [
             'https://unpkg.com/easymde/dist/easymde.min.css',
             'https://unpkg.com/easymde/dist/easymde.min.js',
+        ],
+      
+        'leaflet' => [
+            'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css',
+            'https://unpkg.com/leaflet@1.6.0/dist/leaflet.js',
         ],
 
         'mapbox' => [
