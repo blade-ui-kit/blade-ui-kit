@@ -27,6 +27,7 @@ return [
         'easy-mde' => Components\Editors\EasyMDE::class,
         'email' => Components\Forms\Inputs\Email::class,
         'error' => Components\Forms\Error::class,
+        'filepond' => Components\Forms\Inputs\Filepond::class,
         'form' => Components\Forms\Form::class,
         'form-button' => Components\Buttons\FormButton::class,
         'html' => Components\Layouts\Html::class,
@@ -93,6 +94,11 @@ return [
         'easy-mde' => [
             'https://unpkg.com/easymde/dist/easymde.min.css',
             'https://unpkg.com/easymde/dist/easymde.min.js',
+        ],
+
+        'filepond' => [
+            'https://unpkg.com/filepond/dist/filepond.css',
+            'https://unpkg.com/filepond/dist/filepond.js',
         ],
 
         'mapbox' => [
