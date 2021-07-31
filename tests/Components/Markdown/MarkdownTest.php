@@ -55,7 +55,7 @@ class MarkdownTest extends ComponentTestCase
     public function options_can_be_passed()
     {
         $template = <<<'HTML'
-            <x-markdown :options="['use_asterisk' => false]">
+            <x-markdown :options="['commonmark' => ['use_asterisk' => false]]">
             # Hello World
 
             Blade UI components are *awesome*.

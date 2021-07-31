@@ -25,7 +25,7 @@
     "require-dev": {
         "gajus/dindent": "^2.0",
         "guzzlehttp/guzzle": "^6.5",
-        "league/commonmark": "^1.4",
+        "league/commonmark": "^1.4|^2.0",
         "lorisleiva/cron-translator": "^0.1.1",
         "orchestra/testbench": "^5.0|^6.0",
         "phpunit/phpunit": "^9.0"

@@ -56,7 +56,7 @@ class Markdown extends BladeComponent
             $markdown = $this->generateAnchors($markdown);
         }
 
-        return $this->converter()->convertToHtml($markdown);
+        return (string) $this->converter()->convertToHtml($markdown);
     }
 
     protected function converter(): MarkdownConverterInterface
