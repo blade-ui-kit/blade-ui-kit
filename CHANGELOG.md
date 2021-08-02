@@ -3,7 +3,13 @@
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
 
-## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.3.0...0.x)
+## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.3.1...0.x)
+
+
+## [0.3.1 (2021-08-31)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.3.0...0.3.1)
+
+### Fixed
+- Fixes publish view for the `flat-pickr` component ([#103](https://github.com/blade-ui-kit/blade-ui-kit/pull/103))
 
 
 ## [0.3.0 (2021-07-31)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.2.0...0.3.0)
