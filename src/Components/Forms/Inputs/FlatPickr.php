@@ -54,6 +54,6 @@ class FlatPickr extends Input
 
     public function render(): View
     {
-        return view('blade-ui-kit::components.forms.inputs.flatpickr');
+        return view('blade-ui-kit::components.forms.inputs.flat-pickr');
     }
 }
