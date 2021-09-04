@@ -70,5 +70,4 @@ class ColorPicker extends Input
             'FFFFFF',
         ];
     }
-
 }
