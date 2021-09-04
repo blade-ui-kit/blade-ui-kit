@@ -22,7 +22,7 @@ class ColorPicker extends Input
          * the options() array.
          * Instead, if there's a value from $this->value, it's gonna overwrite the default value in $options.
          */
-        if(!empty($this->value) && !empty($options['default'])){
+        if (! empty($this->value) && ! empty($options['default'])) {
             $options['default'] = $this->value;
         }
 
