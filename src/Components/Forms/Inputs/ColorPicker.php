@@ -17,6 +17,15 @@ class ColorPicker extends Input
     {
         parent::__construct($name, $id, 'hidden', $value);
 
+        /**
+         * The default option was overwriting the value from old() input when $options is merged with\
+         * the options() array.
+         * Instead, if there's a value from $this->value, it's gonna overwrite the default value in $options.
+         */
+        if(!empty($this->value) && !empty($options['default'])){
+            $options['default'] = $this->value;
+        }
+
         $this->options = $options;
     }
 
