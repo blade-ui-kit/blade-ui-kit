@@ -21,6 +21,7 @@
         id="{{ $id }}-input"
         name="{{ $name }}"
         type="hidden"
-        @if($value)value="{{ $value }}"@endif
+        {{-- If there's no value from old(), use value from the default option instead. --}}
+        @if(!empty($value))value="{{ $value }}"@elseif(!empty($options()['default']))value="{{ $options()['default'] }}"@endif
     />
 </div>
