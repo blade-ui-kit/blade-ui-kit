@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUIKit\Components\Forms\Inputs;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 
 class ColorPicker extends Input
 {
@@ -17,16 +18,8 @@ class ColorPicker extends Input
     {
         parent::__construct($name, $id, 'hidden', $value);
 
-        /**
-         * The default option was overwriting the value from old() input when $options is merged with\
-         * the options() array.
-         * Instead, if there's a value from $this->value, it's gonna overwrite the default value in $options.
-         */
-        if (! empty($this->value) && ! empty($options['default'])) {
-            $options['default'] = $this->value;
-        }
-
         $this->options = $options;
+        $this->value = old($name, $options['default'] ?? $value);
     }
 
     public function render(): View
@@ -50,7 +43,7 @@ class ColorPicker extends Input
                     'save' => true,
                 ],
             ],
-        ], $this->options);
+        ], Arr::except($this->options, 'default'));
     }
 
     protected function swatches(): array
