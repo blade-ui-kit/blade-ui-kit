@@ -13,13 +13,13 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [7.3, 7.4, 8.0, 8.1]
-        laravel: [^7.0, ^8.0]
+        php: [7.3, 7.4, '8.0', 8.1]
+        laravel: [7, 8]
         exclude:
           - php: 8.1
-            laravel: ^7.0
+            laravel: 7
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }}
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
     steps:
       - name: Checkout code
@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "illuminate/contracts=${{ matrix.laravel }}" --prefer-dist --no-interaction --no-update
+          composer require "illuminate/contracts=^${{ matrix.laravel }}.0" --prefer-dist --no-interaction --no-update
           composer update --prefer-dist --no-interaction --no-progress
 
       - name: Execute tests
