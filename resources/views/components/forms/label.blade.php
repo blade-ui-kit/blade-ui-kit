@@ -1,3 +1,3 @@
 <label for="{{ $for }}" {{ $attributes }}>
-    {{ $fallback }}
+    {{ $slot->isEmpty() ? $fallback : $slot }}
 </label>
