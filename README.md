@@ -19,8 +19,6 @@
 
 Blade UI Kit is a set of renderless components to utilise in your Laravel Blade views. In all essence, it's a collection of useful utilities, connecting the dots between different parts of [the TALL stack](https://tallstack.dev). It was made for [Blade](https://laravel.com/docs/blade), Laravel's powerful templating engine.
 
-*Join the Discord server: https://discord.gg/Vev5CyE*
-
 ## Official Documentation
 
 Documentation for Blade UI Kit can be found on its [website](https://blade-ui-kit.com/docs).
