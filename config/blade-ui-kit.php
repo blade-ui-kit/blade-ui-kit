@@ -89,7 +89,7 @@ return [
 
     'assets' => [
 
-        'alpine' => 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
+        'alpine' => 'https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js',
 
         'easy-mde' => [
             'https://unpkg.com/easymde/dist/easymde.min.css',
