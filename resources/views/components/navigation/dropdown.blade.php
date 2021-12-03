@@ -1,4 +1,4 @@
-<div x-data="{ open: false }" @click.away="open = false" {{ $attributes }}>
+<div x-data="{ open: false }" @click.outside="open = false" {{ $attributes }}>
     <div @click="open = ! open">
         {{ $trigger }}
     </div>

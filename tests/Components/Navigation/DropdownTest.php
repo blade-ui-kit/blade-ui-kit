@@ -24,7 +24,7 @@ class DropdownTest extends ComponentTestCase
             HTML;
 
         $expected = <<<'HTML'
-            <div x-data="{ open: false }" @click.away="open = false" class="text-gray-500">
+            <div x-data="{ open: false }" @click.outside="open = false" class="text-gray-500">
                 <div @click="open = ! open">
                     <button>Dries</button>
                
