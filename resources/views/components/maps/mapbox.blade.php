@@ -1,7 +1,7 @@
 <div
     x-data="
 {
-    initMapbox: function () {
+    init: function () {
         mapboxgl.accessToken = '{{ config('services.mapbox.public_token') }}';
         var map = new mapboxgl.Map({{ json_encode($options()) }});
 
@@ -12,7 +12,6 @@
         @endforeach
     }
 }"
-    x-init="initMapbox()"
     id="{{ $id }}"
     {{ $attributes }}
 ></div>
