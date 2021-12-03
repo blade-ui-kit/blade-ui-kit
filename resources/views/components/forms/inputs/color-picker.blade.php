@@ -12,7 +12,7 @@
             });
         }
     }"
-    x-init="initPickr($el)"
+    x-init="initPickr($root)"
     {{ $attributes->merge(['title' => $value]) }}
 >
     <div id="{{ $id }}"></div>
