@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BladeUIKit\Components;
 
-use Livewire\Livewire;
+use Livewire\Component;
 
-abstract class LivewireComponent extends Livewire
+abstract class LivewireComponent extends Component
 {
     /** @var array */
     protected static $assets = [];
