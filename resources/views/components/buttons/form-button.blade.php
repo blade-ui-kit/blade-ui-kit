@@ -1,4 +1,4 @@
-<form method="POST" action="{{ $action }}">
+<form method="POST" @isset($action) action="{{ $action }}" @endisset>
     @csrf
     @method($method)
 
