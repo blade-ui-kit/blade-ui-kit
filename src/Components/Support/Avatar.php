@@ -45,9 +45,9 @@ class Avatar extends BladeComponent
         ]));
 
         if ($this->provider) {
-            return sprintf('https://unavatar.now.sh/%s/%s?%s', $this->provider, $this->search, $query);
+            return sprintf('https://unavatar.io/%s/%s?%s', $this->provider, $this->search, $query);
         }
 
-        return sprintf('https://unavatar.now.sh/%s?%s', $this->search, $query);
+        return sprintf('https://unavatar.io/%s?%s', $this->search, $query);
     }
 }

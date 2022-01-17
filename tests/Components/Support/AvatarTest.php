@@ -12,7 +12,7 @@ class AvatarTest extends ComponentTestCase
     public function the_component_can_be_rendered()
     {
         $this->assertComponentRenders(
-            '<img src="https://unavatar.now.sh/johndoe?" />',
+            '<img src="https://unavatar.io/johndoe?" />',
             '<x-avatar search="johndoe"/>',
         );
     }
@@ -30,7 +30,7 @@ class AvatarTest extends ComponentTestCase
     public function it_accepts_providers()
     {
         $this->assertComponentRenders(
-            '<img src="https://unavatar.now.sh/gravatar/john@example.com?" />',
+            '<img src="https://unavatar.io/gravatar/john@example.com?" />',
             '<x-avatar search="john@example.com" provider="gravatar"/>',
         );
     }
@@ -39,7 +39,7 @@ class AvatarTest extends ComponentTestCase
     public function it_accepts_fallbacks()
     {
         $this->assertComponentRenders(
-            '<img src="https://unavatar.now.sh/johndoe?fallback=https%3A%2F%2Fexample.com%2Fimage.png" />',
+            '<img src="https://unavatar.io/johndoe?fallback=https%3A%2F%2Fexample.com%2Fimage.png" />',
             '<x-avatar search="johndoe" fallback="https://example.com/image.png"/>',
         );
     }
