@@ -17,9 +17,9 @@
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
-        "illuminate/filesystem": "^7.0|^8.0",
-        "illuminate/support": "^7.0|^8.0",
-        "illuminate/view": "^7.0|^8.0",
+        "illuminate/filesystem": "^7.0|^8.0|^9.0",
+        "illuminate/support": "^7.0|^8.0|^9.0",
+        "illuminate/view": "^7.0|^8.0|^9.0",
         "nesbot/carbon": "^2.38"
     },
     "require-dev": {
@@ -27,7 +27,7 @@
         "guzzlehttp/guzzle": "^6.5",
         "league/commonmark": "^1.4|^2.0",
         "lorisleiva/cron-translator": "^0.1.1",
-        "orchestra/testbench": "^5.0|^6.0",
+        "orchestra/testbench": "^5.0|^6.0|^7.0",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
