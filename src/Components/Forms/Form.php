@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 
 class Form extends BladeComponent
 {
-    /** @var string */
+    /** @var string|null */
     public $action;
 
     /** @var string */
@@ -18,7 +18,7 @@ class Form extends BladeComponent
     /** @var bool */
     public $hasFiles;
 
-    public function __construct(string $action, string $method = 'POST', bool $hasFiles = false)
+    public function __construct(string $action = null, string $method = 'POST', bool $hasFiles = false)
     {
         $this->action = $action;
         $this->method = strtoupper($method);
