@@ -54,4 +54,25 @@ class FormButtonTest extends ComponentTestCase
 
         $this->assertComponentRenders($expected, $template);
     }
+
+    /** @test */
+    public function the_action_prop_is_optional()
+    {
+        $template = <<<'HTML'
+            <x-form-button method="DELETE">
+                Logout
+            </x-form-button>
+            HTML;
+
+        $expected = <<<'HTML'
+            <form method="POST">
+                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">
+                Logout </button>
+            </form>
+            HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
 }

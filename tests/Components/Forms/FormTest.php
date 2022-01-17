@@ -70,4 +70,25 @@ class FormTest extends ComponentTestCase
 
         $this->assertComponentRenders($expected, $template);
     }
+
+    /** @test */
+    public function the_action_prop_is_optional()
+    {
+        $template = <<<'HTML'
+            <x-form method="POST">
+                Form fields...
+            </x-form>
+            HTML;
+
+        $expected = <<<'HTML'
+            <form method="POST">
+                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_method" value="POST">
+                Form fields...
+
+            </form>
+            HTML;
+
+        $this->assertComponentRenders($expected, $template);
+    }
 }
