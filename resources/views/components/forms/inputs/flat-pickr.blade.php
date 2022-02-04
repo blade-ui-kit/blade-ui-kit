@@ -1,6 +1,6 @@
 <input
-    x-data
-    x-init="flatpickr($el, {{ $jsonOptions() }})"
+    x-data="{picker:null}"
+    x-on:click="picker=picker||flatpickr($el, {{ $jsonOptions() }}),picker.open()"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"
