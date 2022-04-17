@@ -1,10 +1,17 @@
 <input
-    x-data="{picker:null}"
-    x-on:mouseenter="picker=picker||flatpickr($el, {{ $jsonOptions() }}),picker.open()"
+    x-data="{
+        picker: null,
+        initPicker() {
+            if (this.picker) return;
+            
+            this.picker = flatpickr(this.$el, {{ $jsonOptions() }});
+        }
+    }"
+    x-on:mouseenter="initPicker()"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"
     placeholder="{{ $placeholder }}"
-    @if($value)value="{{ $value }}"@endif
+    @if($value) value="{{ $value }}" @endif
     {{ $attributes }}
 />
