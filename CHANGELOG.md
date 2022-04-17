@@ -5,6 +5,8 @@ This changelog follows [the Keep a Changelog standard](https://keepachangelog.co
 
 ## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.3.3...0.x)
 
+### Changed
+- Changed initialization logic of FlatPickr component to improve performance ([#125](https://github.com/blade-ui-kit/blade-ui-kit/pull/125))
 
 ## [0.3.3 (2022-01-17)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.3.2...0.3.3)
 
