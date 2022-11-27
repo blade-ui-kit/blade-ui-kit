@@ -7,9 +7,6 @@
 <a href="https://github.com/blade-ui-kit/blade-ui-kit/actions?query=workflow%3ATests">
     <img src="https://github.com/blade-ui-kit/blade-ui-kit/workflows/Tests/badge.svg" alt="Tests">
 </a>
-<a href="https://github.styleci.io/repos/263720853">
-    <img src="https://github.styleci.io/repos/263720853/shield?style=flat" alt="Code Style">
-</a>
 <a href="https://packagist.org/packages/blade-ui-kit/blade-ui-kit">
     <img src="https://img.shields.io/packagist/v/blade-ui-kit/blade-ui-kit" alt="Latest Stable Version">
 </a>
