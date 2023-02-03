@@ -1,7 +1,11 @@
 {
     "name": "blade-ui-kit/blade-ui-kit",
     "description": "A set of renderless components to utilise in your Laravel Blade views.",
-    "keywords": ["Blade", "UI", "Laravel"],
+    "keywords": [
+        "Blade",
+        "UI",
+        "Laravel"
+    ],
     "homepage": "https://github.com/blade-ui-kit/blade-ui-kit",
     "license": "MIT",
     "support": {
@@ -17,17 +21,17 @@
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
-        "illuminate/filesystem": "^7.0|^8.0|^9.0",
-        "illuminate/support": "^7.0|^8.0|^9.0",
-        "illuminate/view": "^7.0|^8.0|^9.0",
+        "illuminate/filesystem": "^7.0|^8.0|^9.0|^10.0",
+        "illuminate/support": "^7.0|^8.0|^9.0|^10.0",
+        "illuminate/view": "^7.0|^8.0|^9.0|^10.0",
         "nesbot/carbon": "^2.38"
     },
     "require-dev": {
         "gajus/dindent": "^2.0",
-        "guzzlehttp/guzzle": "^7.4",
+        "guzzlehttp/guzzle": "^7.4|^7.2",
         "league/commonmark": "^1.4|^2.0",
-        "lorisleiva/cron-translator": "^0.1.1",
-        "orchestra/testbench": "^5.0|^6.0|^7.1",
+        "lorisleiva/cron-translator": "^0.1.1|^0.4",
+        "orchestra/testbench": "^5.0|^6.0|^7.1|^8.0",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
