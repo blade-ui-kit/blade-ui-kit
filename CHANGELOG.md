@@ -2,6 +2,10 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
+## [0.4.0 (2023-02-17)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.3.4...0.4.0)
+
+### Changed
+- Drop old laravel and php versions & support new ones by @driesvints in https://github.com/blade-ui-kit/blade-ui-kit/pull/134
 
 ## [0.3.4 (2022-04-17)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.3.3...0.3.4)
 
