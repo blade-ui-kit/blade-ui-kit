@@ -11,8 +11,15 @@
         pickr.on('save', function (color) {
             let currentColor = color ? color.toHEXA().toString() : '';
 
+            $dispatch('input', currentColor);
             input.setAttribute('value', currentColor);
             $root.setAttribute('title', currentColor);
+        });
+        
+        pickr.on('change', function (color) {
+            let currentColor = color ? color.toHEXA().toString() : '';
+
+            $dispatch('change', currentColor);
         });
     "
     {{ $attributes->merge(['title' => $value]) }}
