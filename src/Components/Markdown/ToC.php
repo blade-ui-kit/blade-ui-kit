@@ -29,7 +29,7 @@ class ToC extends BladeComponent
         // Remove code blocks which might contain headers.
         $markdown = preg_replace('(```[a-z]*\n[\s\S]*?\n```)', '', $markdown);
 
-        return collect(explode(PHP_EOL, $markdown))
+        return collect(preg_split('/\r\n|\r|\n/', $markdown))
             ->reject(function (string $line) {
                 // Only search for level 2 and 3 headings.
                 return ! Str::startsWith($line, '## ') && ! Str::startsWith($line, '### ');
