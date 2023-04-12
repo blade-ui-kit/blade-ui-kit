@@ -8,11 +8,16 @@
         seconds: '{{ $seconds() }}',
     },
     startCounter: function () {
+        $nextTick(() => {
+            $dispatch('start');
+        });
+
         let runningCounter = setInterval(() => {
             let countDownDate = new Date({{ $expires->timestamp }} * 1000).getTime();
             let timeDistance = countDownDate - new Date().getTime();
 
             if (timeDistance < 0) {
+                $dispatch('end');
                 clearInterval(runningCounter);
 
                 return;
