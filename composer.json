@@ -8,6 +8,12 @@
         "issues": "https://github.com/blade-ui-kit/blade-ui-kit/issues",
         "source": "https://github.com/blade-ui-kit/blade-ui-kit"
     },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/driesvints"
+        }
+    ],
     "authors": [
         {
             "name": "Dries Vints",
