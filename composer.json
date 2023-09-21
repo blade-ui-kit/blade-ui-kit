@@ -23,9 +23,9 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "illuminate/filesystem": "^9.0|^10.0",
-        "illuminate/support": "^9.0|^10.0",
-        "illuminate/view": "^9.0|^10.0",
+        "illuminate/filesystem": "^10.0",
+        "illuminate/support": "^10.0",
+        "illuminate/view": "^10.0",
         "nesbot/carbon": "^2.38"
     },
     "require-dev": {
@@ -33,7 +33,7 @@
         "guzzlehttp/guzzle": "^7.4",
         "league/commonmark": "^1.4|^2.0",
         "lorisleiva/cron-translator": "^0.1.1",
-        "orchestra/testbench": "^7.1|^8.0",
+        "orchestra/testbench": "^8.0",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
