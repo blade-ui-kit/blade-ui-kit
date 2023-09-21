@@ -24,7 +24,7 @@ class FormButtonTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST" action="http://localhost/logout">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="POST">
                 <button type="submit">
                 Sign Out </button>
@@ -45,7 +45,7 @@ class FormButtonTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST" action="http://example.com">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="text-gray-500">
                 Logout </button>
@@ -66,7 +66,7 @@ class FormButtonTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit">
                 Logout </button>

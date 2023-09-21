@@ -19,7 +19,7 @@ class FormTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST" action="http://example.com">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="POST">
                 Form fields...
 
@@ -40,7 +40,7 @@ class FormTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST" action="http://example.com">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="PUT">
                 Form fields...
 
@@ -61,7 +61,7 @@ class FormTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST" action="http://example.com" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="PUT">
                 Form fields...
 
@@ -82,7 +82,7 @@ class FormTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="POST">
                 Form fields...
 

@@ -22,7 +22,7 @@ class LogoutTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST" action="http://localhost/logout">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <button type="submit">
                 Log out </button>
             </form>
@@ -40,7 +40,7 @@ class LogoutTest extends ComponentTestCase
 
         $expected = <<<'HTML'
             <form method="POST" action="http://example.com">
-                <input type="hidden" name="_token" value="">
+                <input type="hidden" name="_token" value="" autocomplete="off">
                 <button type="submit" class="text-gray-500">
                 Sign Out </button>
             </form>
