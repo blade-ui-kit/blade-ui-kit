@@ -6,6 +6,7 @@ namespace BladeUIKit\Components\Forms\Inputs;
 
 use BladeUIKit\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 
 class Input extends BladeComponent
 {
@@ -24,9 +25,9 @@ class Input extends BladeComponent
     public function __construct(string $name, string $id = null, string $type = 'text', ?string $value = '')
     {
         $this->name = $name;
-        $this->id = $id ?? $name;
+        $this->id = $id ?? str_replace('.', '_', Str::dot($name));
         $this->type = $type;
-        $this->value = old($name, $value ?? '');
+        $this->value = old(Str::dot($name), $value ?? '');
     }
 
     public function render(): View

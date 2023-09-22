@@ -6,6 +6,7 @@ namespace BladeUIKit\Components\Forms\Inputs;
 
 use BladeUIKit\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 
 class Textarea extends BladeComponent
 {
@@ -21,7 +22,7 @@ class Textarea extends BladeComponent
     public function __construct(string $name, string $id = null, $rows = 3)
     {
         $this->name = $name;
-        $this->id = $id ?? $name;
+        $this->id = $id ?? str_replace('.', '_', Str::dot($name));
         $this->rows = $rows;
     }
 

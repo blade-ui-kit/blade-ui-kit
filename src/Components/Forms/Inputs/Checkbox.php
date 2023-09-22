@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BladeUIKit\Components\Forms\Inputs;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 
 class Checkbox extends Input
 {
@@ -15,7 +16,7 @@ class Checkbox extends Input
     {
         parent::__construct($name, $id, 'checkbox', $value);
 
-        $this->checked = (bool) old($name, $checked);
+        $this->checked = (bool) old(Str::dot($name), $checked);
     }
 
     public function render(): View
