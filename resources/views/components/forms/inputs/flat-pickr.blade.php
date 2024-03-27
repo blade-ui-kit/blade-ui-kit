@@ -7,7 +7,7 @@
             this.picker = flatpickr(this.$el, {{ $jsonOptions() }});
         }
     }"
-    x-on:mouseenter="initPicker()"
+    x-init="$nextTick(() => { initPicker() })"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"
