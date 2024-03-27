@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Markdown;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class ToCTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_render_markdown_to_html()
     {
         $template = <<<'HTML'
@@ -65,7 +66,7 @@ class ToCTest extends ComponentTestCase
         $this->assertComponentRenders($expected, $template);
     }
 
-    /** @test */
+    #[Test]
     public function it_accepts_a_base_url()
     {
         $template = <<<'HTML'
@@ -103,7 +104,7 @@ class ToCTest extends ComponentTestCase
         $this->assertComponentRenders($expected, $template);
     }
 
-    /** @test */
+    #[Test]
     public function headings_in_code_blocks_are_skipped()
     {
         $template = <<<'HTML'

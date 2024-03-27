@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Layouts;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class HtmlTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_render_to_html()
     {
         $template = <<<'HTML'

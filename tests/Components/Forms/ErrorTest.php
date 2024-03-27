@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Forms;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class ErrorTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $this->withViewErrors(['first_name' => 'Incorrect first name.']);
@@ -22,7 +23,7 @@ class ErrorTest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-error field="first_name" class="text-red-500"/>');
     }
 
-    /** @test */
+    #[Test]
     public function it_can_be_slotted()
     {
         $this->withViewErrors(['first_name' => ['Incorrect first name.', 'Needs at least 5 characters.']]);

@@ -24,7 +24,7 @@ abstract class ComponentTestCase extends TestCase
     {
         session()->flashInput($input);
 
-        request()->setLaravelSession(session());
+        request()->setLaravelSession(session()->driver());
     }
 
     protected function getPackageProviders($app): array

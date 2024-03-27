@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Forms;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class ColorPickerTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $template = <<<'HTML'
@@ -25,7 +26,7 @@ class ColorPickerTest extends ComponentTestCase
         $this->assertComponentRenders($expected, $template);
     }
 
-    /** @test */
+    #[Test]
     public function attributes_can_be_set()
     {
         $template = <<<'HTML'
@@ -42,7 +43,7 @@ class ColorPickerTest extends ComponentTestCase
         $this->assertComponentRenders($expected, $template);
     }
 
-    /** @test */
+    #[Test]
     public function js_options_can_be_passed_along()
     {
         $template = <<<'HTML'
@@ -59,7 +60,7 @@ class ColorPickerTest extends ComponentTestCase
         $this->assertComponentRenders($expected, $template);
     }
 
-    /** @test */
+    #[Test]
     public function inputs_can_have_old_values()
     {
         $this->flashOld(['color' => '#FF9900']);

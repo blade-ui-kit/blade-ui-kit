@@ -53,6 +53,6 @@ class Countdown extends BladeComponent
 
     public function difference(): DateInterval
     {
-        return $this->expires->diff(now());
+        return $this->expires->diff(now($this->expires->getTimezone()));
     }
 }

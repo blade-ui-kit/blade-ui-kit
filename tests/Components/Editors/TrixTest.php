@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Editors;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class TrixTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $expected = <<<'HTML'
@@ -22,7 +23,7 @@ class TrixTest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-trix name="about"/>');
     }
 
-    /** @test */
+    #[Test]
     public function editor_can_have_old_values()
     {
         $this->flashOld(['about' => 'About me text']);

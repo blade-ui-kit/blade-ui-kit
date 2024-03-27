@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace Tests\Components\Buttons;
 
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class LogoutTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         Route::post('logout', function () {
@@ -31,7 +32,7 @@ class LogoutTest extends ComponentTestCase
         $this->assertComponentRenders($expected, $template);
     }
 
-    /** @test */
+    #[Test]
     public function the_action_text_and_attributes_can_be_set()
     {
         $template = <<<'HTML'

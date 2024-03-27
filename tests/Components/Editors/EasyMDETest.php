@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Editors;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class EasyMDETest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $expected = <<<'HTML'
@@ -18,7 +19,7 @@ class EasyMDETest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
     }
 
-    /** @test */
+    #[Test]
     public function editor_can_have_old_values()
     {
         $this->flashOld(['about' => 'About me text']);
@@ -30,7 +31,7 @@ class EasyMDETest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
     }
 
-    /** @test */
+    #[Test]
     public function editor_can_have_options()
     {
         $this->assertComponentRenders(

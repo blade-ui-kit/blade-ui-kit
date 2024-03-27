@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Components\Maps;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class MapboxTest extends ComponentTestCase
@@ -15,7 +16,7 @@ class MapboxTest extends ComponentTestCase
         $app['config']->set('services.mapbox.public_token', 'testing');
     }
 
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $expected = <<<HTML
@@ -27,7 +28,7 @@ class MapboxTest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-mapbox/>');
     }
 
-    /** @test */
+    #[Test]
     public function options_can_be_passed()
     {
         $expected = <<<HTML
@@ -39,7 +40,7 @@ class MapboxTest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-mapbox id="custom-map" :options="[\'zoom\' => 0]"/>');
     }
 
-    /** @test */
+    #[Test]
     public function markers_can_be_placed()
     {
         $expected = <<<HTML
