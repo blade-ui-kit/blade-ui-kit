@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Alerts;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class AlertTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         session()->flash('alert', 'Form was successfully submitted.');
@@ -22,7 +23,7 @@ class AlertTest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-alert/>');
     }
 
-    /** @test */
+    #[Test]
     public function we_can_specify_a_type()
     {
         session()->flash('error', 'Form contains some errors.');
@@ -36,7 +37,7 @@ class AlertTest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-alert type="error"/>');
     }
 
-    /** @test */
+    #[Test]
     public function it_can_be_slotted()
     {
         session()->flash('alert', 'Form was successfully submitted.');
@@ -58,7 +59,7 @@ class AlertTest extends ComponentTestCase
         $this->assertComponentRenders($expected, $template);
     }
 
-    /** @test */
+    #[Test]
     public function multiple_messages_can_be_used()
     {
         session()->flash('alert', [

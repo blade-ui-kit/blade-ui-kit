@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tests\Components;
+use PHPUnit\Framework\Attributes\Test;
 
 class ComponentPrefixTest extends ComponentTestCase
 {
@@ -13,7 +14,7 @@ class ComponentPrefixTest extends ComponentTestCase
         $app['config']->set('blade-ui-kit.prefix', 'ui');
     }
 
-    /** @test */
+    #[Test]
     public function we_can_set_a_config_prefix()
     {
         $expected = <<<'HTML'

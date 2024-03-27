@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Navigation;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class DropdownTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_render()
     {
         $template = <<<'HTML'

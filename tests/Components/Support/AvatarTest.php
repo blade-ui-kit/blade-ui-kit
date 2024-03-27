@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Support;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class AvatarTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $this->assertComponentRenders(
@@ -17,7 +18,7 @@ class AvatarTest extends ComponentTestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_can_have_a_given_avatar_image()
     {
         $this->assertComponentRenders(
@@ -26,7 +27,7 @@ class AvatarTest extends ComponentTestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_accepts_providers()
     {
         $this->assertComponentRenders(
@@ -35,7 +36,7 @@ class AvatarTest extends ComponentTestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_accepts_fallbacks()
     {
         $this->assertComponentRenders(

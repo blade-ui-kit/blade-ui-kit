@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace Tests\Components\DateTime;
 
 use Carbon\Carbon;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class CountdownTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));
@@ -33,7 +34,7 @@ class CountdownTest extends ComponentTestCase
         $this->assertComponentRenders($expected, '<x-countdown :expires="new Carbon\Carbon(\'2020-06-11 17:15:22\', \'CET\')"/>');
     }
 
-    /** @test */
+    #[Test]
     public function the_component_can_be_slotted()
     {
         Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));

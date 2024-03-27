@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Components\DateTime;
 
 use Carbon\Carbon;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class CarbonTest extends ComponentTestCase
@@ -16,7 +17,7 @@ class CarbonTest extends ComponentTestCase
         Carbon::setTestNow();
     }
 
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $expected = <<<'HTML'
@@ -32,7 +33,7 @@ class CarbonTest extends ComponentTestCase
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function its_component_can_be_rendered_in_a_specific_format()
     {
         $expected = <<<'HTML'
@@ -48,7 +49,7 @@ class CarbonTest extends ComponentTestCase
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function its_component_can_be_rendered_as_human_readable()
     {
         $expected = <<<'HTML'
@@ -64,7 +65,7 @@ class CarbonTest extends ComponentTestCase
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_be_displayed_in_the_local_timezone()
     {
         $expected = <<<'HTML'

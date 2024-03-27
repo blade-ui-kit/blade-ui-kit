@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Components\Forms\Inputs;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Components\ComponentTestCase;
 
 class PasswordTest extends ComponentTestCase
 {
-    /** @test */
+    #[Test]
     public function the_component_can_be_rendered()
     {
         $this->assertComponentRenders(
@@ -17,7 +18,7 @@ class PasswordTest extends ComponentTestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function specific_attributes_can_be_overwritten()
     {
         $this->assertComponentRenders(
@@ -26,7 +27,7 @@ class PasswordTest extends ComponentTestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function inputs_cannot_have_old_values()
     {
         $this->flashOld(['password' => 'secret']);
