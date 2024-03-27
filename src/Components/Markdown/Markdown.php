@@ -81,7 +81,7 @@ class Markdown extends BladeComponent
             $markdown = str_replace($match, "<!--code-block-$index-->", $markdown);
         });
 
-        $markdown = collect(explode(PHP_EOL, $markdown))
+        $markdown = collect(preg_split('/\r\n|\r|\n/', $markdown))
             ->map(function (string $line) {
                 // For levels 2 to 6.
                 $anchors = [
