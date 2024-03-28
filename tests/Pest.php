@@ -2,22 +2,8 @@
 
 use Gajus\Dindent\Indenter;
 use Tests\Components\ComponentTestCase;
-use Tests\TestCase;
-
-/*
-|--------------------------------------------------------------------------
-| Test Case
-|--------------------------------------------------------------------------
-*/
 
 uses(ComponentTestCase::class)->in('Components');
-
-/*
-|--------------------------------------------------------------------------
-| Expectations
-|--------------------------------------------------------------------------
-|
-*/
 
 function assertComponentRenders(string $expected, string $template, array $data = []): void
 {
@@ -35,10 +21,3 @@ function assertComponentRenders(string $expected, string $template, array $data 
 
     expect($cleaned)->toBe($expected);
 }
-
-/*
-|--------------------------------------------------------------------------
-| Functions
-|--------------------------------------------------------------------------
-|
-*/
