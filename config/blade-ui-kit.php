@@ -38,6 +38,7 @@ return [
         'markdown' => Components\Markdown\Markdown::class,
         'password' => Components\Forms\Inputs\Password::class,
         'pikaday' => Components\Forms\Inputs\Pikaday::class,
+        'select' => Components\Forms\Inputs\Select::class,
         'social-meta' => Components\Layouts\SocialMeta::class,
         'textarea' => Components\Forms\Inputs\Textarea::class,
         'toc' => Components\Markdown\ToC::class,
