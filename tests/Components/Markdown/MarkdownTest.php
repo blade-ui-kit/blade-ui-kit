@@ -1,18 +1,10 @@
 <?php
 
+  
 declare(strict_types=1);
-
-namespace Tests\Components\Markdown;
-
 use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class MarkdownTest extends ComponentTestCase
-{
-    #[Test]
-    public function it_can_render_markdown_to_html()
-    {
-        $template = <<<'HTML'
+it('can render markdown to html', function () {
+    $template = <<<'HTML'
             <x-markdown>
             # Hello World
 
@@ -22,7 +14,7 @@ class MarkdownTest extends ComponentTestCase
             </x-markdown>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div>
                 <h1>Hello World</h1>
 
@@ -31,31 +23,25 @@ class MarkdownTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-
-    #[Test]
-    public function it_can_render_github_flavored_markdown_to_html()
-    {
-        $template = <<<'HTML'
+    $this->assertComponentRenders($expected, $template);
+});
+it('can render github flavored markdown to html', function () {
+    $template = <<<'HTML'
             <x-markdown flavor="github">
             Blade UI components are ~~cool~~, **awesome**.
             </x-markdown>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div>
                 <p>Blade UI components are <del>cool</del>, <strong>awesome</strong>.</p>
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-
-    #[Test]
-    public function options_can_be_passed()
-    {
-        $template = <<<'HTML'
+    $this->assertComponentRenders($expected, $template);
+});
+test('options can be passed', function () {
+    $template = <<<'HTML'
             <x-markdown :options="['commonmark' => ['use_asterisk' => false]]">
             # Hello World
 
@@ -63,7 +49,7 @@ class MarkdownTest extends ComponentTestCase
             </x-markdown>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div>
                 <h1>Hello World</h1>
 
@@ -71,13 +57,10 @@ class MarkdownTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-
-    #[Test]
-    public function anchors_can_be_generated()
-    {
-        $template = <<<'HTML'
+    $this->assertComponentRenders($expected, $template);
+});
+test('anchors can be generated', function () {
+    $template = <<<'HTML'
             <x-markdown anchors>
             # Hello World
 
@@ -93,7 +76,7 @@ class MarkdownTest extends ComponentTestCase
             </x-markdown>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div>
                 <h1>Hello World</h1>
 
@@ -111,13 +94,10 @@ class MarkdownTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-
-    #[Test]
-    public function anchors_are_not_generated_for_headers_in_code_blocks()
-    {
-        $template = <<<'HTML'
+    $this->assertComponentRenders($expected, $template);
+});
+test('anchors are not generated for headers in code blocks', function () {
+    $template = <<<'HTML'
             <x-markdown anchors>
             # Hello World
 
@@ -139,7 +119,7 @@ class MarkdownTest extends ComponentTestCase
             </x-markdown>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div>
                 <h1>Hello World</h1>
 
@@ -158,6 +138,5 @@ class MarkdownTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    $this->assertComponentRenders($expected, $template);
+});

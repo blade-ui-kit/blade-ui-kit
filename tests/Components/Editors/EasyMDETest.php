@@ -1,42 +1,27 @@
 <?php
 
+  
 declare(strict_types=1);
-
-namespace Tests\Components\Editors;
-
 use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class EasyMDETest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        $expected = <<<'HTML'
+test('the component can be rendered', function () {
+    $expected = <<<'HTML'
             <textarea x-data x-init="new EasyMDE({ element: $el , ...{&quot;forceSync&quot;:true} })" name="about" id="about"></textarea>
             HTML;
 
-        $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
-    }
+    $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
+});
+test('editor can have old values', function () {
+    $this->flashOld(['about' => 'About me text']);
 
-    #[Test]
-    public function editor_can_have_old_values()
-    {
-        $this->flashOld(['about' => 'About me text']);
-
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <textarea x-data x-init="new EasyMDE({ element: $el , ...{&quot;forceSync&quot;:true} })" name="about" id="about">About me text</textarea>
             HTML;
 
-        $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
-    }
-
-    #[Test]
-    public function editor_can_have_options()
-    {
-        $this->assertComponentRenders(
-            '<textarea x-data x-init="new EasyMDE({ element: $el , ...{&quot;forceSync&quot;:true,&quot;minHeight&quot;:&quot;500px&quot;} })" name="about" id="about"></textarea>',
-            '<x-easy-mde name="about" :options="[\'minHeight\' => \'500px\']"/>',
-        );
-    }
-}
+    $this->assertComponentRenders($expected, '<x-easy-mde name="about"/>');
+});
+test('editor can have options', function () {
+    $this->assertComponentRenders(
+        '<textarea x-data x-init="new EasyMDE({ element: $el , ...{&quot;forceSync&quot;:true,&quot;minHeight&quot;:&quot;500px&quot;} })" name="about" id="about"></textarea>',
+        '<x-easy-mde name="about" :options="[\'minHeight\' => \'500px\']"/>',
+    );
+});

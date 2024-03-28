@@ -2,20 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\Components\DateTime;
-
 use Carbon\Carbon;
 use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
+test('the component can be rendered', function () {
+    Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));
 
-class CountdownTest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));
-
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div x-data="
             { timer: { days: '00', hours: '23', minutes: '15', seconds: '22', }, startCounter: function () { let runningCounter = setInterval(() =>
                 { let countDownDate = new Date(1591892122 * 1000).getTime(); let timeDistance = countDownDate - new Date().getTime(); if (timeDistance 
@@ -31,15 +23,12 @@ class CountdownTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, '<x-countdown :expires="new Carbon\Carbon(\'2020-06-11 17:15:22\', \'CET\')"/>');
-    }
+    $this->assertComponentRenders($expected, '<x-countdown :expires="new Carbon\Carbon(\'2020-06-11 17:15:22\', \'CET\')"/>');
+});
+test('the component can be slotted', function () {
+    Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));
 
-    #[Test]
-    public function the_component_can_be_slotted()
-    {
-        Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));
-
-        $template = <<<HTML
+    $template = <<<HTML
             <x-countdown :expires="new Carbon\Carbon('2020-06-11 17:15:22', 'CET')">
                 <span x-text="timer.days">00</span> days
                 <span x-text="timer.hours">23</span> hours
@@ -48,7 +37,7 @@ class CountdownTest extends ComponentTestCase
             </x-countdown>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div x-data="
             { timer: { days: '00', hours: '23', minutes: '15', seconds: '22', }, startCounter: function () { let runningCounter = setInterval(() =>
                 { let countDownDate = new Date(1591892122 * 1000).getTime(); let timeDistance = countDownDate - new Date().getTime(); if (timeDistance 
@@ -64,6 +53,5 @@ class CountdownTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    $this->assertComponentRenders($expected, $template);
+});

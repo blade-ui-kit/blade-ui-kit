@@ -1,18 +1,10 @@
 <?php
 
+  
 declare(strict_types=1);
-
-namespace Tests\Components\Markdown;
-
 use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class ToCTest extends ComponentTestCase
-{
-    #[Test]
-    public function it_can_render_markdown_to_html()
-    {
-        $template = <<<'HTML'
+it('can render markdown to html', function () {
+    $template = <<<'HTML'
             <x-toc>
             # Hello World
 
@@ -36,7 +28,7 @@ class ToCTest extends ComponentTestCase
             </x-toc>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <ul>
                 <li>
                     <a href="#sub-title-level-2">
@@ -63,13 +55,10 @@ class ToCTest extends ComponentTestCase
             </ul>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-
-    #[Test]
-    public function it_accepts_a_base_url()
-    {
-        $template = <<<'HTML'
+    $this->assertComponentRenders($expected, $template);
+});
+it('accepts a base url', function () {
+    $template = <<<'HTML'
             <x-toc url="http://example.com/foo">
             # Hello World
 
@@ -85,7 +74,7 @@ class ToCTest extends ComponentTestCase
             </x-toc>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <ul>
                 <li>
                     <a href="http://example.com/foo#sub-title-level-2">
@@ -101,13 +90,10 @@ class ToCTest extends ComponentTestCase
             </ul>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-
-    #[Test]
-    public function headings_in_code_blocks_are_skipped()
-    {
-        $template = <<<'HTML'
+    $this->assertComponentRenders($expected, $template);
+});
+test('headings in code blocks are skipped', function () {
+    $template = <<<'HTML'
             <x-toc>
             # Hello World
 
@@ -125,7 +111,7 @@ class ToCTest extends ComponentTestCase
             </x-toc>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <ul>
                 <li>
                 <a href="#sub-title-level-2">
@@ -134,6 +120,5 @@ class ToCTest extends ComponentTestCase
             </ul>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    $this->assertComponentRenders($expected, $template);
+});

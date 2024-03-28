@@ -2,46 +2,31 @@
 
 declare(strict_types=1);
 
-namespace Tests\Components\Support;
-
 use Illuminate\Support\Facades\Http;
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
 
-class UnsplashTest extends ComponentTestCase
-{
-    protected function getEnvironmentSetUp($app): void
-    {
-        parent::getEnvironmentSetUp($app);
+beforeEach(function () {
+    config()->set('services.unsplash.access_key', 'testing');
+});
 
-        $app['config']->set('services.unsplash.access_key', 'testing');
-    }
+it('can be rendered', function () {
+    $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0';
 
-    #[Test]
-    public function it_can_be_rendered()
-    {
-        $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0';
+    $expected = sprintf('<img src="%s" />', $url);
 
-        $expected = sprintf('<img src="%s" />', $url);
+    Http::fake([
+        'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
+    ]);
 
-        Http::fake([
-            'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
-        ]);
+    $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI"/>');
+});
+it('can set a specific width or height', function () {
+    $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0&';
 
-        $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI"/>');
-    }
+    $expected = sprintf('<img src="%s" />', $url.'&w=200');
 
-    #[Test]
-    public function it_can_set_a_specific_width_or_height()
-    {
-        $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0&';
+    Http::fake([
+        'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
+    ]);
 
-        $expected = sprintf('<img src="%s" />', $url.'&w=200');
-
-        Http::fake([
-            'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
-        ]);
-
-        $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI" width="200"/>');
-    }
-}
+    $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI" width="200"/>');
+});
