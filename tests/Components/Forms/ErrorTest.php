@@ -11,7 +11,7 @@ test('the component can be rendered', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-error field="first_name" class="text-red-500"/>');
+    assertComponentRenders($expected, '<x-error field="first_name" class="text-red-500"/>');
 });
 
 it('can be slotted', function () {
@@ -36,5 +36,5 @@ it('can be slotted', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

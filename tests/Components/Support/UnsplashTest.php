@@ -17,7 +17,7 @@ it('can be rendered', function () {
         'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
     ]);
 
-    $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI"/>');
+    assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI"/>');
 });
 it('can set a specific width or height', function () {
     $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0&';
@@ -28,5 +28,5 @@ it('can set a specific width or height', function () {
         'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
     ]);
 
-    $this->assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI" width="200"/>');
+    assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI" width="200"/>');
 });

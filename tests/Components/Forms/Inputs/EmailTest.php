@@ -3,14 +3,14 @@
 declare(strict_types=1);
 
 test('the component can be rendered', function () {
-    $this->assertComponentRenders(
+    assertComponentRenders(
         '<input name="email" type="email" id="email" />',
         '<x-email/>',
     );
 });
 
 test('specific attributes can be overwritten', function () {
-    $this->assertComponentRenders(
+    assertComponentRenders(
         '<input name="email_address" type="email" id="emailAddress" class="p-4" />',
         '<x-email name="email_address" id="emailAddress" class="p-4" />',
     );
@@ -19,7 +19,7 @@ test('specific attributes can be overwritten', function () {
 test('inputs can have old values', function () {
     $this->flashOld(['email' => 'Eloquent']);
 
-    $this->assertComponentRenders(
+    assertComponentRenders(
         '<input name="email" type="email" id="email" value="Eloquent" />',
         '<x-email/>',
     );

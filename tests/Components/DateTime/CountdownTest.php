@@ -23,7 +23,7 @@ test('the component can be rendered', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-countdown :expires="new Carbon\Carbon(\'2020-06-11 17:15:22\', \'CET\')"/>');
+    assertComponentRenders($expected, '<x-countdown :expires="new Carbon\Carbon(\'2020-06-11 17:15:22\', \'CET\')"/>');
 });
 
 test('the component can be slotted', function () {
@@ -54,5 +54,5 @@ test('the component can be slotted', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

@@ -14,7 +14,7 @@ test('the component can be rendered', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 test('attributes can be set', function () {
     $template = <<<'HTML'
@@ -28,7 +28,7 @@ test('attributes can be set', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 test('js options can be passed along', function () {
     $template = <<<'HTML'
@@ -42,7 +42,7 @@ test('js options can be passed along', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 test('inputs can have old values', function () {
     $this->flashOld(['color' => '#FF9900']);
@@ -58,5 +58,5 @@ test('inputs can have old values', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

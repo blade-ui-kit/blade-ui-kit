@@ -8,7 +8,7 @@ test('the component can be rendered', function () {
             { initPicker() })" name="birthday" type="text" id="birthday" placeholder="Y-m-d H:i" />
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-flat-pickr name="birthday"/>');
+    assertComponentRenders($expected, '<x-flat-pickr name="birthday"/>');
 });
 
 test('flatpickr can have old values', function () {
@@ -19,5 +19,5 @@ test('flatpickr can have old values', function () {
             { initPicker() })" name="birthday" type="text" id="birthday" placeholder="Y-m-d H:i" value="23/03/1989" />
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-flat-pickr name="birthday"/>');
+    assertComponentRenders($expected, '<x-flat-pickr name="birthday"/>');
 });

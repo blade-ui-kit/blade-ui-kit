@@ -21,7 +21,7 @@ test('the component can be rendered', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('the action text and attributes can be set', function () {
@@ -37,5 +37,5 @@ test('the action text and attributes can be set', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

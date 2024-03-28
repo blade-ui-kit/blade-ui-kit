@@ -11,7 +11,7 @@ test('the component can be rendered', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-alert/>');
+    assertComponentRenders($expected, '<x-alert/>');
 });
 test('we can specify a type', function () {
     session()->flash('error', 'Form contains some errors.');
@@ -22,7 +22,7 @@ test('we can specify a type', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-alert type="error"/>');
+    assertComponentRenders($expected, '<x-alert type="error"/>');
 });
 it('can be slotted', function () {
     session()->flash('alert', 'Form was successfully submitted.');
@@ -41,7 +41,7 @@ it('can be slotted', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 test('multiple messages can be used', function () {
     session()->flash('alert', [
@@ -62,5 +62,5 @@ test('multiple messages can be used', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

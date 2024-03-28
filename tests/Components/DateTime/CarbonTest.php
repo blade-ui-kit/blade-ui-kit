@@ -17,7 +17,7 @@ test('the component can be rendered', function () {
 
     Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-    $this->assertComponentRenders($expected, '<x-carbon :date="$date"/>', [
+    assertComponentRenders($expected, '<x-carbon :date="$date"/>', [
         'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
     ]);
 });
@@ -31,7 +31,7 @@ test('its component can be rendered in a specific format', function () {
 
     Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-    $this->assertComponentRenders($expected, '<x-carbon :date="$date" format="d/m/Y H:i"/>', [
+    assertComponentRenders($expected, '<x-carbon :date="$date" format="d/m/Y H:i"/>', [
         'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
     ]);
 });
@@ -45,7 +45,7 @@ test('its component can be rendered as human readable', function () {
 
     Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-    $this->assertComponentRenders($expected, '<x-carbon :date="$date" human/>', [
+    assertComponentRenders($expected, '<x-carbon :date="$date" human/>', [
         'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
     ]);
 });
@@ -59,7 +59,7 @@ it('can be displayed in the local timezone', function () {
 
     Carbon::setTestNow(new Carbon('2020-05-13 21:00:00', 'CET'));
 
-    $this->assertComponentRenders($expected, '<x-carbon :date="$date" local/>', [
+    assertComponentRenders($expected, '<x-carbon :date="$date" local/>', [
         'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
     ]);
 });

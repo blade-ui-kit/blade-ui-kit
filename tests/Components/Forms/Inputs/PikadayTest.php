@@ -7,7 +7,7 @@ test('the component can be rendered', function () {
             <input x-data x-init="new Pikaday({ field: \$el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" />
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-pikaday name="birthday"/>');
+    assertComponentRenders($expected, '<x-pikaday name="birthday"/>');
 });
 
 test('pikaday can have old values', function () {
@@ -17,5 +17,5 @@ test('pikaday can have old values', function () {
             <input x-data x-init="new Pikaday({ field: \$el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })" name="birthday" type="text" id="birthday" placeholder="DD/MM/YYYY" value="23/03/1989" />
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-pikaday name="birthday"/>');
+    assertComponentRenders($expected, '<x-pikaday name="birthday"/>');
 });

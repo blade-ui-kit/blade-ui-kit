@@ -22,7 +22,7 @@ it('can render markdown to html', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 it('can render github flavored markdown to html', function () {
@@ -38,7 +38,7 @@ it('can render github flavored markdown to html', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('options can be passed', function () {
@@ -58,7 +58,7 @@ test('options can be passed', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('anchors can be generated', function () {
@@ -96,7 +96,7 @@ test('anchors can be generated', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('anchors are not generated for headers in code blocks', function () {
@@ -141,5 +141,5 @@ test('anchors are not generated for headers in code blocks', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

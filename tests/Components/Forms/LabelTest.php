@@ -9,5 +9,5 @@ test('the component can be rendered', function () {
             </label>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-label for="first_name"/>');
+    assertComponentRenders($expected, '<x-label for="first_name"/>');
 });

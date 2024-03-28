@@ -24,7 +24,7 @@ test('the component can be rendered', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('the method and attributes can be set', function () {
@@ -43,7 +43,7 @@ test('the method and attributes can be set', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('the action prop is optional', function () {
@@ -62,5 +62,5 @@ test('the action prop is optional', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

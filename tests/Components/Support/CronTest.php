@@ -11,7 +11,7 @@ test('the component can be rendered', function () {
             </span>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-cron schedule="@weekly"/>');
+    assertComponentRenders($expected, '<x-cron schedule="@weekly"/>');
 });
 
 it('can translate a cron', function () {
@@ -27,5 +27,5 @@ test('its component can be rendered as human readable', function () {
             </span>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-cron schedule="@weekly" human/>');
+    assertComponentRenders($expected, '<x-cron schedule="@weekly" human/>');
 });

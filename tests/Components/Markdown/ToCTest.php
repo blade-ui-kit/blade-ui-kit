@@ -54,7 +54,7 @@ it('can render markdown to html', function () {
             </ul>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 it('accepts a base url', function () {
@@ -90,7 +90,7 @@ it('accepts a base url', function () {
             </ul>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('headings in code blocks are skipped', function () {
@@ -121,5 +121,5 @@ test('headings in code blocks are skipped', function () {
             </ul>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

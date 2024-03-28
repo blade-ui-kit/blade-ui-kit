@@ -11,7 +11,7 @@ test('the component can be rendered', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-trix name="about"/>');
+    assertComponentRenders($expected, '<x-trix name="about"/>');
 });
 
 test('editor can have old values', function () {
@@ -25,5 +25,5 @@ test('editor can have old values', function () {
             </div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-trix name="about"/>');
+    assertComponentRenders($expected, '<x-trix name="about"/>');
 });

@@ -18,7 +18,7 @@ test('the component can be rendered', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('the method can be set', function () {
@@ -37,7 +37,7 @@ test('the method can be set', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 it('can enable file uploads', function () {
@@ -56,7 +56,7 @@ it('can enable file uploads', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });
 
 test('the action prop is optional', function () {
@@ -75,5 +75,5 @@ test('the action prop is optional', function () {
             </form>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

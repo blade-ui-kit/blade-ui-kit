@@ -23,5 +23,5 @@ it('can render to html', function () {
             <meta property="og:locale" content="en" />
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

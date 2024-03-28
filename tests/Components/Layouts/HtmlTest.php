@@ -29,5 +29,5 @@ it('can render to html', function () {
             </html>
             HTML;
 
-    $this->assertComponentRenders($expected, $template);
+    assertComponentRenders($expected, $template);
 });

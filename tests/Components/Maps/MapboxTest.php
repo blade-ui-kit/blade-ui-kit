@@ -13,7 +13,7 @@ test('the component can be rendered', function () {
             }" x-init="initMapbox()" id="map"></div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-mapbox/>');
+    assertComponentRenders($expected, '<x-mapbox/>');
 });
 
 test('options can be passed', function () {
@@ -23,7 +23,7 @@ test('options can be passed', function () {
             }" x-init="initMapbox()" id="custom-map"></div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-mapbox id="custom-map" :options="[\'zoom\' => 0]"/>');
+    assertComponentRenders($expected, '<x-mapbox id="custom-map" :options="[\'zoom\' => 0]"/>');
 });
 
 test('markers can be placed', function () {
@@ -33,5 +33,5 @@ test('markers can be placed', function () {
             }" x-init="initMapbox()" id="map"></div>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-mapbox :markers="[[13.4105300, 52.5243700]]"/>');
+    assertComponentRenders($expected, '<x-mapbox :markers="[[13.4105300, 52.5243700]]"/>');
 });

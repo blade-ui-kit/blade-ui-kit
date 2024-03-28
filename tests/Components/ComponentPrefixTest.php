@@ -13,5 +13,5 @@ test('we can set a config prefix', function () {
             </span>
             HTML;
 
-    $this->assertComponentRenders($expected, '<x-ui-cron schedule="@weekly"/>');
+    assertComponentRenders($expected, '<x-ui-cron schedule="@weekly"/>');
 });
