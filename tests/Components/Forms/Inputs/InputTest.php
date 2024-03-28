@@ -1,40 +1,26 @@
 <?php
-
+  
 declare(strict_types=1);
 
-namespace Tests\Components\Forms\Inputs;
+test('the component can be rendered', function () {
+    assertComponentRenders(
+        '<input name="search" type="text" id="search" />',
+        '<x-input name="search" />',
+    );
+});
 
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
+test('specific attributes can be overwritten', function () {
+    assertComponentRenders(
+        '<input name="confirm_password" type="password" id="confirmPassword" class="p-4" />',
+        '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />',
+    );
+});
 
-class InputTest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        $this->assertComponentRenders(
-            '<input name="search" type="text" id="search" />',
-            '<x-input name="search" />',
-        );
-    }
+test('inputs can have old values', function () {
+    $this->flashOld(['search' => 'Eloquent']);
 
-    #[Test]
-    public function specific_attributes_can_be_overwritten()
-    {
-        $this->assertComponentRenders(
-            '<input name="confirm_password" type="password" id="confirmPassword" class="p-4" />',
-            '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />',
-        );
-    }
-
-    #[Test]
-    public function inputs_can_have_old_values()
-    {
-        $this->flashOld(['search' => 'Eloquent']);
-
-        $this->assertComponentRenders(
-            '<input name="search" type="text" id="search" value="Eloquent" />',
-            '<x-input name="search" />',
-        );
-    }
-}
+    assertComponentRenders(
+        '<input name="search" type="text" id="search" value="Eloquent" />',
+        '<x-input name="search" />',
+    );
+});

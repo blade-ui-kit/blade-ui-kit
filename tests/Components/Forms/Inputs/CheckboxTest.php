@@ -1,40 +1,26 @@
 <?php
-
+  
 declare(strict_types=1);
 
-namespace Tests\Components\Forms\Inputs;
+test('the component can be rendered', function () {
+    assertComponentRenders(
+        '<input name="remember_me" type="checkbox" id="remember_me" />',
+        '<x-checkbox name="remember_me"/>',
+    );
+});
 
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
+test('specific attributes can be overwritten', function () {
+    assertComponentRenders(
+        '<input name="remember_me" type="checkbox" id="rememberMe" class="p-4" />',
+        '<x-checkbox name="remember_me" id="rememberMe" class="p-4" />',
+    );
+});
 
-class CheckboxTest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        $this->assertComponentRenders(
-            '<input name="remember_me" type="checkbox" id="remember_me" />',
-            '<x-checkbox name="remember_me"/>',
-        );
-    }
+test('inputs can have old values', function () {
+    $this->flashOld(['remember_me' => true]);
 
-    #[Test]
-    public function specific_attributes_can_be_overwritten()
-    {
-        $this->assertComponentRenders(
-            '<input name="remember_me" type="checkbox" id="rememberMe" class="p-4" />',
-            '<x-checkbox name="remember_me" id="rememberMe" class="p-4" />',
-        );
-    }
-
-    #[Test]
-    public function inputs_can_have_old_values()
-    {
-        $this->flashOld(['remember_me' => true]);
-
-        $this->assertComponentRenders(
-            '<input name="remember_me" type="checkbox" id="remember_me" value="1" checked />',
-            '<x-checkbox name="remember_me"/>',
-        );
-    }
-}
+    assertComponentRenders(
+        '<input name="remember_me" type="checkbox" id="remember_me" value="1" checked />',
+        '<x-checkbox name="remember_me"/>',
+    );
+});

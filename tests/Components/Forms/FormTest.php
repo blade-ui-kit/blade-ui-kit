@@ -1,24 +1,15 @@
 <?php
-
+  
 declare(strict_types=1);
 
-namespace Tests\Components\Forms;
-
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class FormTest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        $template = <<<'HTML'
+test('the component can be rendered', function () {
+    $template = <<<'HTML'
             <x-form action="http://example.com">
                 Form fields...
             </x-form>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <form method="POST" action="http://example.com">
                 <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="POST">
@@ -27,19 +18,17 @@ class FormTest extends ComponentTestCase
             </form>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
+    assertComponentRenders($expected, $template);
+});
 
-    #[Test]
-    public function the_method_can_be_set()
-    {
-        $template = <<<'HTML'
+test('the method can be set', function () {
+    $template = <<<'HTML'
             <x-form method="PUT" action="http://example.com">
                 Form fields...
             </x-form>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <form method="POST" action="http://example.com">
                 <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="PUT">
@@ -48,19 +37,17 @@ class FormTest extends ComponentTestCase
             </form>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
+    assertComponentRenders($expected, $template);
+});
 
-    #[Test]
-    public function it_can_enable_file_uploads()
-    {
-        $template = <<<'HTML'
+it('can enable file uploads', function () {
+    $template = <<<'HTML'
             <x-form method="PUT" action="http://example.com" has-files>
                 Form fields...
             </x-form>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <form method="POST" action="http://example.com" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="PUT">
@@ -69,19 +56,17 @@ class FormTest extends ComponentTestCase
             </form>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
+    assertComponentRenders($expected, $template);
+});
 
-    #[Test]
-    public function the_action_prop_is_optional()
-    {
-        $template = <<<'HTML'
+test('the action prop is optional', function () {
+    $template = <<<'HTML'
             <x-form method="POST">
                 Form fields...
             </x-form>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <form method="POST">
                 <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="POST">
@@ -90,6 +75,5 @@ class FormTest extends ComponentTestCase
             </form>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    assertComponentRenders($expected, $template);
+});

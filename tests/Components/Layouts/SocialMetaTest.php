@@ -1,18 +1,9 @@
 <?php
-
+  
 declare(strict_types=1);
 
-namespace Tests\Components\Layouts;
-
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class SocialMetaTest extends ComponentTestCase
-{
-    #[Test]
-    public function it_can_render_to_html()
-    {
-        $template = <<<'HTML'
+it('can render to html', function () {
+    $template = <<<'HTML'
             <x-social-meta
                 title="Hello World"
                 description="Blade components are awesome!"
@@ -21,7 +12,7 @@ class SocialMetaTest extends ComponentTestCase
             />
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <meta name="twitter:card" content="summary" />
             <meta property="og:type" content="website">
             <meta property="og:title" content="Hello World" />
@@ -32,6 +23,5 @@ class SocialMetaTest extends ComponentTestCase
             <meta property="og:locale" content="en" />
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    assertComponentRenders($expected, $template);
+});

@@ -2,17 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Tests\Components\Navigation;
-
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class DropdownTest extends ComponentTestCase
-{
-    #[Test]
-    public function it_can_render()
-    {
-        $template = <<<'HTML'
+it('can render', function () {
+    $template = <<<'HTML'
             <x-dropdown class="text-gray-500">
                 <x-slot name="trigger">
                     <button>Dries</button>
@@ -24,7 +15,7 @@ class DropdownTest extends ComponentTestCase
             </x-html>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div x-data="{ open: false }" @click.away="open = false" class="text-gray-500">
                 <div @click="open = ! open">
                     <button>Dries</button>
@@ -38,6 +29,5 @@ class DropdownTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    assertComponentRenders($expected, $template);
+});

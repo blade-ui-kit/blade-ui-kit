@@ -1,44 +1,31 @@
 <?php
-
+  
 declare(strict_types=1);
 
-namespace Tests\Components\Support;
-
 use BladeUIKit\Components\Support\Cron;
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
 
-class CronTest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        $expected = <<<'HTML'
+test('the component can be rendered', function () {
+    $expected = <<<'HTML'
             <span title="Every Sunday at 12:00am">
                 @weekly
             </span>
             HTML;
 
-        $this->assertComponentRenders($expected, '<x-cron schedule="@weekly"/>');
-    }
+    assertComponentRenders($expected, '<x-cron schedule="@weekly"/>');
+});
 
-    #[Test]
-    public function it_can_translate_a_cron()
-    {
-        $cron = new Cron('0 16 * * 1');
+it('can translate a cron', function () {
+    $cron = new Cron('0 16 * * 1');
 
-        $this->assertSame('Every Monday at 4:00pm', $cron->translate());
-    }
+    expect($cron->translate())->toBe('Every Monday at 4:00pm');
+});
 
-    #[Test]
-    public function its_component_can_be_rendered_as_human_readable()
-    {
-        $expected = <<<'HTML'
+test('its component can be rendered as human readable', function () {
+    $expected = <<<'HTML'
             <span title="@weekly">
                 Every Sunday at 12:00am
             </span>
             HTML;
 
-        $this->assertComponentRenders($expected, '<x-cron schedule="@weekly" human/>');
-    }
-}
+    assertComponentRenders($expected, '<x-cron schedule="@weekly" human/>');
+});

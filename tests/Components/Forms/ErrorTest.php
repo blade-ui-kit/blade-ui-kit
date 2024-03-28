@@ -1,34 +1,23 @@
 <?php
-
+  
 declare(strict_types=1);
 
-namespace Tests\Components\Forms;
+test('the component can be rendered', function () {
+    $this->withViewErrors(['first_name' => 'Incorrect first name.']);
 
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class ErrorTest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        $this->withViewErrors(['first_name' => 'Incorrect first name.']);
-
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div class="text-red-500">
                 Incorrect first name.
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, '<x-error field="first_name" class="text-red-500"/>');
-    }
+    assertComponentRenders($expected, '<x-error field="first_name" class="text-red-500"/>');
+});
 
-    #[Test]
-    public function it_can_be_slotted()
-    {
-        $this->withViewErrors(['first_name' => ['Incorrect first name.', 'Needs at least 5 characters.']]);
+it('can be slotted', function () {
+    $this->withViewErrors(['first_name' => ['Incorrect first name.', 'Needs at least 5 characters.']]);
 
-        $template = <<<'HTML'
+    $template = <<<'HTML'
             <x-error field="first_name">
                 <ul>
                     @foreach ($component->messages($errors) as $error)
@@ -38,7 +27,7 @@ class ErrorTest extends ComponentTestCase
             </x-error>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <div>
                 <ul>
                     <li>Incorrect first name.</li>
@@ -47,6 +36,5 @@ class ErrorTest extends ComponentTestCase
             </div>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    assertComponentRenders($expected, $template);
+});

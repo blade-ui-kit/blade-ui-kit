@@ -38,6 +38,7 @@
         "league/commonmark": "^1.4|^2.0",
         "lorisleiva/cron-translator": "^0.1.1|^0.4",
         "orchestra/testbench": "^8.0|^9.0",
+        "pestphp/pest": "^2.34",
         "phpunit/phpunit": "^10.5|^11.0"
     },
     "autoload": {
@@ -62,7 +63,10 @@
         "lorisleiva/cron-translator": "Required to use the cron component (^0.1.1)."
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

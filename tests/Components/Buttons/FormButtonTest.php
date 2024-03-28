@@ -2,28 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Tests\Components\Buttons;
-
 use Illuminate\Support\Facades\Route;
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
 
-class FormButtonTest extends ComponentTestCase
-{
-    #[Test]
-    public function the_component_can_be_rendered()
-    {
-        Route::post('logout', function () {
-            // ...
-        })->name('logout');
+test('the component can be rendered', function () {
+    Route::post('logout', function () {
+        // ...
+    })->name('logout');
 
-        $template = <<<'HTML'
+    $template = <<<'HTML'
             <x-form-button :action="route('logout')">
                 Sign Out
             </x-form-button>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <form method="POST" action="http://localhost/logout">
                 <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="POST">
@@ -32,19 +24,17 @@ class FormButtonTest extends ComponentTestCase
             </form>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
+    assertComponentRenders($expected, $template);
+});
 
-    #[Test]
-    public function the_method_and_attributes_can_be_set()
-    {
-        $template = <<<'HTML'
+test('the method and attributes can be set', function () {
+    $template = <<<'HTML'
             <x-form-button method="DELETE" action="http://example.com" class="text-gray-500">
                 Logout
             </x-form-button>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <form method="POST" action="http://example.com">
                 <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="DELETE">
@@ -53,19 +43,17 @@ class FormButtonTest extends ComponentTestCase
             </form>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
+    assertComponentRenders($expected, $template);
+});
 
-    #[Test]
-    public function the_action_prop_is_optional()
-    {
-        $template = <<<'HTML'
+test('the action prop is optional', function () {
+    $template = <<<'HTML'
             <x-form-button method="DELETE">
                 Logout
             </x-form-button>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <form method="POST">
                 <input type="hidden" name="_token" value="" autocomplete="off">
                 <input type="hidden" name="_method" value="DELETE">
@@ -74,6 +62,5 @@ class FormButtonTest extends ComponentTestCase
             </form>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    assertComponentRenders($expected, $template);
+});

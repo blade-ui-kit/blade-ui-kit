@@ -1,18 +1,9 @@
 <?php
-
+  
 declare(strict_types=1);
 
-namespace Tests\Components\Layouts;
-
-use PHPUnit\Framework\Attributes\Test;
-use Tests\Components\ComponentTestCase;
-
-class HtmlTest extends ComponentTestCase
-{
-    #[Test]
-    public function it_can_render_to_html()
-    {
-        $template = <<<'HTML'
+it('can render to html', function () {
+    $template = <<<'HTML'
             <x-html class="font-sans" title="Blade UI Kit">
                 <x-slot name="head">
                     <link rel="icon" href="favicon.ico" />
@@ -22,7 +13,7 @@ class HtmlTest extends ComponentTestCase
             </x-html>
             HTML;
 
-        $expected = <<<'HTML'
+    $expected = <<<'HTML'
             <!DOCTYPE html>
             <html lang="en">
                 <head>
@@ -38,6 +29,5 @@ class HtmlTest extends ComponentTestCase
             </html>
             HTML;
 
-        $this->assertComponentRenders($expected, $template);
-    }
-}
+    assertComponentRenders($expected, $template);
+});
