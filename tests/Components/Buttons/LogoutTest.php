@@ -23,6 +23,7 @@ test('the component can be rendered', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('the action text and attributes can be set', function () {
     $template = <<<'HTML'
             <x-logout action="http://example.com" class="text-gray-500">Sign Out</x-logout>

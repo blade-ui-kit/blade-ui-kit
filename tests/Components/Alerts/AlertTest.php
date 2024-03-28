@@ -1,7 +1,6 @@
 <?php
-declare(strict_types=1);
 
-  
+declare(strict_types=1);
 
 test('the component can be rendered', function () {
     session()->flash('alert', 'Form was successfully submitted.');

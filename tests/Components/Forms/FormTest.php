@@ -1,8 +1,7 @@
 <?php
-
   
 declare(strict_types=1);
-use PHPUnit\Framework\Attributes\Test;
+
 test('the component can be rendered', function () {
     $template = <<<'HTML'
             <x-form action="http://example.com">
@@ -21,6 +20,7 @@ test('the component can be rendered', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('the method can be set', function () {
     $template = <<<'HTML'
             <x-form method="PUT" action="http://example.com">
@@ -39,6 +39,7 @@ test('the method can be set', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 it('can enable file uploads', function () {
     $template = <<<'HTML'
             <x-form method="PUT" action="http://example.com" has-files>
@@ -57,6 +58,7 @@ it('can enable file uploads', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('the action prop is optional', function () {
     $template = <<<'HTML'
             <x-form method="POST">

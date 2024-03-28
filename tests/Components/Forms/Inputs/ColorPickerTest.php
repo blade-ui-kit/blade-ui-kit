@@ -1,8 +1,7 @@
 <?php
-
   
 declare(strict_types=1);
-use PHPUnit\Framework\Attributes\Test;
+
 test('the component can be rendered', function () {
     $template = <<<'HTML'
             <x-color-picker name="color" />

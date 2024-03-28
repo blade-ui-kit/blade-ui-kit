@@ -1,8 +1,7 @@
 <?php
 
-  
 declare(strict_types=1);
-use PHPUnit\Framework\Attributes\Test;
+
 it('can render markdown to html', function () {
     $template = <<<'HTML'
             <x-toc>
@@ -57,6 +56,7 @@ it('can render markdown to html', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 it('accepts a base url', function () {
     $template = <<<'HTML'
             <x-toc url="http://example.com/foo">
@@ -92,6 +92,7 @@ it('accepts a base url', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('headings in code blocks are skipped', function () {
     $template = <<<'HTML'
             <x-toc>

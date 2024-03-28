@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Carbon\Carbon;
-use PHPUnit\Framework\Attributes\Test;
+
 test('the component can be rendered', function () {
     Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));
 
@@ -25,6 +25,7 @@ test('the component can be rendered', function () {
 
     $this->assertComponentRenders($expected, '<x-countdown :expires="new Carbon\Carbon(\'2020-06-11 17:15:22\', \'CET\')"/>');
 });
+
 test('the component can be slotted', function () {
     Carbon::setTestNow(new Carbon('2020-06-10 18:00:00', 'CET'));
 

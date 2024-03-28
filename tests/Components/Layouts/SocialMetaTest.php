@@ -1,8 +1,7 @@
 <?php
-
   
 declare(strict_types=1);
-use PHPUnit\Framework\Attributes\Test;
+
 it('can render to html', function () {
     $template = <<<'HTML'
             <x-social-meta

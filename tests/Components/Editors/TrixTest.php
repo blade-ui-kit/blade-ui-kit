@@ -1,8 +1,7 @@
 <?php
 
-  
 declare(strict_types=1);
-use PHPUnit\Framework\Attributes\Test;
+  
 test('the component can be rendered', function () {
     $expected = <<<'HTML'
             <div>
@@ -14,6 +13,7 @@ test('the component can be rendered', function () {
 
     $this->assertComponentRenders($expected, '<x-trix name="about"/>');
 });
+
 test('editor can have old values', function () {
     $this->flashOld(['about' => 'About me text']);
 

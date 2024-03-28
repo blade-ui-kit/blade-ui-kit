@@ -15,6 +15,7 @@ test('the component can be rendered', function () {
 
     $this->assertComponentRenders($expected, '<x-mapbox/>');
 });
+
 test('options can be passed', function () {
     $expected = <<<HTML
             <div x-data="
@@ -24,6 +25,7 @@ test('options can be passed', function () {
 
     $this->assertComponentRenders($expected, '<x-mapbox id="custom-map" :options="[\'zoom\' => 0]"/>');
 });
+
 test('markers can be placed', function () {
     $expected = <<<HTML
             <div x-data="

@@ -26,6 +26,7 @@ test('the component can be rendered', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('the method and attributes can be set', function () {
     $template = <<<'HTML'
             <x-form-button method="DELETE" action="http://example.com" class="text-gray-500">
@@ -44,6 +45,7 @@ test('the method and attributes can be set', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('the action prop is optional', function () {
     $template = <<<'HTML'
             <x-form-button method="DELETE">

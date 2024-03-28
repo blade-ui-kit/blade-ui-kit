@@ -21,7 +21,8 @@ test('the component can be rendered', function () {
         'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
     ]);
 });
-it('s component can be rendered in a specific format', function () {
+
+test('its component can be rendered in a specific format', function () {
     $expected = <<<'HTML'
             <span title="2 hours from now">
                 13/05/2020 23:00
@@ -34,7 +35,8 @@ it('s component can be rendered in a specific format', function () {
         'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
     ]);
 });
-it('s component can be rendered as human readable', function () {
+
+test('its component can be rendered as human readable', function () {
     $expected = <<<'HTML'
             <time datetime="2020-05-13 23:00:00">
                 2 hours from now
@@ -47,6 +49,7 @@ it('s component can be rendered as human readable', function () {
         'date' => new Carbon('2020-05-13 23:00:00', 'CET'),
     ]);
 });
+
 it('can be displayed in the local timezone', function () {
     $expected = <<<'HTML'
             <span x-data="{ formatLocalTimeZone: function (element, timestamp) { const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; const date = moment.unix(timestamp).tz(timeZone); element.innerHTML = date.format('YYYY-MM-DD HH:mm:ss (z)'); } }" x-init="formatLocalTimeZone($el, 1589407200)" title="2 hours from now">

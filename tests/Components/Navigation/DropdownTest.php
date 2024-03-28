@@ -1,8 +1,7 @@
 <?php
 
-  
 declare(strict_types=1);
-use PHPUnit\Framework\Attributes\Test;
+
 it('can render', function () {
     $template = <<<'HTML'
             <x-dropdown class="text-gray-500">

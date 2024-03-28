@@ -1,8 +1,7 @@
 <?php
 
-  
 declare(strict_types=1);
-use PHPUnit\Framework\Attributes\Test;
+
 it('can render markdown to html', function () {
     $template = <<<'HTML'
             <x-markdown>
@@ -25,6 +24,7 @@ it('can render markdown to html', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 it('can render github flavored markdown to html', function () {
     $template = <<<'HTML'
             <x-markdown flavor="github">
@@ -40,6 +40,7 @@ it('can render github flavored markdown to html', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('options can be passed', function () {
     $template = <<<'HTML'
             <x-markdown :options="['commonmark' => ['use_asterisk' => false]]">
@@ -59,6 +60,7 @@ test('options can be passed', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('anchors can be generated', function () {
     $template = <<<'HTML'
             <x-markdown anchors>
@@ -96,6 +98,7 @@ test('anchors can be generated', function () {
 
     $this->assertComponentRenders($expected, $template);
 });
+
 test('anchors are not generated for headers in code blocks', function () {
     $template = <<<'HTML'
             <x-markdown anchors>
