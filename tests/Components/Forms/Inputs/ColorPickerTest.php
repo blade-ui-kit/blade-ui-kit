@@ -16,6 +16,7 @@ test('the component can be rendered', function () {
 
     assertComponentRenders($expected, $template);
 });
+
 test('attributes can be set', function () {
     $template = <<<'HTML'
             <x-color-picker name="color" id="mainColor" class="mr-2" />
@@ -30,6 +31,7 @@ test('attributes can be set', function () {
 
     assertComponentRenders($expected, $template);
 });
+
 test('js options can be passed along', function () {
     $template = <<<'HTML'
             <x-color-picker name="color" :options="['theme' => 'monolith']" />
@@ -44,6 +46,7 @@ test('js options can be passed along', function () {
 
     assertComponentRenders($expected, $template);
 });
+
 test('inputs can have old values', function () {
     $this->flashOld(['color' => '#FF9900']);
 

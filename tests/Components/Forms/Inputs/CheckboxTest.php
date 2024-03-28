@@ -15,6 +15,7 @@ test('specific attributes can be overwritten', function () {
         '<x-checkbox name="remember_me" id="rememberMe" class="p-4" />',
     );
 });
+
 test('inputs can have old values', function () {
     $this->flashOld(['remember_me' => true]);
 

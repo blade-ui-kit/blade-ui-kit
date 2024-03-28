@@ -19,6 +19,7 @@ it('can be rendered', function () {
 
     assertComponentRenders($expected, '<x-unsplash photo="t9Td0zfDTwI"/>');
 });
+
 it('can set a specific width or height', function () {
     $url = 'https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNDg5Mn0&';
 
