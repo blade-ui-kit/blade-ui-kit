@@ -8,14 +8,15 @@
 
 <span
     x-data="{
-        formatLocalTimeZone: function (element, timestamp) {
-            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            const date = moment.unix(timestamp).tz(timeZone);
-
-            element.innerHTML = date.format('{{ $local !== true ? $local : 'YYYY-MM-DD HH:mm:ss (z)' }}');
-        }
+        element: this.$el,
+        timestamp: {{ $date->timestamp }}
     }"
-    x-init="formatLocalTimeZone($el, {{ $date->timestamp }})"
+    x-init="
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const date = moment.unix(this.timestamp).tz(timeZone);
+
+        this.element.innerHTML = date.format('{{ $local !== true ? $local : 'YYYY-MM-DD HH:mm:ss (z)' }}');
+    "
     title="{{ $date->diffForHumans() }}"
     {{ $attributes }}
 >

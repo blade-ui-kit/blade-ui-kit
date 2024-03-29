@@ -1,13 +1,12 @@
 <input
     x-data="{
         picker: null,
-        initPicker() {
-            if (this.picker) return;
-            
-            this.picker = flatpickr(this.$el, {{ $jsonOptions() }});
-        }
     }"
-    x-init="$nextTick(() => { initPicker() })"
+    x-init="$nextTick(() => { 
+        if (picker) return;
+            
+        picker = flatpickr($el, {{ $jsonOptions() }});
+    })"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"
