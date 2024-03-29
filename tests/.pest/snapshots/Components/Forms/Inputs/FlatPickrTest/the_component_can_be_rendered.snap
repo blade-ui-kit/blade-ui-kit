@@ -1,13 +1,12 @@
 <input
     x-data="{
         picker: null,
-        initPicker() {
-            if (this.picker) return;
-            
-            this.picker = flatpickr(this.$root, {&quot;dateFormat&quot;:&quot;Y-m-d H:i&quot;,&quot;altInput&quot;:true,&quot;enableTime&quot;:true});
-        }
     }"
-    x-init="$nextTick(() => { initPicker() })"
+    x-init="$nextTick(() => { 
+        if (picker) return;
+            
+        picker = flatpickr($root, {&quot;dateFormat&quot;:&quot;Y-m-d H:i&quot;,&quot;altInput&quot;:true,&quot;enableTime&quot;:true});
+    })"
     name="birthday"
     type="text"
     id="birthday"
