@@ -7,11 +7,5 @@ use Tests\ComponentPrefixTestTrait;
 uses(ComponentPrefixTestTrait::class);
 
 test('we can set a config prefix', function () {
-    $expected = <<<'HTML'
-            <span title="Every Sunday at 12:00am">
-                @weekly
-            </span>
-            HTML;
-
-    assertComponentRenders($expected, '<x-ui-cron schedule="@weekly"/>');
+    expect(blade('<x-ui-cron schedule="@weekly"/>'))->toMatchSnapshot();
 });

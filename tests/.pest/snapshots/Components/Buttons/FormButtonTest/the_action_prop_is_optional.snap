@@ -1,0 +1,6 @@
+<form method="POST" >
+    <input type="hidden" name="_token" value="" autocomplete="off">    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" >
+        Logout
+    </button>
+</form>

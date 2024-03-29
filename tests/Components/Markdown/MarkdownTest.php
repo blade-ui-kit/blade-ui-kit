@@ -13,16 +13,7 @@ it('can render markdown to html', function () {
             </x-markdown>
             HTML;
 
-    $expected = <<<'HTML'
-            <div>
-                <h1>Hello World</h1>
-
-                <p>Blade UI components are <strong>awesome</strong>.</p>
-                <p>Check them out <a href="https://github.com/blade-ui-kit">here</a>.</p>
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 it('can render github flavored markdown to html', function () {
@@ -32,13 +23,7 @@ it('can render github flavored markdown to html', function () {
             </x-markdown>
             HTML;
 
-    $expected = <<<'HTML'
-            <div>
-                <p>Blade UI components are <del>cool</del>, <strong>awesome</strong>.</p>
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('options can be passed', function () {
@@ -50,15 +35,7 @@ test('options can be passed', function () {
             </x-markdown>
             HTML;
 
-    $expected = <<<'HTML'
-            <div>
-                <h1>Hello World</h1>
-
-                <p>Blade UI components are *awesome*.</p>
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('anchors can be generated', function () {
@@ -78,25 +55,7 @@ test('anchors can be generated', function () {
             </x-markdown>
             HTML;
 
-    $expected = <<<'HTML'
-            <div>
-                <h1>Hello World</h1>
-
-                <p>Blade UI components are <em>awesome</em>.</p>
-                <p><a class="anchor" name="foo-title"></a></p>
-                <h2>
-                    Foo Title
-                </h2>
-                <p>Some content.</p>
-                <p><a class="anchor" name="baz-title"></a></p>
-                <h3>
-                    Baz Title
-                </h3>
-                <p>Other content.</p>
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('anchors are not generated for headers in code blocks', function () {
@@ -122,24 +81,5 @@ test('anchors are not generated for headers in code blocks', function () {
             </x-markdown>
             HTML;
 
-    $expected = <<<'HTML'
-            <div>
-                <h1>Hello World</h1>
-
-                <p>Blade UI components are <strong>awesome</strong>.</p>
-                <p><a class="anchor" name="sub-title-level-2"></a></p>
-                <h2>
-                    Sub Title level 2
-                </h2>
-                <pre><code>## Code Snippet Header
-            </code></pre>
-                <p>Some content.</p>
-                <pre><code>&lt;div&gt;
-            ## Code Snippet Header Some content.
-            &lt;/div&gt;
-            </code></pre>
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });

@@ -5,13 +5,7 @@ declare(strict_types=1);
 test('the component can be rendered', function () {
     $this->withViewErrors(['first_name' => 'Incorrect first name.']);
 
-    $expected = <<<'HTML'
-            <div class="text-red-500">
-                Incorrect first name.
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, '<x-error field="first_name" class="text-red-500"/>');
+    expect(blade('<x-error field="first_name" class="text-red-500"/>'))->toMatchSnapshot();
 });
 
 it('can be slotted', function () {
@@ -27,14 +21,5 @@ it('can be slotted', function () {
             </x-error>
             HTML;
 
-    $expected = <<<'HTML'
-            <div>
-                <ul>
-                    <li>Incorrect first name.</li>
-                    <li>Needs at least 5 characters.</li>
-                </ul>
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });

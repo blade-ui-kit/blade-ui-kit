@@ -1,0 +1,7 @@
+<textarea
+    x-data
+    x-init="new EasyMDE({ element: $el , ...{&quot;forceSync&quot;:true} })"
+    name="about"
+    id="about"
+    
+></textarea>

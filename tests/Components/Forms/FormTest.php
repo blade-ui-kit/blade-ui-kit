@@ -9,16 +9,7 @@ test('the component can be rendered', function () {
             </x-form>
             HTML;
 
-    $expected = <<<'HTML'
-            <form method="POST" action="http://example.com">
-                <input type="hidden" name="_token" value="" autocomplete="off">
-                <input type="hidden" name="_method" value="POST">
-                Form fields...
-
-            </form>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the method can be set', function () {
@@ -28,16 +19,7 @@ test('the method can be set', function () {
             </x-form>
             HTML;
 
-    $expected = <<<'HTML'
-            <form method="POST" action="http://example.com">
-                <input type="hidden" name="_token" value="" autocomplete="off">
-                <input type="hidden" name="_method" value="PUT">
-                Form fields...
-
-            </form>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 it('can enable file uploads', function () {
@@ -47,16 +29,7 @@ it('can enable file uploads', function () {
             </x-form>
             HTML;
 
-    $expected = <<<'HTML'
-            <form method="POST" action="http://example.com" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="" autocomplete="off">
-                <input type="hidden" name="_method" value="PUT">
-                Form fields...
-
-            </form>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the action prop is optional', function () {
@@ -66,14 +39,5 @@ test('the action prop is optional', function () {
             </x-form>
             HTML;
 
-    $expected = <<<'HTML'
-            <form method="POST">
-                <input type="hidden" name="_token" value="" autocomplete="off">
-                <input type="hidden" name="_method" value="POST">
-                Form fields...
-
-            </form>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });

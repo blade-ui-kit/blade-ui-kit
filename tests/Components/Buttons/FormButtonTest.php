@@ -15,16 +15,7 @@ test('the component can be rendered', function () {
             </x-form-button>
             HTML;
 
-    $expected = <<<'HTML'
-            <form method="POST" action="http://localhost/logout">
-                <input type="hidden" name="_token" value="" autocomplete="off">
-                <input type="hidden" name="_method" value="POST">
-                <button type="submit">
-                Sign Out </button>
-            </form>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the method and attributes can be set', function () {
@@ -34,16 +25,7 @@ test('the method and attributes can be set', function () {
             </x-form-button>
             HTML;
 
-    $expected = <<<'HTML'
-            <form method="POST" action="http://example.com">
-                <input type="hidden" name="_token" value="" autocomplete="off">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="text-gray-500">
-                Logout </button>
-            </form>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the action prop is optional', function () {
@@ -53,14 +35,5 @@ test('the action prop is optional', function () {
             </x-form-button>
             HTML;
 
-    $expected = <<<'HTML'
-            <form method="POST">
-                <input type="hidden" name="_token" value="" autocomplete="off">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">
-                Logout </button>
-            </form>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });

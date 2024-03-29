@@ -1,0 +1,9 @@
+<input
+    x-data
+    x-init="new Pikaday({ field: $el , ...{&quot;format&quot;:&quot;DD\/MM\/YYYY&quot;} })"
+    name="birthday"
+    type="text"
+    id="birthday"
+    placeholder="DD/MM/YYYY"
+    value="23/03/1989"    
+/>

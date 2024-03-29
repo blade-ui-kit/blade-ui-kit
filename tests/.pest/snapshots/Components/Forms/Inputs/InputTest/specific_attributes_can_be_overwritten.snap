@@ -1,0 +1,6 @@
+<input
+    name="confirm_password"
+    type="password"
+    id="confirmPassword"
+        class="p-4"
+/>

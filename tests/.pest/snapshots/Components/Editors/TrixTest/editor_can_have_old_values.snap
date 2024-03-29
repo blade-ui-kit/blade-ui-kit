@@ -1,0 +1,4 @@
+<div >
+    <input name="about" id="about" value="About me text" type="hidden">
+    <trix-editor input="about" class="trix-content"></trix-editor>
+</div>

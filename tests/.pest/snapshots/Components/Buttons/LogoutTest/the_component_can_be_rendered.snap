@@ -1,0 +1,6 @@
+<form method="POST" action="http://localhost/logout">
+    <input type="hidden" name="_token" value="" autocomplete="off">
+    <button type="submit" >
+        Log out
+    </button>
+</form>

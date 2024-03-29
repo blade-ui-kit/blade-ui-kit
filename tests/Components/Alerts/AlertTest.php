@@ -5,25 +5,13 @@ declare(strict_types=1);
 test('the component can be rendered', function () {
     session()->flash('alert', 'Form was successfully submitted.');
 
-    $expected = <<<'HTML'
-            <div role="alert">
-                Form was successfully submitted.
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, '<x-alert/>');
+    expect(blade('<x-alert />'))->toMatchSnapshot();
 });
 
 test('we can specify a type', function () {
     session()->flash('error', 'Form contains some errors.');
 
-    $expected = <<<'HTML'
-            <div role="alert">
-                Form contains some errors.
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, '<x-alert type="error"/>');
+    expect(blade('<x-alert type="error"/>'))->toMatchSnapshot();
 });
 
 it('can be slotted', function () {
@@ -36,14 +24,7 @@ it('can be slotted', function () {
             </x-alert>
             HTML;
 
-    $expected = <<<'HTML'
-            <div role="alert">
-                <span>Hello World</span>
-                Form was successfully submitted.
-            </div>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('multiple messages can be used', function () {
@@ -58,12 +39,6 @@ test('multiple messages can be used', function () {
                 {{ implode(' ', $component->messages()) }}
             </x-alert>
             HTML;
-    $expected = <<<'HTML'
-            <div role="alert">
-                <span>Hello World</span>
-                Form was successfully submitted. We have sent you a confirmation email.
-            </div>
-            HTML;
 
-    assertComponentRenders($expected, $template);
+    expect(blade($template))->toMatchSnapshot();
 });
