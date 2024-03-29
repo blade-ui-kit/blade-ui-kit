@@ -1,15 +1,11 @@
 <?php
 
 use Tests\Components\ComponentTestCase;
+use Tests\TestView;
 
 uses(ComponentTestCase::class)->in('Components');
 
-/**
- * Render the contents of the given Blade template string.
- *
- * @return \Tests\TestView
- */
-function blade(string $template, array $data = [])
+function blade(string $template, array $data = []): TestView
 {
     return test()->blade($template, $data);
 }
