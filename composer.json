@@ -33,7 +33,6 @@
         "nesbot/carbon": "^2.38|^3.0"
     },
     "require-dev": {
-        "gajus/dindent": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
         "league/commonmark": "^1.4|^2.0",
         "lorisleiva/cron-translator": "^0.1.1|^0.4",
