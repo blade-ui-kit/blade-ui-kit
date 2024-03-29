@@ -15,7 +15,7 @@ it('can be rendered', function () {
         'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
     ]);
 
-    expect($this->blade('<x-unsplash photo="t9Td0zfDTwI"/>'))->toMatchSnapshot();
+    expect(blade('<x-unsplash photo="t9Td0zfDTwI"/>'))->toMatchSnapshot();
 });
 
 it('can set a specific width or height', function () {
@@ -25,5 +25,5 @@ it('can set a specific width or height', function () {
         'unsplash.com/*' => Http::response(['urls' => ['raw' => $url]], 200, ['Headers']),
     ]);
 
-    expect($this->blade('<x-unsplash photo="t9Td0zfDTwI" width="200"/>'))->toMatchSnapshot();
+    expect(blade('<x-unsplash photo="t9Td0zfDTwI" width="200"/>'))->toMatchSnapshot();
 });

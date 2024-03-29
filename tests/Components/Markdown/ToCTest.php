@@ -27,7 +27,7 @@ it('can render markdown to html', function () {
             </x-toc>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 it('accepts a base url', function () {
@@ -47,7 +47,7 @@ it('accepts a base url', function () {
             </x-toc>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('headings in code blocks are skipped', function () {
@@ -69,5 +69,5 @@ test('headings in code blocks are skipped', function () {
             </x-toc>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

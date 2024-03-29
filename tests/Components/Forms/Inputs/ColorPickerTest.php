@@ -7,7 +7,7 @@ test('the component can be rendered', function () {
             <x-color-picker name="color" />
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('attributes can be set', function () {
@@ -15,7 +15,7 @@ test('attributes can be set', function () {
             <x-color-picker name="color" id="mainColor" class="mr-2" />
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('js options can be passed along', function () {
@@ -23,7 +23,7 @@ test('js options can be passed along', function () {
             <x-color-picker name="color" :options="['theme' => 'monolith']" />
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('inputs can have old values', function () {
@@ -33,5 +33,5 @@ test('inputs can have old values', function () {
             <x-color-picker name="color" :options="['default' => '#000000']" />
             HTML;
             
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

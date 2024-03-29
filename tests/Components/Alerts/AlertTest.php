@@ -5,13 +5,13 @@ declare(strict_types=1);
 test('the component can be rendered', function () {
     session()->flash('alert', 'Form was successfully submitted.');
 
-    expect($this->blade('<x-alert />'))->toMatchSnapshot();
+    expect(blade('<x-alert />'))->toMatchSnapshot();
 });
 
 test('we can specify a type', function () {
     session()->flash('error', 'Form contains some errors.');
 
-    expect($this->blade('<x-alert type="error"/>'))->toMatchSnapshot();
+    expect(blade('<x-alert type="error"/>'))->toMatchSnapshot();
 });
 
 it('can be slotted', function () {
@@ -24,7 +24,7 @@ it('can be slotted', function () {
             </x-alert>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('multiple messages can be used', function () {
@@ -40,5 +40,5 @@ test('multiple messages can be used', function () {
             </x-alert>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

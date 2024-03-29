@@ -13,7 +13,7 @@ test('the component can be rendered', function () {
             <x-logout />
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the action text and attributes can be set', function () {
@@ -21,5 +21,5 @@ test('the action text and attributes can be set', function () {
             <x-logout action="http://example.com" class="text-gray-500">Sign Out</x-logout>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

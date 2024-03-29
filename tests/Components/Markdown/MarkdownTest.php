@@ -13,7 +13,7 @@ it('can render markdown to html', function () {
             </x-markdown>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 it('can render github flavored markdown to html', function () {
@@ -23,7 +23,7 @@ it('can render github flavored markdown to html', function () {
             </x-markdown>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('options can be passed', function () {
@@ -35,7 +35,7 @@ test('options can be passed', function () {
             </x-markdown>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('anchors can be generated', function () {
@@ -55,7 +55,7 @@ test('anchors can be generated', function () {
             </x-markdown>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('anchors are not generated for headers in code blocks', function () {
@@ -81,5 +81,5 @@ test('anchors are not generated for headers in code blocks', function () {
             </x-markdown>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

@@ -15,7 +15,7 @@ test('the component can be rendered', function () {
             </x-form-button>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the method and attributes can be set', function () {
@@ -25,7 +25,7 @@ test('the method and attributes can be set', function () {
             </x-form-button>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the action prop is optional', function () {
@@ -35,5 +35,5 @@ test('the action prop is optional', function () {
             </x-form-button>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

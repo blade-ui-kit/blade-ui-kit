@@ -7,17 +7,17 @@ beforeEach(function () {
 });
 
 test('the component can be rendered', function () {
-    expect($this->blade('<x-mapbox/>'))->toMatchSnapshot();
+    expect(blade('<x-mapbox/>'))->toMatchSnapshot();
 });
 
 test('options can be passed', function () {
-    expect($this->blade(
+    expect(blade(
         '<x-mapbox id="custom-map" :options="[\'zoom\' => 0]"/>'
     ))->toMatchSnapshot();
 });
 
 test('markers can be placed', function () {
-    expect($this->blade(
+    expect(blade(
         '<x-mapbox :markers="[[13.4105300, 52.5243700]]"/>'
     ))->toMatchSnapshot();
 });

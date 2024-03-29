@@ -5,7 +5,7 @@ declare(strict_types=1);
 test('the component can be rendered', function () {
     $this->withViewErrors(['first_name' => 'Incorrect first name.']);
 
-    expect($this->blade('<x-error field="first_name" class="text-red-500"/>'))->toMatchSnapshot();
+    expect(blade('<x-error field="first_name" class="text-red-500"/>'))->toMatchSnapshot();
 });
 
 it('can be slotted', function () {
@@ -21,5 +21,5 @@ it('can be slotted', function () {
             </x-error>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

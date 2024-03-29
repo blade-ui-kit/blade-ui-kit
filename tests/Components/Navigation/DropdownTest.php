@@ -15,5 +15,5 @@ it('can render', function () {
             </x-html>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

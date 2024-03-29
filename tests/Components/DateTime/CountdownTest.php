@@ -24,5 +24,5 @@ test('the component can be slotted', function () {
             </x-countdown>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });

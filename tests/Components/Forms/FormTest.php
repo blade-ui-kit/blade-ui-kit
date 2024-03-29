@@ -9,7 +9,7 @@ test('the component can be rendered', function () {
             </x-form>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the method can be set', function () {
@@ -19,7 +19,7 @@ test('the method can be set', function () {
             </x-form>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 it('can enable file uploads', function () {
@@ -29,7 +29,7 @@ it('can enable file uploads', function () {
             </x-form>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
 
 test('the action prop is optional', function () {
@@ -39,5 +39,5 @@ test('the action prop is optional', function () {
             </x-form>
             HTML;
 
-    expect($this->blade($template))->toMatchSnapshot();
+    expect(blade($template))->toMatchSnapshot();
 });
