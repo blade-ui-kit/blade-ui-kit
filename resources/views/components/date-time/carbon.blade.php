@@ -8,7 +8,7 @@
 
 <span
     x-data="{
-        element: this.$el,
+        element: this.$root,
         timestamp: {{ $date->timestamp }}
     }"
     x-init="

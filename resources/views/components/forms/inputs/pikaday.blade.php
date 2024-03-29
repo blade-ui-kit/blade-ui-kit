@@ -1,6 +1,6 @@
 <input
     x-data
-    x-init="new Pikaday({ field: $el {{ $jsonOptions() }} })"
+    x-init="new Pikaday({ field: $root {{ $jsonOptions() }} })"
     name="{{ $name }}"
     type="text"
     id="{{ $id }}"

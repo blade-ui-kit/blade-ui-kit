@@ -4,7 +4,7 @@
         initPicker() {
             if (this.picker) return;
             
-            this.picker = flatpickr(this.$el, {&quot;dateFormat&quot;:&quot;Y-m-d H:i&quot;,&quot;altInput&quot;:true,&quot;enableTime&quot;:true});
+            this.picker = flatpickr(this.$root, {&quot;dateFormat&quot;:&quot;Y-m-d H:i&quot;,&quot;altInput&quot;:true,&quot;enableTime&quot;:true});
         }
     }"
     x-init="$nextTick(() => { initPicker() })"

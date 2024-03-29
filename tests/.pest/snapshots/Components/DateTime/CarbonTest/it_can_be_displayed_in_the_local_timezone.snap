@@ -7,7 +7,7 @@
             element.innerHTML = date.format('YYYY-MM-DD HH:mm:ss (z)');
         }
     }"
-    x-init="formatLocalTimeZone($el, 1589407200)"
+    x-init="formatLocalTimeZone($root, 1589407200)"
     title="2 hours from now"
     
 >

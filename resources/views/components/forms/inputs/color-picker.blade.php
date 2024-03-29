@@ -12,7 +12,7 @@
             let currentColor = color ? color.toHEXA().toString() : '';
 
             input.setAttribute('value', currentColor);
-            $el.setAttribute('title', currentColor);
+            $root.setAttribute('title', currentColor);
         });
     "
     {{ $attributes->merge(['title' => $value]) }}

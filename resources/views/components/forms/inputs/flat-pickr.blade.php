@@ -5,7 +5,7 @@
     x-init="$nextTick(() => { 
         if (picker) return;
             
-        picker = flatpickr($el, {{ $jsonOptions() }});
+        picker = flatpickr($root, {{ $jsonOptions() }});
     })"
     name="{{ $name }}"
     type="text"
