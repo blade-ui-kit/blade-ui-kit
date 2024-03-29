@@ -9,9 +9,9 @@ beforeEach(function () {
 });
 
 test('the component can be rendered', function () {
-    expect(
+    expect(blade(
         '<x-countdown :expires="new Carbon\Carbon(\'2020-06-11 17:15:22\', \'CET\')"/>'
-    )->toMatchSnapshot();
+    ))->toMatchSnapshot();
 });
 
 test('the component can be slotted', function () {
