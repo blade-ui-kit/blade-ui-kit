@@ -1,0 +1,1 @@
+<x-countdown :expires="new Carbon\Carbon('2020-06-11 17:15:22', 'CET')"/>

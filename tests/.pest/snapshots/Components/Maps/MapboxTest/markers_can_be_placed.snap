@@ -1,0 +1,16 @@
+<div
+    x-data="
+{
+    initMapbox: function () {
+        mapboxgl.accessToken = 'testing';
+        var map = new mapboxgl.Map({&quot;container&quot;:&quot;map&quot;,&quot;style&quot;:&quot;mapbox:\/\/styles\/mapbox\/streets-v11&quot;});
+
+                    new mapboxgl.Marker()
+                .setLngLat([13.41053,52.52437])
+                    .addTo(map);
+            }
+}"
+    x-init="initMapbox()"
+    id="map"
+    
+></div>

@@ -1,0 +1,11 @@
+<div >
+    <h1>Hello World</h1>
+<p>Blade UI components are <em>awesome</em>.</p>
+<p><a class="anchor" name="foo-title"></a></p>
+<h2>Foo Title</h2>
+<p>Some content.</p>
+<p><a class="anchor" name="baz-title"></a></p>
+<h3>Baz Title</h3>
+<p>Other content.</p>
+
+</div>

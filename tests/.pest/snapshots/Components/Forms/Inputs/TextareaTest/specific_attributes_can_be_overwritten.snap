@@ -1,0 +1,6 @@
+<textarea
+    name="about"
+    id="aboutMe"
+    rows="5"
+    cols="8" class="p-4"
+>About me text</textarea>

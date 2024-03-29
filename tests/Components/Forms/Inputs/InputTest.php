@@ -3,24 +3,17 @@
 declare(strict_types=1);
 
 test('the component can be rendered', function () {
-    assertComponentRenders(
-        '<input name="search" type="text" id="search" />',
-        '<x-input name="search" />',
-    );
+    expect($this->blade('<x-input name="search" />'))->toMatchSnapshot();
 });
 
 test('specific attributes can be overwritten', function () {
-    assertComponentRenders(
-        '<input name="confirm_password" type="password" id="confirmPassword" class="p-4" />',
-        '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />',
-    );
+    expect($this->blade(
+        '<x-input name="confirm_password" id="confirmPassword" type="password" class="p-4" />'
+    ))->toMatchSnapshot();
 });
 
 test('inputs can have old values', function () {
     $this->flashOld(['search' => 'Eloquent']);
 
-    assertComponentRenders(
-        '<input name="search" type="text" id="search" value="Eloquent" />',
-        '<x-input name="search" />',
-    );
+    expect($this->blade('<x-input name="search" />'))->toMatchSnapshot();
 });

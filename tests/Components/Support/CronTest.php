@@ -5,13 +5,7 @@ declare(strict_types=1);
 use BladeUIKit\Components\Support\Cron;
 
 test('the component can be rendered', function () {
-    $expected = <<<'HTML'
-            <span title="Every Sunday at 12:00am">
-                @weekly
-            </span>
-            HTML;
-
-    assertComponentRenders($expected, '<x-cron schedule="@weekly"/>');
+    expect($this->blade('<x-cron schedule="@weekly"/>'))->toMatchSnapshot();
 });
 
 it('can translate a cron', function () {
@@ -21,11 +15,5 @@ it('can translate a cron', function () {
 });
 
 test('its component can be rendered as human readable', function () {
-    $expected = <<<'HTML'
-            <span title="@weekly">
-                Every Sunday at 12:00am
-            </span>
-            HTML;
-
-    assertComponentRenders($expected, '<x-cron schedule="@weekly" human/>');
+    expect($this->blade('<x-cron schedule="@weekly" human/>'))->toMatchSnapshot();
 });

@@ -1,0 +1,7 @@
+<input
+    name="remember_me"
+    type="checkbox"
+    id="rememberMe"
+        
+    class="p-4"
+/>

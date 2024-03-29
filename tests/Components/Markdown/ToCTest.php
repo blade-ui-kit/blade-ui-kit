@@ -27,34 +27,7 @@ it('can render markdown to html', function () {
             </x-toc>
             HTML;
 
-    $expected = <<<'HTML'
-            <ul>
-                <li>
-                    <a href="#sub-title-level-2">
-                Sub Title level 2 </a>
-                
-                    <ul>
-                        <li>
-                <a href="#sub-sub-title-level-3">
-                Sub Sub Title level 3 </a>
-                </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#other-sub-title-level-2">
-                Other Sub Title level 2 </a>
-                
-                    <ul>
-                        <li>
-                <a href="#sub-sub-title-level-3">
-                Sub Sub Title level 3 </a>
-                </li>
-                    </ul>
-                </li>
-            </ul>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect($this->blade($template))->toMatchSnapshot();
 });
 
 it('accepts a base url', function () {
@@ -74,23 +47,7 @@ it('accepts a base url', function () {
             </x-toc>
             HTML;
 
-    $expected = <<<'HTML'
-            <ul>
-                <li>
-                    <a href="http://example.com/foo#sub-title-level-2">
-                Sub Title level 2 </a>
-                
-                    <ul>
-                        <li>
-                <a href="http://example.com/foo#sub-sub-title-level-3">
-                Sub Sub Title level 3 </a>
-                </li>
-                    </ul>
-                </li>
-            </ul>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect($this->blade($template))->toMatchSnapshot();
 });
 
 test('headings in code blocks are skipped', function () {
@@ -112,14 +69,5 @@ test('headings in code blocks are skipped', function () {
             </x-toc>
             HTML;
 
-    $expected = <<<'HTML'
-            <ul>
-                <li>
-                <a href="#sub-title-level-2">
-                Sub Title level 2 </a>
-                </li>
-            </ul>
-            HTML;
-
-    assertComponentRenders($expected, $template);
+    expect($this->blade($template))->toMatchSnapshot();
 });
