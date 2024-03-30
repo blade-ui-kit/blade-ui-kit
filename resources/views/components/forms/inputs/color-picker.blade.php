@@ -11,15 +11,22 @@
         pickr.on('save', function (color) {
             let currentColor = color ? color.toHEXA().toString() : '';
 
-            $dispatch('input', currentColor);
             input.setAttribute('value', currentColor);
-            $root.setAttribute('title', currentColor);
+            element.setAttribute('title', currentColor);
+
+            $dispatch('buk:color-save', {
+                id: '{{ $id }}',
+                color: currentColor
+            });
         });
-        
+
         pickr.on('change', function (color) {
             let currentColor = color ? color.toHEXA().toString() : '';
 
-            $dispatch('change', currentColor);
+            $dispatch('buk:color-change', {
+                id: '{{ $id }}',
+                color: currentColor
+            });
         });
     "
     {{ $attributes->merge(['title' => $value]) }}
