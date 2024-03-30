@@ -35,8 +35,10 @@
     "require-dev": {
         "guzzlehttp/guzzle": "^7.4",
         "league/commonmark": "^1.4|^2.0",
+        "livewire/livewire": "^3.0",
         "lorisleiva/cron-translator": "^0.1.1|^0.4",
         "orchestra/testbench": "^8.0|^9.0",
+        "orchestra/testbench-dusk": "^9.0",
         "pestphp/pest": "^2.34",
         "phpunit/phpunit": "^10.5|^11.0"
     },
@@ -68,5 +70,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "@dusk:install-chromedriver"
+        ],
+        "dusk:install-chromedriver": "@php vendor/bin/dusk-updater detect --auto-update --ansi"
+    }
 }

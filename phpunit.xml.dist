@@ -2,7 +2,10 @@
 <phpunit colors="true">
     <testsuites>
         <testsuite name="Blade UI Kit Test Suite">
-            <directory>tests</directory>
+            <directory>tests/Components</directory>
+        </testsuite>
+        <testsuite name="Browser">
+            <directory>tests/Browser</directory>
         </testsuite>
     </testsuites>
 </phpunit>
