@@ -7,8 +7,6 @@ use Livewire\LivewireServiceProvider;
 
 abstract class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase 
 {
-    use BuildsComponents;
-
     protected function getPackageProviders($app)
     {
         return [
@@ -41,23 +39,31 @@ abstract class DuskTestCase extends \Orchestra\Testbench\Dusk\TestCase
      */
     protected function defineWebRoutes($router)
     {
-        $router->get('/blade-ui-kit/livewire/{component}/{attributes?}', function ($component, $attributes = '[]') {
-            $attributes = $this->deserializeAttributes($attributes);
+        $router->get('/blade-ui-kit/blade/{componentConfigs}', function ($componentConfigs) {
+            $html = ComponentConfig::deserializeComponentConfigsToHtml(
+                urldecode($componentConfigs)
+            );
 
-            return $this->buildComponentHtml("<livewire:$component $attributes />");
-        })->name('blade-ui-kit.livewire');
-
-        $router->get('/blade-ui-kit/blade/{component}/{attributes?}', function ($component, $attributes = '[]') {
-            $attributes = $this->deserializeAttributes($attributes);
-
-            return $this->buildComponentHtml("<x-dynamic-component component=\"$component\" $attributes />");
+            return ComponentConfig::wrapComponentHtml($html);
         })->name('blade-ui-kit.component');
     }
 
-    protected function makeComponentRoute($component, $attributes = [])
+    /**
+     * Make a route to a page containing the specified Blade component(s).
+     * 
+     * @param ComponentConfig[]|ComponentConfig $componentConfig 
+     * @return string 
+     */
+    protected function makeComponentRoute($componentConfigs)
     {
-        $attributes = urlencode($this->serializeAttributes($attributes));
+        if (!is_array($componentConfigs)) {
+            $componentConfigs = [$componentConfigs];
+        }
 
-        return route('blade-ui-kit.component', compact('component', 'attributes'), false);
+        $componentConfigs = urlencode(
+            ComponentConfig::serializeComponentsConfigs($componentConfigs)
+        );
+
+        return route('blade-ui-kit.component', compact('componentConfigs'), false);
     }
 }
