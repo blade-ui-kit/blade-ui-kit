@@ -2,12 +2,14 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## 0.5.1 - 2024-03-27
+## [Unreleased](https://github.com/laravel/framework/compare/0.5.1...main)
+
+## [0.5.1 (2024-03-27)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.5.0...0.5.1)
 
 * Fix tests for windows by [@luttje](https://github.com/luttje) in https://github.com/blade-ui-kit/blade-ui-kit/pull/135
 * Initiate FlatPickr component on page load instead of mouse-enter by [@koenhendriks](https://github.com/koenhendriks) in https://github.com/blade-ui-kit/blade-ui-kit/pull/139
 
-## 0.5.0 - 2024-03-27
+## [0.5.0 (2024-03-27)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.4.0...0.5.0)
 
 * Laravel 11.x Compatibility by [@laravel-shift](https://github.com/laravel-shift) in https://github.com/blade-ui-kit/blade-ui-kit/pull/149
 
