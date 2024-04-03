@@ -47,11 +47,8 @@ class ComponentConfig
 
     /**
      * Serialize the component configs to JSON.
-     * 
-     * @param array $componentConfigs 
-     * @return string 
      */
-    public static function serializeComponentsConfigs(array $componentConfigs)
+    public static function serializeComponentsConfigs(array $componentConfigs): string
     {
         return json_encode($componentConfigs);
     }
