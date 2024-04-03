@@ -17,8 +17,6 @@ class ComponentConfig
 
     /**
      * Renders the component to HTML.
-     * 
-     * @return string 
      */
     public function render(): string
     {
