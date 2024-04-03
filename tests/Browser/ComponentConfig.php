@@ -55,11 +55,8 @@ class ComponentConfig
 
     /**
      * Wrap the component(s) HTML in a full HTML document.
-     * 
-     * @param string $componentHtml 
-     * @return string 
      */
-    public static function wrapComponentHtml(string $componentHtml)
+    public static function wrapComponentHtml(string $componentHtml): string
     {
         return Blade::render(
             "<html><head><meta name=\"csrf-token\" content=\"{{ csrf_token() }}\" />\n@bukStyles</head><body>\n" .
