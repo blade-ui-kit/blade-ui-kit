@@ -2,7 +2,12 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.5.1...main)
+## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.0...main)
+
+## [0.6.0](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.5.1...0.6.0) - 2024-04-03
+
+* Throw error on Unsplash API fail by [@alexmanase](https://github.com/alexmanase) in https://github.com/blade-ui-kit/blade-ui-kit/pull/155
+* Alpine 3 support by [@alexmanase](https://github.com/alexmanase) in https://github.com/blade-ui-kit/blade-ui-kit/pull/156
 
 ## [0.5.1 (2024-03-27)](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.5.0...0.5.1)
 
