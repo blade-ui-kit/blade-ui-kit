@@ -1,7 +1,14 @@
-<textarea
-    x-data
-    x-init="new EasyMDE({ element: $root , ...{&quot;forceSync&quot;:true} })"
-    name="about"
-    id="about"
-    
-></textarea>
+<div wire:ignore>
+    <textarea
+        x-data="{
+            easyMDE: null
+        }"
+        x-init="
+            this.easyMDE = new EasyMDE({ element: $root , ...{&quot;forceSync&quot;:true} });
+
+                    "
+        name="about"
+        id="about"
+        
+    ></textarea>
+</div>
