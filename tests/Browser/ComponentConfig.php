@@ -33,11 +33,8 @@ class ComponentConfig
 
     /**
      * Deserialize and render the component configs from JSON to HTML.
-     * 
-     * @param string $componentConfigs 
-     * @return string 
      */
-    public static function deserializeComponentConfigsToHtml(string $componentConfigs)
+    public static function deserializeComponentConfigsToHtml(string $componentConfigs): string
     {
         $componentConfigs = collect(json_decode($componentConfigs))->map(function ($componentConfig) {
             return new ComponentConfig($componentConfig->name, (array)$componentConfig->attributes);
