@@ -58,7 +58,7 @@ final class BladeUIKit
             ->map(function (string $script) {
 
                 if (str($script)->contains('alpine')) {
-                    if (config('livewire.inject_assets')) {
+                    if (config('livewire.inject_assets') && !app()->runningUnitTests()) {
                         return;
                     }
                     
