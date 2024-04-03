@@ -1,13 +1,14 @@
 <span
     x-data="{
-        formatLocalTimeZone: function (element, timestamp) {
-            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            const date = moment.unix(timestamp).tz(timeZone);
-
-            element.innerHTML = date.format('YYYY-MM-DD HH:mm:ss (z)');
-        }
+        element: this.$root,
+        timestamp: 1589407200
     }"
-    x-init="formatLocalTimeZone($el, 1589407200)"
+    x-init="
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const date = moment.unix(this.timestamp).tz(timeZone);
+
+        this.element.innerHTML = date.format('YYYY-MM-DD HH:mm:ss (z)');
+    "
     title="2 hours from now"
     
 >

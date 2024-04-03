@@ -1,13 +1,16 @@
 <div
-    x-data="
-{
-    timer: {
-        days: '{{ $days() }}',
-        hours: '{{ $hours() }}',
-        minutes: '{{ $minutes() }}',
-        seconds: '{{ $seconds() }}',
-    },
-    startCounter: function () {
+    x-data="{
+        timer: {
+            days: '{{ $days() }}',
+            hours: '{{ $hours() }}',
+            minutes: '{{ $minutes() }}',
+            seconds: '{{ $seconds() }}',
+        },
+        formatCounter(number) {
+            return number.toString().padStart(2, '0');
+        }
+    }"
+    x-init="
         let runningCounter = setInterval(() => {
             let countDownDate = new Date({{ $expires->timestamp }} * 1000).getTime();
             let timeDistance = countDownDate - new Date().getTime();
@@ -18,18 +21,12 @@
                 return;
             }
 
-            this.timer.days = this.formatCounter(Math.floor(timeDistance / (1000 * 60 * 60 * 24)));
-            this.timer.hours = this.formatCounter(Math.floor((timeDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-            this.timer.minutes = this.formatCounter(Math.floor((timeDistance % (1000 * 60 * 60)) / (1000 * 60)));
-            this.timer.seconds = this.formatCounter(Math.floor((timeDistance % (1000 * 60)) / 1000));
+            timer.days = formatCounter(Math.floor(timeDistance / (1000 * 60 * 60 * 24)));
+            timer.hours = formatCounter(Math.floor((timeDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            timer.minutes = formatCounter(Math.floor((timeDistance % (1000 * 60 * 60)) / (1000 * 60)));
+            timer.seconds = formatCounter(Math.floor((timeDistance % (1000 * 60)) / 1000));
         }, 1000);
-    },
-    formatCounter: function (number) {
-        return number.toString().padStart(2, '0');
-    }
-}
-"
-    x-init="startCounter()"
+    "
     {{ $attributes }}
 >
     @if ($slot->isEmpty())

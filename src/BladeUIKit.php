@@ -53,9 +53,15 @@ final class BladeUIKit
             return '';
         }
 
-        return collect(static::$scripts)->map(function (string $script) {
-            return '<script src="'.$script.'"></script>';
-        })->implode(PHP_EOL);
+        return collect(static::$scripts)
+            ->sort(fn (string $script) => str($script)->contains('alpine') ? 1 : 0)
+            ->map(function (string $script) {
+                if (str($script)->contains('alpine')) {
+                    return '<script src="'.$script.'" defer></script>';
+                }
+
+                return '<script src="'.$script.'"></script>';
+            })->implode(PHP_EOL);
     }
 
     private static function disableScripts(): bool

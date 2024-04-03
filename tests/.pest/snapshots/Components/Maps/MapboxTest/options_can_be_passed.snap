@@ -1,13 +1,9 @@
 <div
-    x-data="
-{
-    initMapbox: function () {
+    x-init="
         mapboxgl.accessToken = 'testing';
         var map = new mapboxgl.Map({&quot;container&quot;:&quot;custom-map&quot;,&quot;style&quot;:&quot;mapbox:\/\/styles\/mapbox\/streets-v11&quot;,&quot;zoom&quot;:0});
 
-            }
-}"
-    x-init="initMapbox()"
+            "
     id="custom-map"
     
 ></div>
