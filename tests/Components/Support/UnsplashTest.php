@@ -38,4 +38,4 @@ it('throws an error when the photo url in invalid', function () {
     ]);
 
     blade('<x-unsplash photo="foo" width="200"/>');
-})->throws(ViewException::class)->only();
+})->throws(ViewException::class);
