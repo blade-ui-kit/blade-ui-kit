@@ -70,7 +70,9 @@ class Unsplash extends BladeComponent
                 'query' => $this->query,
                 'featured' => $this->featured,
                 'username' => $this->username,
-            ]))->json()['urls']['raw'];
+            ]))
+            ->throw()
+            ->json()['urls']['raw'];
         });
 
         if ($this->width || $this->height) {
