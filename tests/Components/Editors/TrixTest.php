@@ -11,3 +11,7 @@ test('editor can have old values', function () {
 
     expect(blade('<x-trix name="about"/>'))->toMatchSnapshot();
 });
+
+it('can have classes', function () {
+    expect(blade('<x-trix name="about" class="p-2" />'))->toMatchSnapshot();
+});
