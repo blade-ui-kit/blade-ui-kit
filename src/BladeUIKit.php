@@ -57,6 +57,10 @@ final class BladeUIKit
             ->sort(fn (string $script) => str($script)->contains('alpine') ? 1 : 0)
             ->map(function (string $script) {
                 if (str($script)->contains('alpine')) {
+                    if (config('livewire.inject_assets') && !app()->runningUnitTests()) {
+                        return;
+                    }
+                    
                     return '<script src="'.$script.'" defer></script>';
                 }
 
