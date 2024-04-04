@@ -4,7 +4,7 @@ $key = uniqid();
 @endphp
 
 
-<div {{ $attributes->whereDoesntStartWith('wire:model') }} }} wire:ignore>
+<div {{ $attributes->whereDoesntStartWith('wire:model') }} wire:ignore>
     <input name="{{ $name }}" id="{{ $id }}" value="{{ old($name, $slot) }}" type="hidden">
 
     <trix-editor

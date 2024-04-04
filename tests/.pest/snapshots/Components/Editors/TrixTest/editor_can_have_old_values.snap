@@ -1,4 +1,4 @@
-<div  }} wire:ignore>
+<div  wire:ignore>
     <input name="about" id="about" value="About me text" type="hidden">
 
     <trix-editor
