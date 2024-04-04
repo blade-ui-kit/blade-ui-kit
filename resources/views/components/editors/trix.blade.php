@@ -7,7 +7,7 @@ $key = uniqid();
     <input name="{{ $name }}" id="{{ $id }}" value="{{ old($name, $slot) }}" type="hidden">
 
     <trix-editor
-        @if($model->first())
+        @if ($model->first())
             x-data
             x-on:trix-change="$dispatch('input', event.target.value)"
             x-ref="trix"
