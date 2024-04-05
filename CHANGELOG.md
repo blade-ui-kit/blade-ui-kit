@@ -2,7 +2,11 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.1...main)
+## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.2...main)
+
+## [0.6.2](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.1...0.6.2) - 2024-04-05
+
+* Use flatpickr with livewire by [@alexmanase](https://github.com/alexmanase) in https://github.com/blade-ui-kit/blade-ui-kit/pull/161
 
 ## [0.6.1](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.0...0.6.1) - 2024-04-04
 
