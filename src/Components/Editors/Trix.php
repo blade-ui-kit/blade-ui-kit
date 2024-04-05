@@ -16,15 +16,15 @@ class Trix extends BladeComponent
     public $id;
 
     /** @var string */
-    public $class;
+    public $trixClass;
 
     protected static $assets = ['trix'];
 
-    public function __construct(string $name, string $id = null, string $class = 'trix-content')
+    public function __construct(string $name, string $id = null, string $trixClass = 'trix-content')
     {
         $this->name = $name;
         $this->id = $id ?? $name;
-        $this->class = $class;
+        $this->trixClass = $trixClass;
     }
 
     public function render(): View

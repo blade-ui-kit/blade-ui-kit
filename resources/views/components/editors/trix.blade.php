@@ -15,6 +15,6 @@ $key = uniqid();
             {{ $attributes->whereStartsWith('wire:model') }}
         @endif
         input="{{ $id }}"
-        class="{{ $class }}"
+        class="{{ $trixClass }}"
     ></trix-editor>
 </div>
