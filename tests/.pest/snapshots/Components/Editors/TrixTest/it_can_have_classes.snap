@@ -1,0 +1,8 @@
+<div  wire:ignore>
+    <input name="about" id="about" value="" type="hidden">
+
+    <trix-editor
+                input="about"
+        class="p-2"
+    ></trix-editor>
+</div>
