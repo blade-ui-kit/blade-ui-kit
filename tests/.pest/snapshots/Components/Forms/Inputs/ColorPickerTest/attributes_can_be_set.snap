@@ -12,7 +12,7 @@
             let currentColor = color ? color.toHEXA().toString() : '';
 
             input.setAttribute('value', currentColor);
-            element.setAttribute('title', currentColor);
+            $root.setAttribute('title', currentColor);
 
             $dispatch('buk:color-save', {
                 id: 'mainColor',
