@@ -13,6 +13,20 @@
 
             input.setAttribute('value', currentColor);
             $root.setAttribute('title', currentColor);
+
+            $dispatch('buk:color-save', {
+                id: '{{ $id }}',
+                color: currentColor
+            });
+        });
+
+        pickr.on('change', function (color) {
+            let currentColor = color ? color.toHEXA().toString() : '';
+
+            $dispatch('buk:color-change', {
+                id: '{{ $id }}',
+                color: currentColor
+            });
         });
     "
     {{ $attributes->merge(['title' => $value]) }}
