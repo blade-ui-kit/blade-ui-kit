@@ -2,7 +2,11 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.2...main)
+## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.3...main)
+
+## [0.6.3](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.2...0.6.3) - 2024-11-22
+
+* Allow slot to be used with Label component by [@driesvints](https://github.com/driesvints) in https://github.com/blade-ui-kit/blade-ui-kit/pull/169
 
 ## [0.6.2](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.1...0.6.2) - 2024-04-05
 
