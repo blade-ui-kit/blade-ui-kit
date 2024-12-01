@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\View;
 
 class Password extends Input
 {
-    public function __construct(string $name = 'password', string $id = null)
+    public function __construct(string $name = 'password', ?string $id = null)
     {
         parent::__construct($name, $id, 'password');
     }

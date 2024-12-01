@@ -38,8 +38,8 @@ class Unsplash extends BladeComponent
         string $query = '',
         bool $featured = false,
         string $username = '',
-        int $width = null,
-        int $height = null,
+        ?int $width = null,
+        ?int $height = null,
         int $ttl = 3600
     ) {
         $this->photo = $photo;

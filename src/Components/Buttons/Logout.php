@@ -12,7 +12,7 @@ class Logout extends BladeComponent
     /** @var string */
     public $action;
 
-    public function __construct(string $action = null)
+    public function __construct(?string $action = null)
     {
         $this->action = $action ?? route('logout');
     }
