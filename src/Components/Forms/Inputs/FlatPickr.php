@@ -21,10 +21,10 @@ class FlatPickr extends Input
 
     public function __construct(
         string $name,
-        string $id = null,
+        ?string $id = null,
         ?string $value = '',
         string $format = 'Y-m-d H:i',
-        string $placeholder = null,
+        ?string $placeholder = null,
         array $options = []
     ) {
         parent::__construct($name, $id, 'text', $value);

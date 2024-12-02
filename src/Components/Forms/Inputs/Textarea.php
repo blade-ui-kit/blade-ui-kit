@@ -18,7 +18,7 @@ class Textarea extends BladeComponent
     /** @var int */
     public $rows;
 
-    public function __construct(string $name, string $id = null, $rows = 3)
+    public function __construct(string $name, ?string $id = null, $rows = 3)
     {
         $this->name = $name;
         $this->id = $id ?? $name;
