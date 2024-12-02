@@ -2,7 +2,11 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.3...main)
+## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.4...main)
+
+## [0.6.4](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.3...0.6.4) - 2024-12-02
+
+* fix PHP 8.4 deprecation for implicit nullables by [@tomschlick](https://github.com/tomschlick) in https://github.com/blade-ui-kit/blade-ui-kit/pull/170
 
 ## [0.6.3](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.2...0.6.3) - 2024-11-22
 
