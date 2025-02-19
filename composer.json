@@ -27,9 +27,9 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
-        "illuminate/filesystem": "^10.0|^11.0",
-        "illuminate/support": "^10.0|^11.0",
-        "illuminate/view": "^10.0|^11.0",
+        "illuminate/filesystem": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/view": "^10.0|^11.0|^12.0",
         "nesbot/carbon": "^2.38|^3.0"
     },
     "require-dev": {
@@ -37,8 +37,8 @@
         "league/commonmark": "^1.4|^2.0",
         "livewire/livewire": "^3.0",
         "lorisleiva/cron-translator": "^0.1.1|^0.4",
-        "orchestra/testbench": "^8.0|^9.0",
-        "orchestra/testbench-dusk": "^8.0|^9.0",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "orchestra/testbench-dusk": "^8.0|^9.0|^10.0",
         "pestphp/pest": "^2.34|^3.0",
         "phpunit/phpunit": "^10.5|^11.0"
     },

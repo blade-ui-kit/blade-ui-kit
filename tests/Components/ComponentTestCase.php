@@ -4,12 +4,9 @@ namespace Tests\Components;
 
 use BladeUIKit\BladeUIKitServiceProvider;
 use Orchestra\Testbench\TestCase;
-use Tests\InteractsWithViews;
 
 abstract class ComponentTestCase extends TestCase
 {
-    use InteractsWithViews;
-
     protected function setUp(): void
     {
         parent::setUp();
