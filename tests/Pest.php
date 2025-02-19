@@ -1,8 +1,8 @@
 <?php
 
+use Illuminate\Testing\TestView;
 use Tests\Browser\DuskTestCase;
 use Tests\Components\ComponentTestCase;
-use Tests\TestView;
 
 uses(ComponentTestCase::class)->in('Components');
 uses(DuskTestCase::class)->in('Browser');
