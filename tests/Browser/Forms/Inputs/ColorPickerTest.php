@@ -12,8 +12,8 @@ use Tests\Browser\DuskTestCase;
 // https://github.com/orchestral/testbench-dusk/issues/91#issuecomment-1884250004
 class ColorPickerTest extends DuskTestCase
 {
-    /** @test */
-    public function it_can_render_color_picker_and_choose_color() {
+    public function test_it_can_render_color_picker_and_choose_color()
+    {
         $this->browse(function (Browser $browser) {
             $inputElement = 'document.querySelector("#color1-input")';
 
@@ -34,8 +34,8 @@ class ColorPickerTest extends DuskTestCase
         });
     }
     
-    /** @test */
-    public function it_can_render_multiple_color_pickers_and_choose_color() {
+    public function test_it_can_render_multiple_color_pickers_and_choose_color()
+    {
         $this->browse(function (Browser $browser) {
             $inputElement1 = 'document.querySelector("#color1-input")';
             $inputElement2 = 'document.querySelector("#color2-input")';
