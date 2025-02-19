@@ -2,7 +2,11 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.4...main)
+## [Unreleased](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.7.0...main)
+
+## [0.7.0](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.4...0.7.0) - 2025-02-19
+
+* Laravel v12 Support by [@driesvints](https://github.com/driesvints) in https://github.com/blade-ui-kit/blade-ui-kit/pull/171
 
 ## [0.6.4](https://github.com/blade-ui-kit/blade-ui-kit/compare/0.6.3...0.6.4) - 2024-12-02
 
