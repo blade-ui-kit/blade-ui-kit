@@ -87,7 +87,7 @@ final class BladeUIKitServiceProvider extends ServiceProvider
             });
 
             collect($files)->filter(function (string $file) {
-                return Str::endsWith($file, '.js');
+                return Str::endsWith($file, '.js') || Str::contains($file, 'googleapis.com/maps');
             })->each(function (string $script) {
                 BladeUIKit::addScript($script);
             });
