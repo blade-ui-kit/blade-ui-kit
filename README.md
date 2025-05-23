@@ -1,4 +1,4 @@
-> A message from the maintainer: in recent years it has become more and more clear to me that I won't be able to continue the maintenance of Blade UI Kit. What started originally as an ambitious component library grew too large for me to properly maintain and expand on. In the meantime, more advanced libraries like [Flux UI](https://fluxui.dev) have emerged.
+> **A message from the maintainer:** in recent years it has become more and more clear to me that I won't be able to continue the maintenance of Blade UI Kit. What started originally as an ambitious component library grew too large for me to properly maintain and expand on. In the meantime, more advanced libraries like [Flux UI](https://fluxui.dev) have emerged.
 >
 > Rather than finding a new maintainer I think it's best to let the project come to an end. I want to thank all users for their support and if anyone wants, they can fork the library to give it a second life.
 >
