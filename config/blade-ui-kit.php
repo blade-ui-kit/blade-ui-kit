@@ -36,6 +36,7 @@ return [
         'logout' => Components\Buttons\Logout::class,
         'mapbox' => Components\Maps\Mapbox::class,
         'markdown' => Components\Markdown\Markdown::class,
+        'money' => Components\Support\Money::class,
         'password' => Components\Forms\Inputs\Password::class,
         'pikaday' => Components\Forms\Inputs\Pikaday::class,
         'social-meta' => Components\Layouts\SocialMeta::class,
