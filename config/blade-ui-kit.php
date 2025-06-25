@@ -30,6 +30,10 @@ return [
         'flat-pickr' => Components\Forms\Inputs\FlatPickr::class,
         'form' => Components\Forms\Form::class,
         'form-button' => Components\Buttons\FormButton::class,
+        'google-map' => Components\Maps\GoogleMap::class,
+        'google-map-marker' => Components\Maps\GoogleMapMarker::class,
+        'google-map-circle' => Components\Maps\GoogleMapCircle::class,
+        'google-map-polygon' => Components\Maps\GoogleMapPolygon::class,
         'html' => Components\Layouts\Html::class,
         'input' => Components\Forms\Inputs\Input::class,
         'label' => Components\Forms\Label::class,
@@ -95,6 +99,8 @@ return [
             'https://unpkg.com/easymde/dist/easymde.min.css',
             'https://unpkg.com/easymde/dist/easymde.min.js',
         ],
+      
+        'google-maps' => 'https://maps.googleapis.com/maps/api/js?key=' . env('GOOGLEMAPS'),
 
         'flat-pickr' => [
             'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css',
